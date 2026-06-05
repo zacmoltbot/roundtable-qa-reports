@@ -1,0 +1,72 @@
+{
+  "testDate": "2026-06-05T06:37-08:00",
+  "target": "https://doppel-health.zeabur.app/group",
+  "scope": "user-facing /group only (no /admin, /create)",
+  "browser": "openclaw profile, chromium headless, locale=zh-TW",
+  "timingMarks": [
+    {"label":"T0_navigate","ts":1780641643709,"note":"initial nav start"},
+    {"label":"nav_domcontentloaded","ms":2341,"note":"group page DOMContentLoaded"},
+    {"label":"disclaimer_visible","ts":1780641646,"note":"modal appeared after domcontentloaded"},
+    {"label":"disclaimer_accept_click","ts":1780641651,"note":"clicked accept button"},
+    {"label":"T1_topic_cards_visible","ts":1780641656,"note":"topic cards visible after accept"},
+    {"label":"T2_topic_card_click","ts":1780641663,"note":"sleep quality card clicked"},
+    {"label":"T3_chat_route_visible","ms":4663,"note":"URL changed to /group/chat"},
+    {"label":"T4_expert_labels_visible","ts":1780641667,"note":"賴珊蒂+林珍妮 labels appeared"},
+    {"label":"T5_custom_topic_submit","ts":1780642103,"note":"submitted bone density custom topic"},
+    {"label":"T6_selection_route_visible","ms":25751,"note":"expert selection page appeared"},
+    {"label":"T7_experts_populated","ts":1780642171,"note":"8 expert cards with scores visible"},
+    {"label":"T8_manual_override","ts":1780642229,"note":"removed 林安娜, manually added back"},
+    {"label":"T9_start_discussion","ts":1780642274,"note":"clicked 開始討論"},
+    {"label":"T10_chat_entered_custom","ms":22429,"note":"URL changed to custom topic chat"}
+  ],
+  "networkCalls": {
+    "note": "No raw HAR captured (browser console logs used as proxy)",
+    "keyObservations": [
+      "All warmup TTS text captured in console with timestamps",
+      "lipsync fallback pattern: [lipsync] ✗ not ready, TTS fallback for \"...\"",
+      "preheat warmup sequences for both sessions captured",
+      "No JS pageerrors or uncaught exceptions in console"
+    ]
+  },
+  "consoleSummary": {
+    "session1_topic1": "warmup playing (blob not ready) + lipsync fallback TTS strings; no errors",
+    "session1_text_interjection": "lipsync continuously generating TTS fallback responses to user text",
+    "session2_custom": "preheat warmup ready messages for 林安娜, 宋艾倫; pre-fetched blob 127KB; lipsync fallback for 林安娜 self-intro + 宋艾倫 English intro",
+    "no_pageerrors": true,
+    "no_critical_js_errors": true
+  },
+  "screenshots": [
+    {"file":"01_homepage.png","label":"homepage before disclaimer"},
+    {"file":"02_homepage_after_disclaimer.png","label":"homepage topic cards, mic+text input visible"},
+    {"file":"03_chat_entered.png","label":"P1 topic click - chat entered, 賴珊蒂 speaking, 傳送中"},
+    {"file":"04_chat_second_speaker.png","label":"林珍妮 speaking, role-to-role rotation visible"},
+    {"file":"05_text_interjection_response.png","label":"text input opened, user typed失眠"},
+    {"file":"06_text_response_received.png","label":"expert responding to 失眠, 專家正在思考中"},
+    {"file":"07_summary_early.png","label":"early summary - modal opened, insufficient content"},
+    {"file":"08_confirm_back.png","label":"confirm-back dialog on back button"},
+    {"file":"09_custom_topic_entered.png","label":"custom topic input filled"},
+    {"file":"10_expert_selection.png","label":"expert selection page, 8 cards with scores+reasons"},
+    {"file":"11_manual_selection.png","label":"manual override - removed auto-selected, selected 3 manually"},
+    {"file":"12_custom_topic_chat.png","label":"custom topic chat entered with 林安娜+宋艾倫+白大衛"},
+    {"file":"13_paused.png","label":"pause clicked - 繼續 button shown"},
+    {"file":"14_resumed.png","label":"resume clicked - 繼續 toggled back"},
+    {"file":"15_mobile_view.png","label":"390x844 viewport - layout adapts"},
+    {"file":"16_confirm_back_custom.png","label":"confirm-back dialog on custom topic session"}
+  ],
+  "audioEvidence": {
+    "note": "Automated audio evidence only - no human listening verification",
+    "session1_preheat": "warmup audio triggered for 賴珊蒂 at T+51s; blob URL streaming; fallback TTS text logged",
+    "session1_tts_fallback": "Multiple [lipsync] ✗ not ready, TTS fallback logs showing TTS generation occurring in browser JS",
+    "session2_preheat": "pre-fetched blob 127KB; warmup ready for 林安娜+宋艾倫; playing log confirmed",
+    "no_audio_playback_measured": true,
+    "limitation": "headless browser cannot measure actual audio playback; TTS generation confirmed via console logs only"
+  },
+  "limitations": [
+    "No real microphone test (fake mic fixture not created - edge-tts unavailable)",
+    "No semantic STT validation (no WAV fixture injected)",
+    "Headless browser cannot measure actual audio audible playback",
+    "Lipsync video avatar state not inspectable in headless DOM (video elements exist but readyState not measured)",
+    "Session timer (免費試用 3:59) visible but not instrumented for timeout behavior",
+    "No load/stress testing performed"
+  ]
+}

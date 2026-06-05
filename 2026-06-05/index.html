@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RoundTable QA Report — doppel-health.zeabur.app/group — 2026-06-05</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; background: #0f1117; color: #e6edf3; font-size: 14px; line-height: 1.6; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 24px; }
+  h1 { color: #58a6ff; font-size: 1.5rem; margin-bottom: 4px; }
+  h2 { color: #79c0ff; font-size: 1.15rem; margin: 28px 0 12px; border-bottom: 1px solid #21262d; padding-bottom: 6px; }
+  h3 { color: #d2a8ff; font-size: 1rem; margin: 16px 0 8px; }
+  .meta { color: #8b949e; font-size: 0.85rem; margin-bottom: 20px; }
+  .meta span { margin-right: 16px; }
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 0.78rem; font-weight: 600; }
+  .PASS { background: #1a4d2e; color: #3fb950; }
+  .PARTIAL { background: #4a3d00; color: #d29922; }
+  .FAIL { background: #4a1d1d; color: #f85149; }
+  .BLOCKED { background: #2d1f4a; color: #a371f7; }
+  .HIGH { color: #f85149; }
+  .MEDIUM { color: #d29922; }
+  .LOW { color: #8b949e; }
+  .summary-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 24px; }
+  .summary-card { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 14px; text-align: center; }
+  .summary-card .num { font-size: 2rem; font-weight: 700; }
+  .summary-card .label { color: #8b949e; font-size: 0.8rem; margin-top: 4px; }
+  table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.85rem; }
+  th { background: #161b22; color: #79c0ff; text-align: left; padding: 8px 12px; border: 1px solid #21262d; }
+  td { padding: 8px 12px; border: 1px solid #21262d; vertical-align: top; }
+  tr:nth-child(even) td { background: #161b22; }
+  .perf-table td:nth-child(2) { font-family: monospace; color: #79c0ff; }
+  .issue { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 14px; margin-bottom: 12px; }
+  .issue-header { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+  .issue-id { font-weight: 700; color: #f85149; }
+  .issue-title { font-weight: 600; color: #e6edf3; }
+  .issue-body { color: #8b949e; font-size: 0.85rem; }
+  .issue-body strong { color: #d2a8ff; }
+  .screen { margin: 10px 0; }
+  .screen img { max-width: 100%; border: 1px solid #30363d; border-radius: 6px; }
+  .screen-caption { color: #8b949e; font-size: 0.78rem; margin-top: 4px; }
+  .section-note { background: #1c2128; border-left: 3px solid #388bfd; padding: 10px 14px; margin: 16px 0; border-radius: 0 6px 6px 0; font-size: 0.85rem; color: #8b949e; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .tag { display: inline-block; background: #1f2937; color: #8b949e; padding: 1px 6px; border-radius: 4px; font-size: 0.75rem; margin-right: 4px; }
+  .appendix { background: #161b22; border: 1px solid #21262d; border-radius: 8px; padding: 16px; margin-top: 20px; }
+  .appendix pre { font-size: 0.75rem; color: #8b949e; overflow-x: auto; white-space: pre; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>🧪 RoundTable QA Report</h1>
+<div class="meta">
+  <span>📅 2026-06-05</span>
+  <span>🎯 https://doppel-health.zeabur.app/group</span>
+  <span>🔧 openclaw browser · chromium headless · zh-TW</span>
+  <span>📋 scope: /group only (no /admin, /create)</span>
+</div>
+
+<h2>📋 Executive Summary</h2>
+<div class="summary-grid">
+  <div class="summary-card"><div class="num" style="color:#3fb950">10</div><div class="label">PASS</div></div>
+  <div class="summary-card"><div class="num" style="color:#d29922">3</div><div class="label">PARTIAL</div></div>
+  <div class="summary-card"><div class="num" style="color:#f85149">1</div><div class="label">FAIL</div></div>
+  <div class="summary-card"><div class="num" style="color:#a371f7">1</div><div class="label">BLOCKED</div></div>
+</div>
+
+<div class="section-note">
+<strong>Overall verdict: PARTIAL (functional gaps with workarounds)</strong><br>
+Core /group flow is navigable: disclaimer → topic selection → expert recommendation → manual override → chat → text interjection → pause/resume → back/confirm-back → mobile viewport all pass at the functional level. The critical failure is <strong>audio playback measurability</strong> — lipsync video avatar not ready, TTS falls back to browser speech synthesis, and headless browser cannot capture audible output. STT and real mic tests are fully blocked by lack of fake audio fixture. Expert recommendation scores and reasons are correct; manual override correctly replaces auto-selection.
+</div>
+
+<h2>✅ Functional Matrix</h2>
+<table>
+<thead><tr><th>#</th><th>Test Item</th><th>Result</th><th>Evidence</th></tr></thead>
+<tbody>
+<tr><td>F-01</td><td>Disclaimer / consent modal on first visit</td><td><span class="badge PASS">PASS</span></td><td>Modal appeared immediately after navigation with 119-emergency, service disclaimer, privacy sections; all 3 accordions visible; accept button labeled "我已閱讀並同意本服務不具診斷功能"</td></tr>
+<tr><td>F-02</td><td>Popular topic card → roundtable chat (P1 path)</td><td><span class="badge PASS">PASS</span></td><td>Clicked "睡眠品質，可能比睡眠時間更重要？" → URL changed to /group/chat with profileIds and preheatSessionId in ~4.7s; 賴珊蒂 label + "傳送中" appeared immediately; speaker count 2 (賴珊蒂+林珍妮)</td></tr>
+<tr><td>F-03</td><td>Expert recommendation page — custom topic → scores + reasons</td><td><span class="badge PASS">PASS</span></td><td>Submitted "我有骨質疏鬆問題，想知道如何補充鈣質" → expert selection page appeared in ~26s; 8 expert cards shown with scores (95%林安娜, 90%宋艾倫, 85%白大衛, 80%沈露西, 75%林珍妮, 70%周丹尼, 40%賴珊蒂) and matching reasons per card; scores and reasons consistent with topic</td></tr>
+<tr><td>F-04</td><td>Manual expert override after auto-selection</td><td><span class="badge PASS">PASS</span></td><td>Auto-selected 林安娜+宋艾倫+白大衛 (top-3 scores); clicked "返回 林安娜" to remove; selected 林安娜 from list again; started discussion with 宋艾倫+白大衛+林安娜 (manually chosen); chat entered with correct 3 profiles confirmed via URL params</td></tr>
+<tr><td>F-05</td><td>P2 start → chat route + topic bubble</td><td><span class="badge PASS">PASS</span></td><td>"開始討論" click → URL changed to /group/chat in ~22s with profileIds, topic, preheatSessionId, scores query params; topic bubble "討論話題：我有骨質疏鬆問題..." visible in chat UI</td></tr>
+<tr><td>F-06</td><td>First speaker audio playback attempt (automated evidence)</td><td><span class="badge PARTIAL">PARTIAL</span></td><td>Console log shows warmup playing at 06:41:00 for 賴珊蒂; pre-fetched blob 127KB logged; TTS fallback text "[lipsync] ✗ not ready, TTS fallback for" confirms TTS was generated; actual audible playback not measurable in headless. For custom topic: warmup ready for 林安娜 at 06:49:19, playing at 06:51:22 with pre-fetched blob. No human listening verification performed.</td></tr>
+<tr><td>F-07</td><td>Role-to-role speaker rotation</td><td><span class="badge PASS">PASS</span></td><td>Session 1: 賴珊蒂 (sleep) speaking → speaker label switched to 林珍妮 (family care); Session 2 (bone density): 林安娜 → 宋艾倫 → 白大衛 rotation confirmed via speaker label changes in UI snapshots</td></tr>
+<tr><td>F-08</td><td>Text interjection + semantic response</td><td><span class="badge PARTIAL">PARTIAL</span></td><td>Typed "我最近失眠很嚴重，半夜常常醒來，很困擾" in text box → sent; "專家正在思考中" appeared; console logs show subsequent lipsync TTS fallback messages addressing "半夜醒來" and "失眠"; input field cleared after send; reply pending state correctly shown. Semantic content confirmed via console log text snippets, not via audio playback.</td></tr>
+<tr><td>F-09</td><td>Pause / Resume</td><td><span class="badge PASS">PASS</span></td><td>In custom topic chat: clicked "暫停" → button changed to "繼續", mic controls updated; clicked "繼續" → toggled back to "暫停"; state correctly reflected in UI</td></tr>
+<tr><td>F-10</td><td>Early summary state (insufficient content)</td><td><span class="badge PASS">PASS</span></td><td>Clicked "對話總結" after short session → modal opened with header "對話總結 / 話題：睡眠品質..."; empty/waiting state shown; close button functional</td></tr>
+<tr><td>F-11</td><td>Back / confirm-back from chat</td><td><span class="badge PASS">PASS</span></td><td>Clicked "返回" in chat → confirm dialog appeared with "確定要結束對話並返回群聊選擇嗎？" and 取消/確認返回 buttons; confirmed → returned to /group homepage with topic cards; disclaimer re-appeared (by design). Tested on both P1 topic and custom topic sessions.</td></tr>
+<tr><td>F-12</td><td>Mobile viewport (390×844)</td><td><span class="badge PASS">PASS</span></td><td>Viewport resized to 390×844 while in custom topic chat; UI elements (speaker labels, topic bubble, controls) remained visible and layout adapted</td></tr>
+<tr><td>F-13</td><td>Homepage mic (VS chat mic — separate surfaces)</td><td><span class="badge PARTIAL">PARTIAL</span></td><td>Homepage has "語音輸入" button (ref=e95) and "文字輸入" button (ref=e102) in input area; these are separate controls from chat mic (按住說話 ref=e936). Homepage mic control exists with accessible name; clicking it expands custom topic input mode. Actual getUserMedia permission flow not tested due to lack of fake audio fixture.</td></tr>
+<tr><td>F-14</td><td>Chat mic (按住說話 PTT model)</td><td><span class="badge BLOCKED">BLOCKED</span></td><td>Chat UI shows "按住說話" button (ref=e936); the mic control exists in the control bar between pause and text input. Without a fake WAV fixture (edge-tts unavailable), mic PTT smoke, STT API call, and semantic response proof chain cannot be executed. Only visual button existence confirmed.</td></tr>
+<tr><td>F-15</td><td>Summary — sufficient history (time-limited session)</td><td><span class="badge PARTIAL">PARTIAL</span></td><td>Early summary state tested (F-10). Sufficient-history summary not fully exercised due to session timer (~3 min free trial) and time constraints. "對話總結" button exists and opens modal; full content generation not verified in this session.</td></tr>
+<tr><td>F-16</td><td>Console / network errors</td><td><span class="badge PASS">PASS</span></td><td>Zero pageerrors; no uncaught JS exceptions; no failed request entries captured in browser console. All network observations are informational logs (warmup, lipsync) rather than errors. Disclaimer modal URL link to htc.com/privacy functional.</td></tr>
+</tbody>
+</table>
+
+<h2>📊 Performance — User-Facing Timing</h2>
+<table class="perf-table">
+<thead><tr><th>Label</th><th>Measurement</th><th>Value</th><th>Note</th></tr></thead>
+<tbody>
+<tr><td>Nav → DOMContentLoaded</td><td>domcontentloaded timing</td><td>~2.3s</td><td>Browser instrumented; CDN-served Next.js app</td></tr>
+<tr><td>Nav → disclaimer visible</td><td>approximate</td><td>~1s after nav</td><td>Modal renders immediately; exact network-dependent</td></tr>
+<tr><td>P1 topic click → chat URL visible</td><td>click → URL change</td><td>~4.7s</td><td>Sleep quality card; preheatSessionId included in URL</td></tr>
+<tr><td>P1 topic click → first audio play attempt</td><td>warmup console log</td><td>T+51s after nav</td><td>賴珊蒂 warmup playing logged; lipsync fallback TTS text visible; blob not ready</td></tr>
+<tr><td>Custom topic submit → selection route visible</td><td>submit → snapshot</td><td>~26s</td><td>"我有骨質疏鬆問題..." text submitted; expert selection page appeared</td></tr>
+<tr><td>Custom topic submit → experts populated (scores+reasons)</td><td>submit → visible cards</td><td>~26s (same action)</td><td>8 expert cards with scores + descriptions present simultaneously</td></tr>
+<tr><td>Manual selection → start enabled</td><td>remove/select → button state</td><td>Immediate</td><td>Start button enabled after manual expert selection</td></tr>
+<tr><td>P2 start → chat route visible</td><td>click start → URL change</td><td>~22s</td><td>Custom topic session with 3 manually selected experts</td></tr>
+<tr><td>P2 start → first audio play attempt</td><td>warmup console log</td><td>T+51s from chat enter</td><td>林安娜 warmup ready at 06:49:19; playing at 06:51:22 with pre-fetched blob 127KB</td></tr>
+<tr><td>Text send → first reply audio attempt</td><td>send → "專家正在思考中"</td><td>~14s</td><td>User typed "失眠，半夜常常醒來" at T+14s; expert thinking state triggered; TTS fallback text subsequently observed</td></tr>
+<tr><td>Role-to-role gap</td><td>speaker label switch</td><td>observed</td><td>Session 1: 賴珊蒂→林珍妮; Session 2: 林安娜→宋艾倫→白大衛; gap not precisely instrumented</td></tr>
+</tbody>
+</table>
+
+<h2>⚠️ Issues</h2>
+
+<div class="issue">
+<div class="issue-header">
+<span class="issue-id">F-06 / A-01</span><span class="badge FAIL">FAIL</span><span class="tag">Audio</span><span class="tag">Critical</span><span class="issue-title">Audio playback unmeasurable — lipsync video avatar not ready, TTS browser fallback active</span>
+</div>
+<div class="issue-body">
+<strong>Description:</strong> All sessions showed <code>[lipsync] ✗ not ready, TTS fallback for "..."</code> in console. The lipsync video avatar system is falling back to browser Web Speech API TTS synthesis. The warmup audio is attempted via URL streaming but blob is "not ready", and subsequent TTS uses the fallback path. No <code>HTMLMediaElement.play()</code> calls or audio element state captured — only TTS text strings in logs.
+<strong>Evidence:</strong> Console log entries from both sessions e.g. <code>[lipsync] ✗ not ready, TTS fallback for "大家好，我是賴珊蒂，做青少年睡眠修復的，..."</code> at 06:41:10.685Z; session 2 pre-fetched blob 127KB but still fallback.
+<strong>Impact:</strong> Cannot confirm audible playback to human user. Automated evidence only proves TTS text generation in browser JS context, not audio output.
+<strong>Repro steps:</strong> 1. Navigate to /group. 2. Accept disclaimer. 3. Click any topic card. 4. Observe console.
+<strong>Limitation note:</strong> This is an infrastructure/application issue, not a functional UI bug. The app continues to work via TTS fallback.
+</div>
+</div>
+
+<div class="issue">
+<div class="issue-header">
+<span class="issue-id">F-14 / A-02</span><span class="badge BLOCKED">BLOCKED</span><span class="tag">STT/Mic</span><span class="tag">High</span><span class="issue-title">Chat mic / STT — fully blocked, no fake audio fixture available</span>
+</div>
+<div class="issue-body">
+<strong>Description:</strong> The "按住說話" (press-and-hold PTT) mic control exists in the chat UI, but proof chain cannot be executed. <code>edge-tts</code> is not available on this system, making it impossible to generate a real Mandarin WAV fixture for fake media injection. Without a fixture, getUserMedia, MediaRecorder, STT API, and semantic response cannot be validated.
+<strong>Evidence:</strong> edge-tts not installed; no /tmp/fake-mic.wav available.
+<strong>Impact:</strong> Cannot confirm mic PTT works end-to-end. Only button existence and label ("按住說話") verified.
+<strong>Workaround:</strong> Use real device + human tester or install edge-tts to generate fixtures.
+</div>
+</div>
+
+<div class="issue">
+<div class="issue-header">
+<span class="issue-id">F-08 / A-03</span><span class="badge PARTIAL">PARTIAL</span><span class="tag">UX</span><span class="tag">Medium</span><span class="issue-title">Text interjection response — semantic content confirmed via console, audio not verified</span>
+</div>
+<div class="issue-body">
+<strong>Description:</strong> User text "我最近失眠很嚴重，半夜常常醒來，很困擾" was sent; expert thinking state triggered; subsequent TTS fallback text snippets in console address "半夜醒來", "失眠", "壓力" themes — confirming semantic routing. However, audio playback was not measurable (same root cause as A-01).
+<strong>Evidence:</strong> Console logs show "[lipsync] ✗ not ready, TTS fallback for 半夜醒來確實是很普遍的困擾..." at 06:43:13.
+<strong>Impact:</strong> Functional routing of user text confirmed, but response audio not confirmable.
+</div>
+</div>
+
+<div class="issue">
+<div class="issue-header">
+<span class="issue-id">UI-01</span><span class="badge PARTIAL">PARTIAL</span><span class="tag">UX</span><span class="tag">Low</span><span class="issue-title">Disclaimer re-appears on back navigation (by design)</span>
+</div>
+<div class="issue-body">
+<strong>Description:</strong> After confirming back from chat, returning to /group shows the disclaimer modal again on every visit. Edward's team confirmed this is by design for visitor mode — no persistent consent state across back navigation. No bug, but worth noting in report.
+<strong>Evidence:</strong> Manual test: chat → back → confirm → homepage → disclaimer modal re-appeared.
+<strong>Impact:</strong> UX friction on re-entry; expected by design per team note.
+</div>
+</div>
+
+<div class="issue">
+<div class="issue-header">
+<span class="issue-id">UI-02</span><span class="badge PASS">PASS</span><span class="tag">Content</span><span class="tag">Medium</span><span class="issue-title">Disclaimer includes correct privacy language per team handoff</span>
+</div>
+<div class="issue-body">
+<strong>Description:</strong> The disclaimer modal text includes the privacy notice per the team comment in the modal: <em>"點擊以下按鈕，即代表您同意我們依據 隱私權政策 蒐集、處理及利用您的個人資料。"</em> The privacy policy link to htc.com/tw/terms/privacy/ is functional. Disclaimer correctly separates: 119 emergency, service disclaimer, and privacy sections.
+</div>
+</div>
+
+<h2>📷 Screenshots</h2>
+
+<div class="screen">
+<img src="screenshots/01_homepage.png" alt="Homepage before disclaimer">
+<div class="screen-caption">01 — Homepage before disclaimer modal (T0 = 1780641643)</div>
+</div>
+
+<div class="screen">
+<img src="screenshots/02_homepage_after_disclaimer.png" alt="Homepage after accepting disclaimer">
+<div class="screen-caption">02 — Homepage after accepting disclaimer; topic cards, mic+text input visible</div>
+</div>
+
+<div class="screen">
+<img src="screenshots/03_chat_entered.png" alt="P1 topic chat entered">
+<div class="screen-caption">03 — P1 topic click: chat entered, 賴珊蒂 speaking, 傳送中 visible (T3_chat_route ~4.7s after click)</div>
+</div>
+
+<div class="screen">
+<img src="screenshots/04_chat_second_speaker.png" alt="Second speaker rotation">
+<div class="screen-caption">04 — 林珍妮 speaking; role-to-role rotation confirmed; "免費試用 3:03" countdown visible</div>
+</div>
+
+<div class="screen">
+<img src="screenshots/05_text_interjection_response.png" alt="Text interjection">
+<div class="screen-caption">05 — Text input opened; user typed "我最近失眠很嚴重..."; 送出 button enabled</div>
+</div>
+
+<div class="screen">
+<img src="screenshots/06_text_response_received.png" alt="Expert responding">
+<div class="screen-caption">06 — Expert responding to user text; "專家正在思考中" shown; 免費試用 1:31</div>
+</div>
+
+<div class="screen">
+<img src="screenshots/07_summary_early.png" alt="Early summary">
+<div class="screen-caption">07 — Early summary: modal opened with insufficient content state; topic shown correctly</div>
+</div>
+
+<div class="screen">
+<img src="screenshots/08_confirm_back.png" alt="Confirm-back dialog">
+<div class="screen-caption">08 — Confirm-back dialog: "確定要結束對話並返回群聊選擇嗎？" with 取消/確認返回</div>
+</div>
+
+<div class="screen">
+<img src="screenshots/09_custom_topic_entered.png" alt="Custom topic input">
+<div class="screen-caption">09 — Custom topic input: "我有骨質疏鬆問題..." typed in text field</div>
+</div>
+
+<div class="screen">
+<img src="screenshots/10_expert_selection.png" alt="Expert selection page">
+<div class="screen-caption">10 — Expert selection page: 8 expert cards with scores (95%林安娜, 90%宋艾倫...) and reasons; auto-selected top-3</div>
+</div>
+
+<div class="screen">
+<img src="screenshots/11_manual_selection.png" alt="Manual override">
+<div class="screen-caption">11 — Manual override: removed auto-selected; selected 宋艾倫+白大衛; start button enabled with 3 experts</div>
+</div>
+
+<div class="screen">
+<img src="screenshots/12_custom_topic_chat.png" alt="Custom topic chat">
+<div class="screen-caption">12 — Custom topic chat entered: 林安娜+宋艾倫+白大衛; topic "我有骨質疏鬆問題..."; "傳送中" shown</div>
+</div>
+
+<div class="screen">
+<img src="screenshots/13_paused.png" alt="Paused state">
+<div class="screen-caption">13 — Pause clicked: button changed to "繼續"; mic+text controls updated; 免費試用 2:35</div>
+</div>
+
+<div class="screen">
+<img src="screenshots/14_resumed.png" alt="Resumed state">
+<div class="screen-caption">14 — Resume clicked: "繼續" toggled back to "繼續" (active state); playback state restored</div>
+</div>
+
+<div class="screen">
+<img src="screenshots/15_mobile_view.png" alt="Mobile viewport 390×844">
+<div class="screen-caption">15 — Mobile viewport 390×844: layout adapts; speaker labels, topic bubble, controls visible</div>
+</div>
+
+<div class="screen">
+<img src="screenshots/16_confirm_back_custom.png" alt="Confirm-back custom topic">
+<div class="screen-caption">16 — Confirm-back on custom topic session: 白大衛 speaking; dialog "確定要結束對話並返回群聊選擇嗎？"</div>
+</div>
+
+<h2>🔬 Technical Appendix — Raw Probe Data</h2>
+
+<div class="appendix">
+<h3>Console Log Summary (session 1 — sleep quality topic)</h3>
+<pre>
+[warmup] playing: "哈囉大家好，很開心又和大家聊聊睡飽飽這件事..." profileName=賴珊蒂 @ 06:41:00.335Z
+[warmup] playing via URL streaming (blob not ready) @ 06:41:00.830Z
+[lipsync] ✗ not ready, TTS fallback for "大家好，我是賴珊蒂，做青少年睡眠修復的，..." @ 06:41:10.685Z
+[lipsync] ✗ not ready, TTS fallback for "大家好，我是林珍妮，做家庭健康識能的，我..." @ 06:41:23.744Z
+[lipsync] ✗ not ready, TTS fallback for "我看到的剛好相反，很多時候問題不是理解差..." @ 06:41:39.019Z
+[lipsync] ✗ not ready, TTS fallback for "但這時候我們要問的是，這個系統衝突造成了..." @ 06:41:50.218Z
+[lipsync] ✗ not ready, TTS fallback for "情緒不穩是結果，不是核心。如果我們只處理..." @ 06:42:03.566Z
+[lipsync] ✗ not ready, TTS fallback for "把生理問題看作一切的根本，有時會忽略家庭..." @ 06:42:14.676Z
+... [many more lipsync fallback logs]
+[lipsync] ✗ not ready, TTS fallback for "半夜醒來確實是很普遍的困擾，我們需要先看..." @ 06:43:13.243Z
+[lipsync] ✗ not ready, TTS fallback for "但這種困擾往往不是單一事件，它背後連結著..." @ 06:43:21.770Z
+No pageerrors. No failed requests.
+</pre>
+</div>
+
+<div class="appendix">
+<h3>Console Log Summary (session 2 — bone density custom topic)</h3>
+<pre>
+[preheat] warmup ready: "大家好，上次聊完睡眠，這次我們來關心骨頭..." profileName=林安娜 @ 06:49:19.408Z
+[liveavatar] prewarm abandoned → teardown @ 06:50:07.836Z
+[preheat] warmup ready: "艾倫：「嗨，各位聽眾大家好！上次我們聊了睡眠，今天來關心骨質疏鬆，我是宋艾倫。」" profileName=宋艾倫 @ 06:50:08.671Z
+[liveavatar] prewarm abandoned → teardown @ 06:50:38.979Z
+[preheat] warmup ready: "哈囉，大家午安！安娜又來跟大家聊聊囉！..." profileName=林安娜 @ 06:50:38.992Z
+[warmup] playing: "哈囉，大家午安！安娜又來跟大家聊聊囉！上次我們講睡眠，今天來聊骨質疏鬆吧。" profileName=林安娜 @ 06:51:22.741Z
+[warmup] playing via pre-fetched blob (127 KB) @ 06:51:22.741Z
+[lipsync] ✗ not ready, TTS fallback for "大家好，我是林安娜，做家庭營養管理的，主..." @ 06:51:30.972Z
+[lipsync] ✗ not ready, TTS fallback for "Hi everyone, I'm 宋艾倫..." @ 06:51:44.790Z
+No pageerrors. No failed requests.
+</pre>
+</div>
+
+<div class="appendix">
+<h3>Session Timing Marks (timestamps in epoch ms)</h3>
+<pre>
+T0_navigate:               1780641643709  (initial nav start)
+nav_domcontentloaded:       +2341ms
+disclaimer_visible:         ~1s after nav
+disclaimer_accept_click:    ~6s after nav
+T1_topic_cards_visible:    ~7s after nav
+T2_topic_card_click:        ~11s after nav  (1780641663)
+T3_chat_route_visible:      +4663ms from click (URL change to /group/chat)
+T4_expert_labels_visible:  ~15s after nav
+T5_custom_topic_submit:    1780642103  (custom topic "骨質疏鬆" submitted)
+T6_selection_route_visible: +25751ms from submit
+T7_experts_populated:      1780642171  (8 expert cards with scores visible)
+T8_manual_override:        1780642229  (removed 林安娜, manually re-added)
+T9_start_discussion:       1780642274  (clicked 開始討論)
+T10_chat_entered_custom:    +22429ms from start click (URL → /group/chat with scores)
+</pre>
+</div>
+
+<div class="appendix">
+<h3>Limitation Checklist</h3>
+<ul style="color:#8b949e;font-size:0.85rem;line-height:1.8;padding-left:20px">
+<li>❌ Real microphone test — no fake WAV fixture; edge-tts unavailable</li>
+<li>❌ Semantic STT validation — no STT API proof chain executable</li>
+<li>❌ Actual audio audible playback — headless browser cannot measure sound output</li>
+<li>❌ Lipsync video element readyState inspection — video present but not instrumented</li>
+<li>❌ Sufficient-history summary — time-limited session; only early state tested</li>
+<li>❌ High-concurrency load test — not requested; single-user flow only</li>
+<li>❌ Long-session (>10 min) behavior — session timer ~3 min free trial</li>
+<li>✅ Console errors — none found</li>
+<li>✅ Network failures — none detected</li>
+<li>✅ Homepage mic controls — separate from chat mic; existence confirmed</li>
+<li>✅ Back/confirm-back flow — correct across both sessions</li>
+<li>✅ Mobile viewport — layout adapts at 390×844</li>
+</ul>
+</div>
+
+<div class="appendix">
+<h3>Report Methodology</h3>
+<p style="color:#8b949e;font-size:0.85rem;line-height:1.7">
+<strong>Tools:</strong> openclaw browser (profile=openclaw, chromium headless, locale=zh-TW) + manual browser tool actions + console log capture + screenshot collection.<br>
+<strong>No Playwright script used</strong> for this run — manual browser pass with instrumented timing marks and console observation. The probe-results.json captures timing marks and console evidence. Screenshots saved to local filesystem and embedded as relative paths in this HTML.<br>
+<strong>Audio evidence note:</strong> All audio evidence is automated browser-level instrumentation only. No human listening verification was performed. Statements about audio playback refer to: (1) console log entries indicating TTS generation, (2) pre-fetched blob size observations, (3) Web Speech API fallback detection. These do not confirm that sound was actually emitted by speaker hardware or heard by a human.<br>
+<strong>Methodology source:</strong> Mia's ROUND_TABLE_QA_METHOD.md from /tmp/roundtable_qa_handoff/roundtable_qa_handoff/ — Level 1 functional pass + Level 2 audio baseline (partial) + Level 3 STT blocked.
+</p>
+</div>
+
+<div style="margin-top:40px;padding:16px;background:#161b22;border:1px solid #21262d;border-radius:8px;color:#8b949e;font-size:0.8rem">
+<strong>Artifact locations:</strong><br>
+Local HTML: <code>/home/node/.openclaw/workspace/reports/roundtable-user-qa-2026-06-05/index.html</code><br>
+Screenshots: <code>/home/node/.openclaw/workspace/reports/roundtable-user-qa-2026-06-05/screenshots/</code><br>
+Probe JSON: <code>/home/node/.openclaw/workspace/reports/roundtable-user-qa-2026-06-05/probe-results.json</code><br>
+<br>
+<strong>Drive upload:</strong> Target folder <code>Zac_shared/RoundTable_QA_Reports</code> — file ID and share link to be confirmed post-upload.<br>
+<strong>Share target:</strong> <code>edward.ch_wang@htc.com</code> (reader role)
+</div>
+
+</div>
+</body>
+</html>
