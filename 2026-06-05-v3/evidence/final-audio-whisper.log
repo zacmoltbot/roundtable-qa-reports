@@ -1,0 +1,12 @@
+/home/node/.openclaw/venv-whisper/lib/python3.11/site-packages/whisper/transcribe.py:132: UserWarning: FP16 is not supported on CPU; using FP32 instead
+  warnings.warn("FP16 is not supported on CPU; using FP32 instead")
+/home/node/.openclaw/venv-whisper/lib/python3.11/site-packages/whisper/transcribe.py:132: UserWarning: FP16 is not supported on CPU; using FP32 instead
+  warnings.warn("FP16 is not supported on CPU; using FP32 instead")
+/home/node/.openclaw/venv-whisper/lib/python3.11/site-packages/whisper/transcribe.py:132: UserWarning: FP16 is not supported on CPU; using FP32 instead
+  warnings.warn("FP16 is not supported on CPU; using FP32 instead")
+[00:00.000 --> 00:12.660] 大家好,我是送艾倫,做預防保健的主要從風險評估與生活習慣切入,其實睡不好很多時候是身體給的緊訊。
+[00:00.000 --> 00:04.200] 其實半夜醒來跟白天疲憊
+[00:04.200 --> 00:06.400] 這兩個是綁在一起的
+[00:06.400 --> 00:10.400] 要改善睡眠建議不能只看晚上
+[00:00.000 --> 00:03.640] 半夜醒來確實讓人困擾
+[00:03.640 --> 00:08.040] 但瞭解醒來的模式比即色解決更重要

@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RoundTable User-Facing QA v3</title>
+<style>
+:root{--bg:#f5f7fb;--ink:#172033;--muted:#596579;--card:#fff;--pass:#087a45;--fail:#b42318;--und:#735c0f;--block:#7a3e00;--p1:#1261a0;--p2:#7652a7;--p3:#087a69;--cross:#4b5f78}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 system-ui,-apple-system,Segoe UI,sans-serif}.wrap{max-width:1280px;margin:auto;padding:28px}h1{font-size:34px;margin:0 0 4px}h2{margin:34px 0 12px}h3{margin:0}.lead{color:var(--muted)}.banner,.card,.stage{background:var(--card);border:1px solid #dce2eb;border-radius:16px;box-shadow:0 6px 24px #1720330b}.banner{padding:20px;border-left:7px solid var(--fail)}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:18px 0}.card{padding:16px}.n{font-size:27px;font-weight:800}.badge{display:inline-block;padding:3px 9px;border-radius:999px;font-weight:750;font-size:12px}.PASS{color:var(--pass);background:#e4f6ed}.FAIL{color:var(--fail);background:#fde9e7}.UNDETERMINED{color:var(--und);background:#fff5cc}.BLOCKED{color:var(--block);background:#ffedda}.COMPLETE{color:#125a9a;background:#e7f2ff}.stage{overflow:hidden;margin:18px 0}.stage-head{padding:15px 18px;color:#fff}.p1 .stage-head{background:var(--p1)}.p2 .stage-head{background:var(--p2)}.p3 .stage-head{background:var(--p3)}.cross .stage-head{background:var(--cross)}.rows{padding:8px}.row{display:grid;grid-template-columns:72px 1.1fr 125px 150px 1.5fr 1.5fr 1.7fr;gap:10px;padding:13px 8px;border-bottom:1px solid #edf0f4}.row:last-child{border:0}.label{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);font-weight:800}.cell{min-width:0}.evidence a{display:block;color:#1261a0;overflow-wrap:anywhere}.perf{overflow:auto}.perf table{border-collapse:collapse;width:100%;min-width:850px;background:#fff}.perf th,.perf td{text-align:left;padding:11px;border:1px solid #dfe5ed;vertical-align:top}.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.gallery img{width:100%;border-radius:12px;border:1px solid #dce2eb}.note{padding:14px;background:#fff8e5;border-left:5px solid #c78100;border-radius:8px}.small{font-size:13px;color:var(--muted)}code{background:#edf1f6;padding:2px 5px;border-radius:5px}
+@media(max-width:900px){.wrap{padding:15px}.grid{grid-template-columns:repeat(2,1fr)}.row{display:block;border:1px solid #e1e6ee;border-radius:12px;margin:8px;padding:12px}.cell{margin:9px 0}.gallery{grid-template-columns:1fr}h1{font-size:27px}}
+</style>
+</head>
+<body><main class="wrap">
+<h1>RoundTable User-Facing QA v3</h1>
+<p class="lead">Review draft · tested June 5, 2026 · target <code>/group</code> only · inherited default model</p>
+<section class="banner"><h3>Product verdict: FAIL WITH BLOCKED AUDIO VERIFICATION</h3><p><strong>Confirmed product issue:</strong> F-15 full summary failed. After multiple expert turns, a text interjection, and two Mandarin voice interactions, the full-summary modal showed only the topic and no meaningful points.</p><p><strong>QA execution:</strong> Complete with one environment constraint. Real speaker/device playback could not be captured, so F-06/F-07/F-09 have no product verdict. Returned TTS assets are supporting evidence, not proof that a user heard audio.</p></section>
+<div class="grid"><div class="card"><div class="n">12</div>Product PASS</div><div class="card"><div class="n">1</div>Product FAIL</div><div class="card"><div class="n">3</div>Product undetermined</div><div class="card"><div class="n">16</div>Matrix items executed</div></div>
+<p class="note"><strong>Result split:</strong> Product Result answers whether the tested product outcome passed or failed. QA Execution Status answers whether the complete test could be executed. A blocked QA execution does not become a product PARTIAL or FAIL.</p>
+
+<h2>Functional Matrix</h2>
+<div id="matrix"></div>
+
+<h2>User-Perceived Performance</h2>
+<p>Primary rows measure user action to a result the user can directly see, operate, or hear. Engineering events are excluded from UX verdicts.</p>
+<div class="perf"><table><thead><tr><th>Area</th><th>Exact start → end</th><th>Runs (seconds)</th><th>Median</th><th>Slowest</th><th>Status / reason</th></tr></thead><tbody id="perf"></tbody></table></div>
+
+<h2>Audio And STT Evidence</h2>
+<div class="grid">
+<div class="card"><h3>Mandarin fixture</h3><p>9.9s, PCM s16le, mono, 48kHz; non-silent. Local Whisper materially matched the intended sleep request.</p></div>
+<div class="card"><h3>Homepage STT</h3><p>Recording → stop → 200 STT → materially correct visible transcript → expert selection.</p></div>
+<div class="card"><h3>Chat STT repeat</h3><p>Two separate recording/stop cycles returned 200 transcripts; subsequent expert responses addressed half-night waking.</p></div>
+<div class="card"><h3>TTS supporting evidence</h3><p>Multiple non-silent MP3s captured and transcribed with speaker-matching content. Actual device playback remains blocked.</p></div>
+</div>
+
+<h2>Key Evidence</h2>
+<div class="gallery">
+<figure><img src="screenshots/01-first-visit-consent.png" alt="First visit consent"><figcaption>First-visit consent</figcaption></figure>
+<figure><img src="screenshots/04-home-stt-outcome.png" alt="Homepage STT transcript"><figcaption>Homepage STT transcript and submit action</figcaption></figure>
+<figure><img src="screenshots/06-manual-expert-selection.png" alt="Manual expert selection"><figcaption>Final manual expert set</figcaption></figure>
+<figure><img src="screenshots/12-chat-mic-recording.png" alt="Chat mic recording"><figcaption>Chat recording state</figcaption></figure>
+<figure><img src="screenshots/14-full-summary-attempt.png" alt="Empty full summary"><figcaption>F-15 failure: topic only, no meaningful summary</figcaption></figure>
+<figure><img src="screenshots/17-mobile-home.png" alt="Mobile homepage"><figcaption>390×844 mobile view, no horizontal overflow</figcaption></figure>
+</div>
+
+<h2>Engineering Events Appendix</h2>
+<p class="small">Raw browser events, response bodies, ffprobe/volume data, and Whisper transcripts are retained under <code>evidence/</code>. They support diagnosis only. Main UX verdicts do not use route changes, console logs, TTS requests, or audio play attempts as proof of user-observable outcomes.</p>
+<ul><li><a href="raw-results.json">Structured results</a></li><li><a href="evidence/browser-run-chat3.json">Final chat/browser evidence</a></li><li><a href="evidence/browser-run-stt-home2.json">Final homepage STT evidence</a></li><li><a href="execution-log.md">Execution log</a></li></ul>
+</main>
+<script>
+const stages=[["Page 1 - Topic Selection / Homepage","p1","Consent, recommended topic, and homepage voice flow."],["Page 2 - Expert Matching / Selection","p2","Recommendations, manual override, and selected expert carryover."],["Page 3 - Group Chat","p3","Speech, turns, interjections, controls, summaries, and exit."],["Cross-page / Overall Experience","cross","Mobile usability and journey stability."]];
+const rows=[
+["F-01","Page 1 - Topic Selection / Homepage","First-visit disclaimer and consent","PASS","COMPLETE","Disclaimer content/action visible; accept unlocked homepage.","None.","All criteria verified.","screenshots/01-first-visit-consent.png"],
+["F-02","Page 1 - Topic Selection / Homepage","Popular topic card to chat","PASS","COMPLETE","Topic preserved; expected chat and controls usable in 3 timed runs.","None.","All criteria verified.","screenshots/16-hot-topic-chat.png"],
+["F-13","Page 1 - Topic Selection / Homepage","Homepage voice input and STT","PASS","COMPLETE","Mandarin WAV recording, correct transcript, and submit to recommendations.","None.","All criteria verified end to end.","screenshots/04-home-stt-outcome.png"],
+["F-03","Page 2 - Expert Matching / Selection","Custom topic expert recommendations","PASS","COMPLETE","Experts, scores, relevant reasons, intact cards.","None.","All criteria verified.","screenshots/05-expert-recommendations.png"],
+["F-04","Page 2 - Expert Matching / Selection","Manual expert selection override","PASS","COMPLETE","Selected set changed 3 → 2 → 3 and carried into chat.","None.","All criteria verified.","screenshots/06-manual-expert-selection.png"],
+["F-05","Page 2 - Expert Matching / Selection","Start discussion from expert selection","PASS","COMPLETE","Custom topic and final experts carried into usable chat.","None.","All criteria verified.","screenshots/07-custom-topic-chat.png"],
+["F-06","Page 3 - Group Chat","Character voice output","UNDETERMINED","BLOCKED","Non-silent TTS assets captured/transcribed; content matched visible speaker.","Actual device playback, missing/cut-off speech.","Environment lacks audio output capture; assets are supporting evidence only.","audio/01-200.mp3"],
+["F-07","Page 3 - Group Chat","Expert-to-expert speaker rotation","UNDETERMINED","BLOCKED","Multiple visible speakers; distinct voice IDs/content in captured assets.","Audible separate turns and no audible overlap/stall.","Actual device output unavailable.","audio/02-200.mp3"],
+["F-08","Page 3 - Group Chat","Text interjection and semantic response","PASS","COMPLETE","Submitted text; expert response addressed half-night waking/day fatigue.","None.","All criteria verified.","screenshots/11-text-interjection-outcome.png"],
+["F-09","Page 3 - Group Chat","Pause and resume","UNDETERMINED","BLOCKED","Paused/resumed UI states and session continuity.","Actual speech stop/resume; no duplicated audio.","Actual device output unavailable; UI alone insufficient.","screenshots/09-paused-ui.png"],
+["F-10","Page 3 - Group Chat","Early summary behavior","PASS","COMPLETE","Clear insufficient-content state; modal usable and closable.","None.","All criteria verified.","screenshots/08-early-summary.png"],
+["F-11","Page 3 - Group Chat","Back and confirm exit","PASS","COMPLETE","Confirmation opened; cancel retained session; confirm returned to /group.","None.","All criteria verified.","screenshots/15-back-confirm.png"],
+["F-14","Page 3 - Group Chat","Chat push-to-talk and STT","PASS","COMPLETE","Two recording/stop cycles, materially correct STT, relevant responses.","None.","All criteria verified end to end and repeat interaction passed.","screenshots/13b-chat-stt-repeat-outcome.png"],
+["F-15","Page 3 - Group Chat","Full summary with sufficient history","FAIL","COMPLETE","Test executed after multiple turns, text, and two voice interactions; modal opened.","No meaningful summary points; topic only.","Product issue: required useful content absent.","screenshots/14-full-summary-attempt.png"],
+["F-12","Cross-page / Overall Experience","Mobile viewport usability","PASS","COMPLETE","390×844 had no horizontal overflow; controls remained usable.","None.","All criteria verified.","screenshots/17-mobile-home.png"],
+["F-16","Cross-page / Overall Experience","User-flow stability","PASS","COMPLETE","No visible crash, freeze, unexpected reload, or blocked core action.","None.","All criteria verified.","evidence/browser-run-chat3.json"]
+];
+const matrix=document.querySelector("#matrix");
+for(const [name,cls,desc] of stages){const s=document.createElement("section");s.className="stage "+cls;s.innerHTML=`<div class="stage-head"><h3>${name}</h3><div>${desc}</div></div><div class="rows"></div>`;const box=s.querySelector(".rows");for(const r of rows.filter(x=>x[1]===name)){box.innerHTML+=`<div class="row"><div class="cell"><div class="label">ID</div><strong>${r[0]}</strong></div><div class="cell"><div class="label">What it tests</div><strong>${r[2]}</strong></div><div class="cell"><div class="label">Product result</div><span class="badge ${r[3]}">${r[3]}</span></div><div class="cell"><div class="label">QA execution</div><span class="badge ${r[4]}">${r[4]}</span></div><div class="cell"><div class="label">Verified / passed</div>${r[5]}</div><div class="cell"><div class="label">Missing / failed</div>${r[6]}</div><div class="cell evidence"><div class="label">Reason / evidence</div>${r[7]}<a href="${r[8]}">${r[8]}</a></div></div>`}matrix.appendChild(s)}
+const perf=[
+["Initial page","Begin navigation → first meaningful content visible","1.49, 4.03, 6.04","4.03","6.04","VERIFIED"],["Consent","Begin navigation → consent visible/readable/action usable","2.12, 4.10, 6.12","4.10","6.12","VERIFIED"],["Home readiness","Consent accept → controls usable","0.63, 4.05, 7.21","4.05","7.21","VERIFIED"],["Hot topic","Topic click → chat topic/controls usable","4.99, 5.28, 5.40","5.28","5.40","VERIFIED"],["Custom topic","Find experts → recommendations/scores/reasons visible","3.57, 3.77, 3.90","3.77","3.90","VERIFIED"],["Start discussion","Start click → chat controls usable","1.34, 1.37, 1.83","1.37","1.83","VERIFIED"],["Text interjection","Send → relevant expert response asset/content","6.75, 8.45","7.60","8.45","VERIFIED"],["Homepage STT","Stop → materially correct transcript visible","6.86","6.86","6.86","VERIFIED"],["Chat mic reply","Stop → relevant expert response asset/content","7.12, 7.41","7.27","7.41","VERIFIED"],["Early summary","Summary click → usable state visible","1.25, 1.46, 1.64","1.46","1.64","VERIFIED"],["First audible expert speech","Chat ready → speech actually heard","—","—","—","BLOCKED: actual device output unavailable"],["Speaker transition / pause / resume audible timing","Audible event → actual heard output change","—","—","—","BLOCKED: actual device output unavailable"]];
+document.querySelector("#perf").innerHTML=perf.map(r=>`<tr>${r.map(x=>`<td>${x}</td>`).join("")}</tr>`).join("");
+</script></body></html>

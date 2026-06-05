@@ -1,0 +1,23 @@
+Guessed Channel Layout for Input Stream #0.0 : mono
+Input #0, wav, from 'reports/roundtable-qa-fixtures/mandarin-stt-sleep-test.wav':
+  Metadata:
+    encoder         : Lavf59.27.100
+  Duration: 00:00:09.90, bitrate: 768 kb/s
+  Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 48000 Hz, mono, s16, 768 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (pcm_s16le (native) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+Output #0, null, to 'pipe:':
+  Metadata:
+    encoder         : Lavf59.27.100
+  Stream #0:0: Audio: pcm_s16le, 48000 Hz, mono, s16, 768 kb/s
+    Metadata:
+      encoder         : Lavc59.37.100 pcm_s16le
+size=N/A time=00:00:00.04 bitrate=N/A speed=N/A    size=N/A time=00:00:09.90 bitrate=N/A speed= 302x    
+video:0kB audio:928kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: unknown
+[Parsed_volumedetect_0 @ 0x5b26fb9f1840] n_samples: 475200
+[Parsed_volumedetect_0 @ 0x5b26fb9f1840] mean_volume: -27.7 dB
+[Parsed_volumedetect_0 @ 0x5b26fb9f1840] max_volume: -11.5 dB
+[Parsed_volumedetect_0 @ 0x5b26fb9f1840] histogram_11db: 31
+[Parsed_volumedetect_0 @ 0x5b26fb9f1840] histogram_12db: 183
+[Parsed_volumedetect_0 @ 0x5b26fb9f1840] histogram_13db: 500

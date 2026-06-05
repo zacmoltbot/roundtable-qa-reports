@@ -1,0 +1,735 @@
+{
+  "started": "2026-06-05T17:31:03.508Z",
+  "environment": {
+    "chromium": "148.0.7778.215",
+    "fixture": "/home/node/.openclaw/workspace/reports/roundtable-qa-fixtures/mandarin-stt-sleep-test.wav",
+    "fixtureExists": true,
+    "viewport": "1440x1000 and 390x844"
+  },
+  "checkpoints": [
+    {
+      "at": "2026-06-05T17:31:05.680Z",
+      "name": "browser-started",
+      "phase": "stt-home"
+    },
+    {
+      "at": "2026-06-05T17:31:31.560Z",
+      "name": "screenshot:03-home-mic-recording.png"
+    },
+    {
+      "at": "2026-06-05T17:31:51.768Z",
+      "name": "stt-response",
+      "status": 200
+    },
+    {
+      "at": "2026-06-05T17:32:01.643Z",
+      "name": "screenshot:04-home-stt-outcome.png"
+    },
+    {
+      "at": "2026-06-05T17:32:01.643Z",
+      "name": "homepage-stt-complete",
+      "outcome": "TRANSCRIPT_VISIBLE"
+    },
+    {
+      "at": "2026-06-05T17:32:01.645Z",
+      "name": "stt-home-only-complete"
+    }
+  ],
+  "timings": [
+    {
+      "area": "Homepage mic",
+      "run": 1,
+      "definition": "Mic click -> recording state visibly active",
+      "ms": 7261.1,
+      "verified": true
+    },
+    {
+      "area": "Homepage STT",
+      "run": 1,
+      "definition": "Mic stop click -> transcript visible or expert-selection flow reached",
+      "ms": 16342.9,
+      "verified": true,
+      "outcome": "TRANSCRIPT_VISIBLE"
+    }
+  ],
+  "observations": {
+    "homepageMicStopControl": {
+      "manualStopClicked": true,
+      "note": "Active mic control clicked."
+    },
+    "homepageStt": {
+      "beforeStop": {
+        "url": "https://doppel-health.zeabur.app/group",
+        "text": "熱門話題\n睡眠品質，可能比睡眠時間更重要？\n睡眠修復\n家庭照護\n加入這場討論\n喝豆漿、吃豆腐防乳癌有秘訣！\n營養管理\n內科健康\n加入這場討論\n60歲像40歲，正在從幻想變成生意?\n營養管理\n中醫養生\n預防保健\n加入這場討論\n長時間看螢幕讓眼睛太疲勞，怎麼改善？\n復健治療\n內科健康\n家庭照護\n加入這場討論\n長時間坐辦公室導致肩頸痠痛，該如何舒緩？\n睡眠修復\n內科健康\n中醫養生\n加入這場討論\n您想討論什麼健康主題？\n點擊停止\n本內容由人工智慧(AI)生成，可能包括不準確資訊，僅供創意與個人化參考。做出決定前請自行查證，本公司不保證內容之絕對正確性，互動過程請避免輸入個人資料。",
+        "buttons": [
+          {
+            "i": 0,
+            "text": "",
+            "aria": "停止錄音",
+            "disabled": false,
+            "className": "relative grid place-items-center rounded-full border-[0.5px] border-[rgba(255,255,255,0.3)] bg-[linear-gradient(135deg,rgba(255,255,255,0.4)_0%,rgba(255,255,255,0.2)_100%)] text-[var(--ink-soft)] shadow-[0_1px_4px_rgba(0,0,0,0.04),inset_0_0.5px_0_rgba(255,255,255,0.5)] backdrop-blur-[12px] transition-[transform,background,box-shadow] duration-[250ms] hover:translate-y-[-1.5px] hover:scale-[1.05] hover:bg-[linear-gradient(135deg,rgba(255,255,255,0.55)_0%,rgba(255,255,255,0.35)_100%)] active:scale-[0.95] disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-60 h-[72px] w-[72px] recording !bg-[rgba(255,59,48,0.9)] !text-white [animation:mic-pulse_1.5s_ease-in-out_infinite] rt-voice-mode-btn hover:shadow-[0_2px_8px_rgba(0,0,0,0.06),0_0.5px_0_rgba(255,255,255,0.6)_inset]"
+          },
+          {
+            "i": 1,
+            "text": "",
+            "aria": "文字輸入",
+            "disabled": false,
+            "className": "rt-chat-mic"
+          }
+        ],
+        "inputs": []
+      },
+      "afterStop": {
+        "url": "https://doppel-health.zeabur.app/group",
+        "text": "熱門話題\n睡眠品質，可能比睡眠時間更重要？\n睡眠修復\n家庭照護\n加入這場討論\n喝豆漿、吃豆腐防乳癌有秘訣！\n營養管理\n內科健康\n加入這場討論\n60歲像40歲，正在從幻想變成生意?\n營養管理\n中醫養生\n預防保健\n加入這場討論\n長時間看螢幕讓眼睛太疲勞，怎麼改善？\n復健治療\n內科健康\n家庭照護\n加入這場討論\n長時間坐辦公室導致肩頸痠痛，該如何舒緩？\n睡眠修復\n內科健康\n中醫養生\n加入這場討論\n您想討論什麼健康主題？\n\n這是一段語音辨識測試。我最近晚上睡不好，半夜常常醒來，想請專家提供改善睡眠的建議。這是一段語音辨識測試，我最近晚上睡不好，半夜常常醒來，想請專家提供改善睡眠的建議。這是一段。\n\n尋找專家\n本內容由人工智慧(AI)生成，可能包括不準確資訊，僅供創意與個人化參考。做出決定前請自行查證，本公司不保證內容之絕對正確性，互動過程請避免輸入個人資料。",
+        "buttons": [
+          {
+            "i": 0,
+            "text": "",
+            "aria": "語音輸入",
+            "disabled": false,
+            "className": "relative grid place-items-center rounded-full border-[0.5px] border-[rgba(255,255,255,0.3)] bg-[linear-gradient(135deg,rgba(255,255,255,0.4)_0%,rgba(255,255,255,0.2)_100%)] text-[var(--ink-soft)] shadow-[0_1px_4px_rgba(0,0,0,0.04),inset_0_0.5px_0_rgba(255,255,255,0.5)] backdrop-blur-[12px] transition-[transform,background,box-shadow] duration-[250ms] hover:translate-y-[-1.5px] hover:scale-[1.05] hover:bg-[linear-gradient(135deg,rgba(255,255,255,0.55)_0%,rgba(255,255,255,0.35)_100%)] active:scale-[0.95] disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-60 h-[72px] w-[72px] rt-voice-mode-btn hover:shadow-[0_2px_8px_rgba(0,0,0,0.06),0_0.5px_0_rgba(255,255,255,0.6)_inset]"
+          },
+          {
+            "i": 1,
+            "text": "",
+            "aria": "文字輸入",
+            "disabled": false,
+            "className": "rt-chat-mic"
+          },
+          {
+            "i": 2,
+            "text": "尋找專家",
+            "aria": "尋找專家",
+            "disabled": false,
+            "className": "rt-chat-send"
+          }
+        ],
+        "inputs": []
+      },
+      "outcome": "TRANSCRIPT_VISIBLE",
+      "submittedToRecommendations": true,
+      "submittedState": {
+        "url": "https://doppel-health.zeabur.app/group/select?topic=%E9%80%99%E6%98%AF%E4%B8%80%E6%AE%B5%E8%AA%9E%E9%9F%B3%E8%BE%A8%E8%AD%98%E6%B8%AC%E8%A9%A6%E3%80%82%E6%88%91%E6%9C%80%E8%BF%91%E6%99%9A%E4%B8%8A%E7%9D%A1%E4%B8%8D%E5%A5%BD%EF%BC%8C%E5%8D%8A%E5%A4%9C%E5%B8%B8%E5%B8%B8%E9%86%92%E4%BE%86%EF%BC%8C%E6%83%B3%E8%AB%8B%E5%B0%88%E5%AE%B6%E6%8F%90%E4%BE%9B%E6%94%B9%E5%96%84%E7%9D%A1%E7%9C%A0%E7%9A%84%E5%BB%BA%E8%AD%B0%E3%80%82%E9%80%99%E6%98%AF%E4%B8%80%E6%AE%B5%E8%AA%9E%E9%9F%B3%E8%BE%A8%E8%AD%98%E6%B8%AC%E8%A9%A6%EF%BC%8C%E6%88%91%E6%9C%80%E8%BF%91%E6%99%9A%E4%B8%8A%E7%9D%A1%E4%B8%8D%E5%A5%BD%EF%BC%8C%E5%8D%8A%E5%A4%9C%E5%B8%B8%E5%B8%B8%E9%86%92%E4%BE%86%EF%BC%8C%E6%83%B3%E8%AB%8B%E5%B0%88%E5%AE%B6%E6%8F%90%E4%BE%9B%E6%94%B9%E5%96%84%E7%9D%A1%E7%9C%A0%E7%9A%84%E5%BB%BA%E8%AD%B0%E3%80%82%E9%80%99%E6%98%AF%E4%B8%80%E6%AE%B5%E3%80%82&projectTheme=%E5%81%A5%E5%BA%B7%E9%86%AB%E7%99%82",
+        "text": "返回\n已選的AI虛擬專家\n你也可從下方換成其他專家\n討論話題：這是一段語音辨識測試。我最近晚上睡不好，半夜常常醒來，想請專家提供改善睡眠的建議。這是一段語音辨識測試，我最近晚上睡不好，半夜常常醒來，想請專家提供改善睡眠的建議。這是一段。\n開始討論\n推薦\n全部\n家庭照護\n復健治療\n內科健康\n睡眠修復\n預防保健\n中醫養生\n營養管理\n營養管理\n林安娜\n營養管理\n林安娜\n讓健康飲食真正融入生活節奏\n家庭營養規劃專家\n讓健康飲食真正走進日常生活\n建立身體營養基礎\n中醫養生\n沈露西\n中醫養生\n沈露西\n從節氣與體質重新理解身體狀態\n邏輯嚴密的經絡分析者\n專注根源調理的治本之道\n結合傳統智慧的精準養生\n營養管理\n周丹尼\n營養管理\n周丹尼\n高壓生活型態整合營養專家\n重新回到穩定生活節奏\n系統化方法改善失衡狀態\n長期維持的健康運作系統\n預防保健\n宋艾倫\n預防保健\n宋艾倫\n讓健康風險在發生前被看見\n預防醫學與健康管理專家\n重新理解身體狀態\n建立可執行的健康策略\n睡眠修復\n賴珊蒂\n睡眠修復\n賴珊蒂\n優化睡眠品質與深層修復\n理解情緒與睡眠節律的睡眠專家\n用低壓力方式慢慢修復睡眠狀態\n幫助身體重新建立穩定作息節奏\n內科健康\n白大衛\n內科健康\n白大衛\n調理內在平衡與穩固體質\n理解生活脈絡的健康專家\n從日常慢慢調整身體狀態\n建立能長久維持的健康節奏\n復健治療\n郭馬克\n復健治療\n郭馬克\n專精復健訓練與機能重建\n專注重建身體平衡的復健專家\n協助身體慢慢找回生活節奏\n重啟自然而穩定的身體運作\n家庭照護\n林珍妮\n家庭照護\n林珍妮\n探索身體警訊與多元引導\n家庭健康與健康識能整合專家\n梳理反覆不適與慢性健康困擾\n建立以家庭為核心的健康照護方式\n本內容由人工智慧(AI)生成，可能包括不準確資訊，僅供創意與個人化參考。做出決定前請自行查證，本公司不保證內容之絕對正確性，互動過程請避免輸入個人資料。",
+        "buttons": [
+          {
+            "i": 0,
+            "text": "返回",
+            "aria": "返回",
+            "disabled": false,
+            "className": "rt-help-btn rt-back-btn"
+          },
+          {
+            "i": 1,
+            "text": "開始討論",
+            "aria": null,
+            "disabled": false,
+            "className": "rt-chat-send justify-center min-w-[200px] max-sm:w-full max-sm:max-w-[480px]  "
+          },
+          {
+            "i": 2,
+            "text": "推薦",
+            "aria": null,
+            "disabled": false,
+            "className": "rt-expert-tab rt-tab-recommended border-[#fbbf24] bg-[#fef3c7] text-[#d97706] active"
+          },
+          {
+            "i": 3,
+            "text": "全部",
+            "aria": null,
+            "disabled": false,
+            "className": "rt-expert-tab border-white/20 bg-white/[0.06] text-[#9ca3af]"
+          },
+          {
+            "i": 4,
+            "text": "家庭照護",
+            "aria": null,
+            "disabled": false,
+            "className": "rt-expert-tab"
+          },
+          {
+            "i": 5,
+            "text": "復健治療",
+            "aria": null,
+            "disabled": false,
+            "className": "rt-expert-tab"
+          },
+          {
+            "i": 6,
+            "text": "內科健康",
+            "aria": null,
+            "disabled": false,
+            "className": "rt-expert-tab"
+          },
+          {
+            "i": 7,
+            "text": "睡眠修復",
+            "aria": null,
+            "disabled": false,
+            "className": "rt-expert-tab"
+          },
+          {
+            "i": 8,
+            "text": "預防保健",
+            "aria": null,
+            "disabled": false,
+            "className": "rt-expert-tab"
+          },
+          {
+            "i": 9,
+            "text": "中醫養生",
+            "aria": null,
+            "disabled": false,
+            "className": "rt-expert-tab"
+          },
+          {
+            "i": 10,
+            "text": "營養管理",
+            "aria": null,
+            "disabled": false,
+            "className": "rt-expert-tab"
+          },
+          {
+            "i": 11,
+            "text": "",
+            "aria": "View details",
+            "disabled": false,
+            "className": "rt-mini-flip-btn absolute bottom-2.5 right-2.5 w-7 h-7 rounded-full bg-white/35 [backdrop-filter:blur(12px)] [-webkit-backdrop-filter:blur(12px)] border-[0.5px] border-white/20 flex items-center justify-center cursor-pointer z-[3] transition-[background] duration-[180ms] [-webkit-tap-highlight-color:transparent]"
+          },
+          {
+            "i": 12,
+            "text": "",
+            "aria": "Back to front side",
+            "disabled": false,
+            "className": "rt-mini-flip-btn back absolute bottom-2.5 right-2.5 w-7 h-7 rounded-full bg-black/35 [backdrop-filter:blur(12px)] [-webkit-backdrop-filter:blur(12px)] border-[0.5px] border-white/20 flex items-center justify-center cursor-pointer z-[3] transition-[background] duration-[180ms] [-webkit-tap-highlight-color:transparent]"
+          },
+          {
+            "i": 13,
+            "text": "",
+            "aria": "View details",
+            "disabled": false,
+            "className": "rt-mini-flip-btn absolute bottom-2.5 right-2.5 w-7 h-7 rounded-full bg-white/35 [backdrop-filter:blur(12px)] [-webkit-backdrop-filter:blur(12px)] border-[0.5px] border-white/20 flex items-center justify-center cursor-pointer z-[3] transition-[background] duration-[180ms] [-webkit-tap-highlight-color:transparent]"
+          },
+          {
+            "i": 14,
+            "text": "",
+            "aria": "Back to front side",
+            "disabled": false,
+            "className": "rt-mini-flip-btn back absolute bottom-2.5 right-2.5 w-7 h-7 rounded-full bg-black/35 [backdrop-filter:blur(12px)] [-webkit-backdrop-filter:blur(12px)] border-[0.5px] border-white/20 flex items-center justify-center cursor-pointer z-[3] transition-[background] duration-[180ms] [-webkit-tap-highlight-color:transparent]"
+          },
+          {
+            "i": 15,
+            "text": "",
+            "aria": "View details",
+            "disabled": false,
+            "className": "rt-mini-flip-btn absolute bottom-2.5 right-2.5 w-7 h-7 rounded-full bg-white/35 [backdrop-filter:blur(12px)] [-webkit-backdrop-filter:blur(12px)] border-[0.5px] border-white/20 flex items-center justify-center cursor-pointer z-[3] transition-[background] duration-[180ms] [-webkit-tap-highlight-color:transparent]"
+          },
+          {
+            "i": 16,
+            "text": "",
+            "aria": "Back to front side",
+            "disabled": false,
+            "className": "rt-mini-flip-btn back absolute bottom-2.5 right-2.5 w-7 h-7 rounded-full bg-black/35 [backdrop-filter:blur(12px)] [-webkit-backdrop-filter:blur(12px)] border-[0.5px] border-white/20 flex items-center justify-center cursor-pointer z-[3] transition-[background] duration-[180ms] [-webkit-tap-highlight-color:transparent]"
+          },
+          {
+            "i": 17,
+            "text": "",
+            "aria": "View details",
+            "disabled": false,
+            "className": "rt-mini-flip-btn absolute bottom-2.5 right-2.5 w-7 h-7 rounded-full bg-white/35 [backdrop-filter:blur(12px)] [-webkit-backdrop-filter:blur(12px)] border-[0.5px] border-white/20 flex items-center justify-center cursor-pointer z-[3] transition-[background] duration-[180ms] [-webkit-tap-highlight-color:transparent]"
+          },
+          {
+            "i": 18,
+            "text": "",
+            "aria": "Back to front side",
+            "disabled": false,
+            "className": "rt-mini-flip-btn back absolute bottom-2.5 right-2.5 w-7 h-7 rounded-full bg-black/35 [backdrop-filter:blur(12px)] [-webkit-backdrop-filter:blur(12px)] border-[0.5px] border-white/20 flex items-center justify-center cursor-pointer z-[3] transition-[background] duration-[180ms] [-webkit-tap-highlight-color:transparent]"
+          },
+          {
+            "i": 19,
+            "text": "",
+            "aria": "View details",
+            "disabled": false,
+            "className": "rt-mini-flip-btn absolute bottom-2.5 right-2.5 w-7 h-7 rounded-full bg-white/35 [backdrop-filter:blur(12px)] [-webkit-backdrop-filter:blur(12px)] border-[0.5px] border-white/20 flex items-center justify-center cursor-pointer z-[3] transition-[background] duration-[180ms] [-webkit-tap-highlight-color:transparent]"
+          },
+          {
+            "i": 20,
+            "text": "",
+            "aria": "Back to front side",
+            "disabled": false,
+            "className": "rt-mini-flip-btn back absolute bottom-2.5 right-2.5 w-7 h-7 rounded-full bg-black/35 [backdrop-filter:blur(12px)] [-webkit-backdrop-filter:blur(12px)] border-[0.5px] border-white/20 flex items-center justify-center cursor-pointer z-[3] transition-[background] duration-[180ms] [-webkit-tap-highlight-color:transparent]"
+          },
+          {
+            "i": 21,
+            "text": "",
+            "aria": "View details",
+            "disabled": false,
+            "className": "rt-mini-flip-btn absolute bottom-2.5 right-2.5 w-7 h-7 rounded-full bg-white/35 [backdrop-filter:blur(12px)] [-webkit-backdrop-filter:blur(12px)] border-[0.5px] border-white/20 flex items-center justify-center cursor-pointer z-[3] transition-[background] duration-[180ms] [-webkit-tap-highlight-color:transparent]"
+          },
+          {
+            "i": 22,
+            "text": "",
+            "aria": "Back to front side",
+            "disabled": false,
+            "className": "rt-mini-flip-btn back absolute bottom-2.5 right-2.5 w-7 h-7 rounded-full bg-black/35 [backdrop-filter:blur(12px)] [-webkit-backdrop-filter:blur(12px)] border-[0.5px] border-white/20 flex items-center justify-center cursor-pointer z-[3] transition-[background] duration-[180ms] [-webkit-tap-highlight-color:transparent]"
+          },
+          {
+            "i": 23,
+            "text": "",
+            "aria": "View details",
+            "disabled": false,
+            "className": "rt-mini-flip-btn absolute bottom-2.5 right-2.5 w-7 h-7 rounded-full bg-white/35 [backdrop-filter:blur(12px)] [-webkit-backdrop-filter:blur(12px)] border-[0.5px] border-white/20 flex items-center justify-center cursor-pointer z-[3] transition-[background] duration-[180ms] [-webkit-tap-highlight-color:transparent]"
+          },
+          {
+            "i": 24,
+            "text": "",
+            "aria": "Back to front side",
+            "disabled": false,
+            "className": "rt-mini-flip-btn back absolute bottom-2.5 right-2.5 w-7 h-7 rounded-full bg-black/35 [backdrop-filter:blur(12px)] [-webkit-backdrop-filter:blur(12px)] border-[0.5px] border-white/20 flex items-center justify-center cursor-pointer z-[3] transition-[background] duration-[180ms] [-webkit-tap-highlight-color:transparent]"
+          },
+          {
+            "i": 25,
+            "text": "",
+            "aria": "View details",
+            "disabled": false,
+            "className": "rt-mini-flip-btn absolute bottom-2.5 right-2.5 w-7 h-7 rounded-full bg-white/35 [backdrop-filter:blur(12px)] [-webkit-backdrop-filter:blur(12px)] border-[0.5px] border-white/20 flex items-center justify-center cursor-pointer z-[3] transition-[background] duration-[180ms] [-webkit-tap-highlight-color:transparent]"
+          },
+          {
+            "i": 26,
+            "text": "",
+            "aria": "Back to front side",
+            "disabled": false,
+            "className": "rt-mini-flip-btn back absolute bottom-2.5 right-2.5 w-7 h-7 rounded-full bg-black/35 [backdrop-filter:blur(12px)] [-webkit-backdrop-filter:blur(12px)] border-[0.5px] border-white/20 flex items-center justify-center cursor-pointer z-[3] transition-[background] duration-[180ms] [-webkit-tap-highlight-color:transparent]"
+          }
+        ],
+        "inputs": []
+      }
+    }
+  },
+  "sttResponses": [
+    {
+      "at": "2026-06-05T17:31:51.734Z",
+      "url": "https://doppel-health.zeabur.app/api/stt",
+      "status": 200,
+      "body": "{\"text\":\"這是一段語音辨識測試。我最近晚上睡不好，半夜常常醒來，想請專家提供改善睡眠的建議。這是一段語音辨識測試，我最近晚上睡不好，半夜常常醒來，想請專家提供改善睡眠的建議。這是一段。\",\"language\":\"zh\"}"
+    }
+  ],
+  "audioResponses": [],
+  "engineeringEvents": {
+    "console": [
+      {
+        "at": "2026-06-05T17:31:16.635Z",
+        "type": "warning",
+        "text": "[GroupMarkerNotSet(crbug.com/242999)!:54C0020A0A0]Automatic fallback to software WebGL has been deprecated. Please use the --enable-unsafe-swiftshader (about:flags#enable-unsafe-swiftshader) flag to opt in to lower security guarantees for trusted content."
+      }
+    ],
+    "pageErrors": [],
+    "failedRequests": [
+      {
+        "at": "2026-06-05T17:31:12.501Z",
+        "url": "https://securepubads.g.doubleclick.net/pcs/view?xai=AKAOjsu2XFMPm6Oiv7Xnv3C5wD19qD8NKlalCeaTDxzNdaFanKM4bRghOd2L5-uUAZ_qvzIE882BxYNdnzMcXhiZECIUNmM41kXpH6jazk49PBsFGG6Rv0UamJHCRkOD-k7avcI-kfYVOkPyuj6PX5BFlyJ1JOnCB8joLw7aJR2FdlIqWF5fTAibaqmDZoxy6F15NN6kuCp1krKPojjpnE80ea60ti-lLXDZtnMFYFFTqH8u4nKpcNVDrX71HqXnzgbw1xDOqA_1YD6F-rydIJUY7Wht8nf3BRt-6AUKMOiCO7-qtmmIE1iiqEfdtvrAfLYJ-dj2XCKCHNaqVt-mYcevPP9KHtZyH8UJRhhfAKtWBB7QQu_M3oc2S9ve7Rm7N7sOnqTePQt5oh9T4xXt-OYZhDsd15BR9uGG8XLZ4MfEr3sV&sai=AMfl-YQN2kh1zISjEAgbmTcmkY95XdzqeLKS3lZum6IoHakyWoeHHLR__XafLEXRVBo-t7E1j86_Z4yQZnkBiFlkfHFkMEJwSwGzbXqRfIkBcoL_TbyaeepghPjt_ycdQJsB0z4zWcozEwLdg2zZE9bvCMN4I-v-gfFMcHQxqWyo4EVV8EFwo-tx4Kaau8_4KEjrJpGU9DzIpnZdzUavBiuwh5yH8Wzx7KyvWSuUUeXQuXI67IZeCJ3uiF-Nx_naecaWnx-BgzV_P8qsbY3Y3lUvzWiFW3AyzFXxLGOIz7_3p4WvL1FFWsZKCV4e1iF1nTAFdL_39LIqWg9phiqovqA6iXezd-VWB33zT4lgQTzB0j7fwdx3zHvNxsYfdHCRiDqLNvJ7DoXxy3GyBB8&sig=Cg0ArKJSzOGe8pw2OPQ0EAE&uach_m=%5BUACH%5D&adurl=",
+        "reason": "net::ERR_ABORTED"
+      },
+      {
+        "at": "2026-06-05T17:31:13.941Z",
+        "url": "https://pagead2.googlesyndication.com/pagead/gen_204?id=av-js&type=fle-fetch-start2",
+        "reason": "net::ERR_ABORTED"
+      },
+      {
+        "at": "2026-06-05T17:31:13.941Z",
+        "url": "https://pagead2.googlesyndication.com/pagead/gen_204?id=av-js&type=colleague-executed&name=4",
+        "reason": "net::ERR_ABORTED"
+      },
+      {
+        "at": "2026-06-05T17:31:13.970Z",
+        "url": "https://securepubads.g.doubleclick.net/pcs/view?xai=AKAOjsuHiTf31W_DuOYh8o_X97BbpbcKOaQLYL2ClCa7RPwrWlzh8LjPZlV-GuGf9V96QRlqOo9-Y0fIbBJOJ31CETtjhOGwl4-LRKHmpqJO1Go-nuRceHYq64OjFN1pvCh4Y7ON7XxfWdMHrJLG0U4lissG2UC0hOqPyZxCzTPH5x2z7sdRkGloGtasHEpmSi9k_gNyw2G5g02G9EyJ57leCnLHUxvdCWW9f1wbPFV_vrNdw58NyrqqnYNTp8DpgVvtecKvRXOgDNjbEiyULNe5UBHiRLf2VSsKEJIfzeL5HRlRxHoui5QdL9WX7MworaU931Uk6GIXAdNHnj0cbCQV6N45t1aL4xR1QAoTTAHi3vq6i2dh4JZqIBZN9J6heC0rWSS8tsMvlIyf07K__x83RGM_nLZpJHl3wQeB-sGqU1r47Nw&sai=AMfl-YS6LSZXyf2j_21BLI4gngx9kvbLSqvW68pfFeguCag5udnFjseO0CsPVdBieAlDOU1F-LQapXdiXWu8bljZdgCEAJ45EVpnYiO6XuZskbt2XInBisbZGJ4WLEC1LfaOEucig-NrRFvNVO86azo06mdhN2G_jLJN8k6Jk8DadS8QO8ZvqaJs_hoYYmrd0UdeppC4D1iH6fTcX7-IOQ2pDWxnRByr8uNADVkJOM4LPYOR_aYdMPxElg7VtDgA67pHtHs7RBiFdsw2YIiBzejSR_NDQrcHqwKKvL0T1q85Oe1187rmY8ktPFogZ3Oiks-WO8ktFHGlO0bjNpsoiuPSKKIwaMvRUkt2hG9Eo80TFm6i6U_auuBKoKQjNeVmYril1H3LI67D_TMFioE&sig=Cg0ArKJSzI1d47UCA9hXEAE&uach_m=%5BUACH%5D&dett=2&adurl=",
+        "reason": "net::ERR_ABORTED"
+      },
+      {
+        "at": "2026-06-05T17:31:13.974Z",
+        "url": "https://pagead2.googlesyndication.com/pagead/gen_204?id=av-js&type=reach&proto=CAlgAWACaAM%3D",
+        "reason": "net::ERR_ABORTED"
+      },
+      {
+        "at": "2026-06-05T17:31:56.915Z",
+        "url": "https://doppel-health.zeabur.app/group/select?topic=%E9%80%99%E6%98%AF%E4%B8%80%E6%AE%B5%E8%AA%9E%E9%9F%B3%E8%BE%A8%E8%AD%98%E6%B8%AC%E8%A9%A6%E3%80%82%E6%88%91%E6%9C%80%E8%BF%91%E6%99%9A%E4%B8%8A%E7%9D%A1%E4%B8%8D%E5%A5%BD%EF%BC%8C%E5%8D%8A%E5%A4%9C%E5%B8%B8%E5%B8%B8%E9%86%92%E4%BE%86%EF%BC%8C%E6%83%B3%E8%AB%8B%E5%B0%88%E5%AE%B6%E6%8F%90%E4%BE%9B%E6%94%B9%E5%96%84%E7%9D%A1%E7%9C%A0%E7%9A%84%E5%BB%BA%E8%AD%B0%E3%80%82%E9%80%99%E6%98%AF%E4%B8%80%E6%AE%B5%E8%AA%9E%E9%9F%B3%E8%BE%A8%E8%AD%98%E6%B8%AC%E8%A9%A6%EF%BC%8C%E6%88%91%E6%9C%80%E8%BF%91%E6%99%9A%E4%B8%8A%E7%9D%A1%E4%B8%8D%E5%A5%BD%EF%BC%8C%E5%8D%8A%E5%A4%9C%E5%B8%B8%E5%B8%B8%E9%86%92%E4%BE%86%EF%BC%8C%E6%83%B3%E8%AB%8B%E5%B0%88%E5%AE%B6%E6%8F%90%E4%BE%9B%E6%94%B9%E5%96%84%E7%9D%A1%E7%9C%A0%E7%9A%84%E5%BB%BA%E8%AD%B0%E3%80%82%E9%80%99%E6%98%AF%E4%B8%80%E6%AE%B5%E3%80%82&projectTheme=%E5%81%A5%E5%BA%B7%E9%86%AB%E7%99%82&_rsc=DcbKRNfKLQhOUlUb",
+        "reason": "net::ERR_ABORTED"
+      },
+      {
+        "at": "2026-06-05T17:31:57.655Z",
+        "url": "https://pagead2.googlesyndication.com/pcs/activeview?xai=AKAOjssO7qx19VIjVcWp6PVP-NjXuhWXRWxsbPt-xRIvUBAp-Qoo8R4l19mkYRt8deAo326QCgIpX3ZhIRAsDRuiutcFFdV8YHOd90JAsJ7lqEIjd7OYpkt0TmTlNa7aPHC_csw3NSfGKeKCQdE_dko8Z-rJ7kXUj2mRtxd6lvusvy9uQLlZwntHNi6qKjd_tg&sig=Cg0ArKJSzL_0rZj0WRNNEAE&id=lidartos&mcvt=34216&p=984,356,1074,1084&tm=43839.800000190735&tu=9624.100000143051&mtos=34216,34216,34216,34216,34216&tos=34216,0,0,0,0&v=20260603&bin=7&avms=nio&bs=1440,1000&mc=1&vu=1&app=0&itpl=0&adk=3077673317&rs=4&la=0&cr=0&uach=WyJMaW51eCIsIiIsIng4NiIsIiIsIjE0OC4wLjc3NzguMjE1IixudWxsLDAsbnVsbCwiNjQiLFtbIk5vdC9BKUJyYW5kIiwiOTkuMC4wLjAiXSxbIkNocm9taXVtIiwiMTQ4LjAuNzc3OC4yMTUiXV0sMF0%3D&vs=4&r=b&co=7661347301&rst=1780680671546&rpt=2021&isd=0&lsd=0&ec=1&met=mue&wmsd=0&pbe=0&fle=0&vae=0&spb=0&sfl=0&ffslot=0&reach=8&io2=0",
+        "reason": "net::ERR_ABORTED"
+      },
+      {
+        "at": "2026-06-05T17:31:57.659Z",
+        "url": "https://pagead2.googlesyndication.com/pagead/gen_204?id=av-js&type=fle-fetch-pagehide2",
+        "reason": "net::ERR_ABORTED"
+      }
+    ],
+    "responses": [
+      {
+        "status": 200,
+        "type": "text/html; charset=utf-8",
+        "url": "https://doppel-health.zeabur.app/group"
+      },
+      {
+        "status": 200,
+        "type": "text/javascript; charset=utf-8",
+        "url": "https://securepubads.g.doubleclick.net/tag/js/gpt.js"
+      },
+      {
+        "status": 200,
+        "type": "text/css; charset=utf-8",
+        "url": "https://doppel-health.zeabur.app/_next/static/css/a9df89f85981f642.css"
+      },
+      {
+        "status": 200,
+        "type": "text/javascript; charset=utf-8",
+        "url": "https://imasdk.googleapis.com/js/sdkloader/ima3.js"
+      },
+      {
+        "status": 200,
+        "type": "text/css; charset=utf-8",
+        "url": "https://doppel-health.zeabur.app/_next/static/css/658d756c4e1bc4e2.css"
+      },
+      {
+        "status": 200,
+        "type": "font/woff2",
+        "url": "https://doppel-health.zeabur.app/_next/static/media/1e41be92c43b3255-s.p.woff2"
+      },
+      {
+        "status": 200,
+        "type": "font/woff2",
+        "url": "https://doppel-health.zeabur.app/_next/static/media/6ba5f591ae6c56f6-s.p.woff2"
+      },
+      {
+        "status": 200,
+        "type": "application/javascript; charset=utf-8",
+        "url": "https://doppel-health.zeabur.app/_next/static/chunks/main-app-05a5fe279f4f6e20.js"
+      },
+      {
+        "status": 200,
+        "type": "font/woff2",
+        "url": "https://doppel-health.zeabur.app/_next/static/media/af4bf8399d1aacdf-s.p.woff2"
+      },
+      {
+        "status": 200,
+        "type": "application/javascript; charset=utf-8",
+        "url": "https://doppel-health.zeabur.app/_next/static/chunks/app/group/layout-d2228027937792d8.js"
+      },
+      {
+        "status": 200,
+        "type": "application/javascript; charset=utf-8",
+        "url": "https://doppel-health.zeabur.app/_next/static/chunks/webpack-85b4a9ed5142587c.js"
+      },
+      {
+        "status": 200,
+        "type": "application/javascript; charset=utf-8",
+        "url": "https://doppel-health.zeabur.app/_next/static/chunks/1255-ea8f38a888ce0788.js"
+      },
+      {
+        "status": 200,
+        "type": "application/javascript; charset=utf-8",
+        "url": "https://doppel-health.zeabur.app/_next/static/chunks/4bd1b696-f6bedae49f0827a5.js"
+      },
+      {
+        "status": 200,
+        "type": "application/javascript; charset=utf-8",
+        "url": "https://doppel-health.zeabur.app/_next/static/chunks/4226-b875ff73f4447053.js"
+      },
+      {
+        "status": 200,
+        "type": "application/javascript; charset=utf-8",
+        "url": "https://doppel-health.zeabur.app/_next/static/chunks/2391-18ab6a08bf0ab839.js"
+      },
+      {
+        "status": 200,
+        "type": "application/javascript; charset=utf-8",
+        "url": "https://doppel-health.zeabur.app/_next/static/chunks/app/layout-d902be728488fc25.js"
+      },
+      {
+        "status": 200,
+        "type": "application/javascript; charset=utf-8",
+        "url": "https://doppel-health.zeabur.app/_next/static/chunks/3990-df601a83aff880d1.js"
+      },
+      {
+        "status": 200,
+        "type": "application/javascript; charset=utf-8",
+        "url": "https://doppel-health.zeabur.app/_next/static/chunks/app/group/page-d74ca6dd8a190a13.js"
+      },
+      {
+        "status": 200,
+        "type": "application/javascript; charset=utf-8",
+        "url": "https://doppel-health.zeabur.app/_next/static/chunks/144d3bae-15dd0d4029d7aecb.js"
+      },
+      {
+        "status": 200,
+        "type": "application/json",
+        "url": "https://doppel-health.zeabur.app/api/settings"
+      },
+      {
+        "status": 200,
+        "type": "application/json; charset=utf-8",
+        "url": "https://securepubads.g.doubleclick.net/pagead/ppub_config?ippd=doppel-health.zeabur.app"
+      },
+      {
+        "status": 200,
+        "type": "text/javascript; charset=utf-8",
+        "url": "https://securepubads.g.doubleclick.net/pagead/managed/js/gpt/m202606030101/pubads_impl.js?cb=31098982"
+      },
+      {
+        "status": 200,
+        "type": "text/html; charset=utf-8",
+        "url": "https://cm.g.doubleclick.net/partnerpixels?url=https%3A%2F%2Fdoppel-health.zeabur.app%2Fgroup"
+      },
+      {
+        "status": 200,
+        "type": "image/jpeg",
+        "url": "https://doppel-health.zeabur.app/api/scenes/scene-b8a56f90-21b4-4e83-aabb-054a3bb40c24.jpg"
+      },
+      {
+        "status": 200,
+        "type": "application/json",
+        "url": "https://doppel-health.zeabur.app/api/expert-categories"
+      },
+      {
+        "status": 200,
+        "type": "application/json",
+        "url": "https://doppel-health.zeabur.app/api/rss/topics"
+      },
+      {
+        "status": 200,
+        "type": "image/jpeg",
+        "url": "https://doppel-health.zeabur.app/api/scenes/room-bg-8ee8ab7a-4616-4b24-b3f8-9987b4b45a0c.jpg"
+      },
+      {
+        "status": 200,
+        "type": "application/json",
+        "url": "https://doppel-health.zeabur.app/api/topic-chips"
+      },
+      {
+        "status": 200,
+        "type": "application/json; charset=utf-8",
+        "url": "https://ep1.adtrafficquality.google/getconfig/sodar?sv=200&tid=gpt&tv=m202606030101&st=env&sjk=1436234274383866"
+      },
+      {
+        "status": 200,
+        "type": "text/html",
+        "url": "https://98d25202e51bee42a70eaca3f74c0b3a.safeframe.googlesyndication.com/safeframe/1-0-45/html/container.html"
+      },
+      {
+        "status": 200,
+        "type": "text/plain; charset=utf-8",
+        "url": "https://securepubads.g.doubleclick.net/gampad/ads?pvsid=1436234274383866&correlator=2654047502488432&eid=95390553%2C31098982&output=ldjh&gdfp_req=1&vrg=202606030101&ptt=17&impl=fif&iu_parts=23300104091%2CRoundTable%2Cbanner&enc_prev_ius=%2F0%2F1%2F2&prev_iu_szs=728x90&ifi=1&dids=gam-ad-_r_0_&adfs=2673252194&sfv=1-0-45&sc=1&cookie_enabled=1&abxe=1&dt=1780680670949&lmt=1780680670&adxs=356&adys=835&biw=1440&bih=1000&scr_x=0&scr_y=0&btvi=0&ucis=1&oid=2&u_his=2&u_h=1000&u_w=1440&u_ah=1000&u_aw=1440&u_cd=24&u_sd=1&dmc=8&bc=31&nvt=1&uach=WyJMaW51eCIsIiIsIng4NiIsIiIsIjE0OC4wLjc3NzguMjE1IixudWxsLDAsbnVsbCwiNjQiLFtbIk5vdC9BKUJyYW5kIiwiOTkuMC4wLjAiXSxbIkNocm9taXVtIiwiMTQ4LjAuNzc3OC4yMTUiXV0sMF0.&uas=3&url=https%3A%2F%2Fdoppel-health.zeabur.app%2Fgroup&vis=1&psz=728x90&msz=728x0&fws=0&ohw=0&dlt=1780680666978&idt=3546&adks=3077673317&frm=20&eoidce=1&pgls=CAk."
+      },
+      {
+        "status": 200,
+        "type": "application/json",
+        "url": "https://doppel-health.zeabur.app/api/profiles"
+      },
+      {
+        "status": 200,
+        "type": "image/png",
+        "url": "https://tpc.googlesyndication.com/simgad/9101060077097893788"
+      },
+      {
+        "status": 200,
+        "type": "application/json",
+        "url": "https://doppel-health.zeabur.app/api/carousel-banners?lang=zh"
+      },
+      {
+        "status": 200,
+        "type": "application/json",
+        "url": "https://doppel-health.zeabur.app/api/theme-cards"
+      },
+      {
+        "status": 200,
+        "type": "text/javascript",
+        "url": "https://ep2.adtrafficquality.google/sodar/sodar2.js"
+      },
+      {
+        "status": 200,
+        "type": "image/gif",
+        "url": "https://securepubads.g.doubleclick.net/pcs/view?xai=AKAOjsu2XFMPm6Oiv7Xnv3C5wD19qD8NKlalCeaTDxzNdaFanKM4bRghOd2L5-uUAZ_qvzIE882BxYNdnzMcXhiZECIUNmM41kXpH6jazk49PBsFGG6Rv0UamJHCRkOD-k7avcI-kfYVOkPyuj6PX5BFlyJ1JOnCB8joLw7aJR2FdlIqWF5fTAibaqmDZoxy6F15NN6kuCp1krKPojjpnE80ea60ti-lLXDZtnMFYFFTqH8u4nKpcNVDrX71HqXnzgbw1xDOqA_1YD6F-rydIJUY7Wht8nf3BRt-6AUKMOiCO7-qtmmIE1iiqEfdtvrAfLYJ-dj2XCKCHNaqVt-mYcevPP9KHtZyH8UJRhhfAKtWBB7QQu_M3oc2S9ve7Rm7N7sOnqTePQt5oh9T4xXt-OYZhDsd15BR9uGG8XLZ4MfEr3sV&sai=AMfl-YQN2kh1zISjEAgbmTcmkY95XdzqeLKS3lZum6IoHakyWoeHHLR__XafLEXRVBo-t7E1j86_Z4yQZnkBiFlkfHFkMEJwSwGzbXqRfIkBcoL_TbyaeepghPjt_ycdQJsB0z4zWcozEwLdg2zZE9bvCMN4I-v-gfFMcHQxqWyo4EVV8EFwo-tx4Kaau8_4KEjrJpGU9DzIpnZdzUavBiuwh5yH8Wzx7KyvWSuUUeXQuXI67IZeCJ3uiF-Nx_naecaWnx-BgzV_P8qsbY3Y3lUvzWiFW3AyzFXxLGOIz7_3p4WvL1FFWsZKCV4e1iF1nTAFdL_39LIqWg9phiqovqA6iXezd-VWB33zT4lgQTzB0j7fwdx3zHvNxsYfdHCRiDqLNvJ7DoXxy3GyBB8&sig=Cg0ArKJSzOGe8pw2OPQ0EAE&uach_m=%5BUACH%5D&adurl="
+      },
+      {
+        "status": 200,
+        "type": "text/javascript; charset=utf-8",
+        "url": "https://tpc.googlesyndication.com/pagead/js/r20260604/r20110914/client/window_focus.js"
+      },
+      {
+        "status": 200,
+        "type": "text/javascript; charset=iso-8859-1",
+        "url": "https://pagead2.googlesyndication.com/pagead/managed/js/activeview/current/ufs_web_display.js"
+      },
+      {
+        "status": 200,
+        "type": "text/html",
+        "url": "https://ep2.adtrafficquality.google/sodar/sodar2/254/runner.html"
+      },
+      {
+        "status": 200,
+        "type": "text/html; charset=utf-8",
+        "url": "https://www.google.com/recaptcha/api2/aframe"
+      },
+      {
+        "status": 204,
+        "type": "image/gif",
+        "url": "https://pagead2.googlesyndication.com/pagead/gen_204?id=av-js&type=fle-fetch-start2"
+      },
+      {
+        "status": 204,
+        "type": "image/gif",
+        "url": "https://pagead2.googlesyndication.com/pagead/gen_204?id=av-js&type=colleague-executed&name=4"
+      },
+      {
+        "status": 200,
+        "type": "image/gif",
+        "url": "https://securepubads.g.doubleclick.net/pcs/view?xai=AKAOjsuHiTf31W_DuOYh8o_X97BbpbcKOaQLYL2ClCa7RPwrWlzh8LjPZlV-GuGf9V96QRlqOo9-Y0fIbBJOJ31CETtjhOGwl4-LRKHmpqJO1Go-nuRceHYq64OjFN1pvCh4Y7ON7XxfWdMHrJLG0U4lissG2UC0hOqPyZxCzTPH5x2z7sdRkGloGtasHEpmSi9k_gNyw2G5g02G9EyJ57leCnLHUxvdCWW9f1wbPFV_vrNdw58NyrqqnYNTp8DpgVvtecKvRXOgDNjbEiyULNe5UBHiRLf2VSsKEJIfzeL5HRlRxHoui5QdL9WX7MworaU931Uk6GIXAdNHnj0cbCQV6N45t1aL4xR1QAoTTAHi3vq6i2dh4JZqIBZN9J6heC0rWSS8tsMvlIyf07K__x83RGM_nLZpJHl3wQeB-sGqU1r47Nw&sai=AMfl-YS6LSZXyf2j_21BLI4gngx9kvbLSqvW68pfFeguCag5udnFjseO0CsPVdBieAlDOU1F-LQapXdiXWu8bljZdgCEAJ45EVpnYiO6XuZskbt2XInBisbZGJ4WLEC1LfaOEucig-NrRFvNVO86azo06mdhN2G_jLJN8k6Jk8DadS8QO8ZvqaJs_hoYYmrd0UdeppC4D1iH6fTcX7-IOQ2pDWxnRByr8uNADVkJOM4LPYOR_aYdMPxElg7VtDgA67pHtHs7RBiFdsw2YIiBzejSR_NDQrcHqwKKvL0T1q85Oe1187rmY8ktPFogZ3Oiks-WO8ktFHGlO0bjNpsoiuPSKKIwaMvRUkt2hG9Eo80TFm6i6U_auuBKoKQjNeVmYril1H3LI67D_TMFioE&sig=Cg0ArKJSzI1d47UCA9hXEAE&uach_m=%5BUACH%5D&dett=2&adurl="
+      },
+      {
+        "status": 204,
+        "type": "image/gif",
+        "url": "https://pagead2.googlesyndication.com/pagead/gen_204?id=av-js&type=reach&proto=CAlgAWACaAM%3D"
+      },
+      {
+        "status": 200,
+        "type": "text/javascript",
+        "url": "https://pagead2.googlesyndication.com/bg/OXwaDaq6f72xAhuqrmzlNA5owmDUfXXfSctljlYgh8A.js"
+      },
+      {
+        "status": 200,
+        "type": "image/jpeg",
+        "url": "https://doppel-health.zeabur.app/api/scenes/carousel-banner-fallback-704d7907-09f9-4304-95da-301f154b4bbb.jpg"
+      },
+      {
+        "status": 200,
+        "type": "image/jpeg",
+        "url": "https://doppel-health.zeabur.app/api/scenes/theme-card-bf36684a-94b4-4f6a-bfc5-48c9a8d92e7b.jpg"
+      },
+      {
+        "status": 200,
+        "type": "image/jpeg",
+        "url": "https://doppel-health.zeabur.app/api/scenes/theme-card-45728b82-df28-4cb8-8086-3e07cadbbd33.jpg"
+      },
+      {
+        "status": 200,
+        "type": "video/webm",
+        "url": "https://doppel-health.zeabur.app/api/scenes/theme-card-1402f237-f5a6-431f-b1dd-2a16cbece12e.webm"
+      },
+      {
+        "status": 200,
+        "type": "video/webm",
+        "url": "https://doppel-health.zeabur.app/api/scenes/carousel-banner-c7876320-4850-4f64-86d1-65cd2ce3ebd8.webm"
+      },
+      {
+        "status": 200,
+        "type": "video/webm",
+        "url": "https://doppel-health.zeabur.app/api/scenes/theme-card-fe28a389-6166-4277-8e10-d07e6b0a2cad.webm"
+      },
+      {
+        "status": 200,
+        "type": "video/webm",
+        "url": "https://doppel-health.zeabur.app/api/scenes/theme-card-d7cad316-3a4d-4575-a71d-74736ce6fcdf.webm"
+      },
+      {
+        "status": 204,
+        "type": "",
+        "url": "https://ep2.adtrafficquality.google/generate_204?L2vU4Q"
+      },
+      {
+        "status": 204,
+        "type": "image/",
+        "url": "https://ep1.adtrafficquality.google/pagead/sodar?id=sodar2&v=254&t=2&li=gpt_m202606030101&jk=1436234274383866&bg=!Y2ClYALNAAYVyLrKNcg7AEcBe5WfOMelN_rYpbiqO3YXz57M0X2-SDHJ7dDmRO0u18gv56YIdTqwHpBEdNkCICj34OA3Nfww6Ywnf4j60ZsbkO0avaot2wIAAApbUgAAAOhoAQd-ADaef6VcPQupq791ZKuK8cZcg9E8GcvaPKAEZZEIYujzuV7w9B8wnjt1RArDLZHqV50AULcwvBgKAAKwOZkCohUjxVlYapgfEUBlhF0fsDJvPk5lRPSCIR-V31ZINYmgpJz26jtGLhlR-XXcmr2G77zQOt8sYd_9QpeGvsbRhkRyEOuv0cLBZRYqajWnRmkV7ons10rXYdHmdbX-FZGB2MlVJJohwNbQxQ-xdTPwD9VDnN41vasBG2Fw2OJ32C22t1FKbXkLFeMhPrKp6RQJwk5jDgLcis2OLWAbT5A1Ji3OGv3ifibC9LRo32z6gplst8AFhKfLcVFrJVm575Ufc8QLoC40gphnnLHd7ngTBnUWUXabgbsbPCx7C1hcvvGNNENrCC7ZlPmh5Rgc8fVJGgItB8UrVtZ2Eo5JmDLUMrM_8FzNwYwU6GrwfcDI3ifx0Ml23G_b-9JBwobUzQqiNPqIp4wI3Rq062kStm0p6OIKU9DQDm2jqHMMIbdnEXBXJbGTycU-SW53ezlkgh2FUWJl3t31Qn2wiqpQeQwRKjZgNLnIYJc1n4nEYbhrU0sOvyvc-xSeBZsbbVH22Wwtd7leYxMLhFTgs1d9Rva6IPMCSpknidODje7EJI3gfTEmrwM8fPdo7ywQMQEIRsOOfWBZnqh3X1q-FuMotDiae_wptKNpp8B9upBKWN7hGCpSSm6S6kiH8bx_yjmqAF1CuOv2tn4ZZZ46xZ1ldWhsZTOk38-v0V-6ipDbdKTzacMIagePgLIJhlA52HKV2ULfTzzWq2rbaBwFX5w3TRW4foJs8JWeN-5Q4ThYb0vk9yLyh8EZsW22ekPcTVjmjLnHhNkNklOgyE5d2f9QiQLiC7fjiqEyWgeJ5QU5KGpMHLjgXhtcCbiStPosWAf11qaW6A6nIQklYMP0jnLRsfT_ENAWIZ_nYZKjaqyC6LeY88ph8sVBlSOC893Q2iSEa4JfRlbw"
+      },
+      {
+        "status": 200,
+        "type": "image/gif",
+        "url": "https://pagead2.googlesyndication.com/pcs/activeview?xai=AKAOjssO7qx19VIjVcWp6PVP-NjXuhWXRWxsbPt-xRIvUBAp-Qoo8R4l19mkYRt8deAo326QCgIpX3ZhIRAsDRuiutcFFdV8YHOd90JAsJ7lqEIjd7OYpkt0TmTlNa7aPHC_csw3NSfGKeKCQdE_dko8Z-rJ7kXUj2mRtxd6lvusvy9uQLlZwntHNi6qKjd_tg&sig=Cg0ArKJSzL_0rZj0WRNNEAE&id=lidar2&mcvt=1003&p=984,356,1074,1084&tm=10626.700000047684&tu=9624.100000143051&mtos=1003,1003,1003,1003,1003&tos=1003,0,0,0,0&v=20260603&bin=7&avms=nio&bs=1440,1000&mc=1&vu=1&app=0&itpl=0&adk=3077673317&rs=4&la=0&cr=0&uach=WyJMaW51eCIsIiIsIng4NiIsIiIsIjE0OC4wLjc3NzguMjE1IixudWxsLDAsbnVsbCwiNjQiLFtbIk5vdC9BKUJyYW5kIiwiOTkuMC4wLjAiXSxbIkNocm9taXVtIiwiMTQ4LjAuNzc3OC4yMTUiXV0sMF0%3D&vs=4&r=v&co=7661347300&rst=1780680671546&rpt=2021&isd=0&lsd=0&met=mue&wmsd=0&pbe=0&fle=0&vae=0&spb=0&sfl=0&ffslot=0&reach=8&io2=0"
+      },
+      {
+        "status": 200,
+        "type": "text/plain; charset=utf-8",
+        "url": "https://securepubads.g.doubleclick.net/pagead/managed/dict/m202606040101/gpt"
+      },
+      {
+        "status": 200,
+        "type": "application/json",
+        "url": "https://doppel-health.zeabur.app/api/stt"
+      },
+      {
+        "status": 200,
+        "type": "text/x-component",
+        "url": "https://doppel-health.zeabur.app/group/select?topic=%E9%80%99%E6%98%AF%E4%B8%80%E6%AE%B5%E8%AA%9E%E9%9F%B3%E8%BE%A8%E8%AD%98%E6%B8%AC%E8%A9%A6%E3%80%82%E6%88%91%E6%9C%80%E8%BF%91%E6%99%9A%E4%B8%8A%E7%9D%A1%E4%B8%8D%E5%A5%BD%EF%BC%8C%E5%8D%8A%E5%A4%9C%E5%B8%B8%E5%B8%B8%E9%86%92%E4%BE%86%EF%BC%8C%E6%83%B3%E8%AB%8B%E5%B0%88%E5%AE%B6%E6%8F%90%E4%BE%9B%E6%94%B9%E5%96%84%E7%9D%A1%E7%9C%A0%E7%9A%84%E5%BB%BA%E8%AD%B0%E3%80%82%E9%80%99%E6%98%AF%E4%B8%80%E6%AE%B5%E8%AA%9E%E9%9F%B3%E8%BE%A8%E8%AD%98%E6%B8%AC%E8%A9%A6%EF%BC%8C%E6%88%91%E6%9C%80%E8%BF%91%E6%99%9A%E4%B8%8A%E7%9D%A1%E4%B8%8D%E5%A5%BD%EF%BC%8C%E5%8D%8A%E5%A4%9C%E5%B8%B8%E5%B8%B8%E9%86%92%E4%BE%86%EF%BC%8C%E6%83%B3%E8%AB%8B%E5%B0%88%E5%AE%B6%E6%8F%90%E4%BE%9B%E6%94%B9%E5%96%84%E7%9D%A1%E7%9C%A0%E7%9A%84%E5%BB%BA%E8%AD%B0%E3%80%82%E9%80%99%E6%98%AF%E4%B8%80%E6%AE%B5%E3%80%82&projectTheme=%E5%81%A5%E5%BA%B7%E9%86%AB%E7%99%82&_rsc=DcbKRNfKLQhOUlUb"
+      },
+      {
+        "status": 200,
+        "type": "application/javascript; charset=utf-8",
+        "url": "https://doppel-health.zeabur.app/_next/static/chunks/app/group/select/page-d8b0e342b30bbc69.js"
+      },
+      {
+        "status": 204,
+        "type": "image/gif",
+        "url": "https://pagead2.googlesyndication.com/pagead/gen_204?id=av-js&type=fle-fetch-later2"
+      },
+      {
+        "status": 200,
+        "type": "image/jpeg",
+        "url": "https://doppel-health.zeabur.app/api/scenes/room-bg-8ee8ab7a-4616-4b24-b3f8-9987b4b45a0c.jpg"
+      },
+      {
+        "status": 200,
+        "type": "application/json",
+        "url": "https://doppel-health.zeabur.app/api/expert-categories"
+      },
+      {
+        "status": 200,
+        "type": "application/json",
+        "url": "https://doppel-health.zeabur.app/api/profiles"
+      },
+      {
+        "status": 200,
+        "type": "image/png",
+        "url": "https://doppel-health.zeabur.app/api/avatar/3de05046-191b-4776-86d0-04187d9c9388-1780374652294.png"
+      },
+      {
+        "status": 200,
+        "type": "image/png",
+        "url": "https://doppel-health.zeabur.app/api/avatar/518e4b8b-31df-45fa-8395-3f64ed919ccc-1780374890238.png"
+      },
+      {
+        "status": 200,
+        "type": "image/png",
+        "url": "https://doppel-health.zeabur.app/api/avatar/8463a8dc-5ed1-4eb9-be30-a6078f70d952-1780374722221.png"
+      },
+      {
+        "status": 200,
+        "type": "image/png",
+        "url": "https://doppel-health.zeabur.app/api/avatar/aa856c73-9438-4a98-9ecb-00adeec575d0-1780375727149.png"
+      },
+      {
+        "status": 200,
+        "type": "image/png",
+        "url": "https://doppel-health.zeabur.app/api/avatar/ddd73f22-2d09-4328-94f2-333ddb14685d-1780374914053.png"
+      },
+      {
+        "status": 200,
+        "type": "image/png",
+        "url": "https://doppel-health.zeabur.app/api/avatar/be7b273d-d444-4223-b5b7-c4241f1f9699-1780374943092.png"
+      },
+      {
+        "status": 200,
+        "type": "image/png",
+        "url": "https://doppel-health.zeabur.app/api/avatar/63841b56-3674-4c5e-bf84-f66b30024725-1780373626715.png"
+      },
+      {
+        "status": 200,
+        "type": "image/png",
+        "url": "https://doppel-health.zeabur.app/api/avatar/424fb0ae-d2de-4f24-acea-146186ee3271-1780374681611.png"
+      }
+    ]
+  },
+  "errors": [],
+  "finished": "2026-06-05T17:32:01.650Z"
+}
