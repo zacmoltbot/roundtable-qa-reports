@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RoundTable QA Report - 2026-06-05 v2</title>
+  <style>
+    :root {
+      --primary: #6366f1;
+      --primary-hover: #4f46e5;
+      --success: #22c55e;
+      --warning: #f59e0b;
+      --danger: #ef4444;
+      --partial: #eab308;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text: #1e293b;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 2rem;
+    }
+    .container { max-width: 1200px; margin: 0 auto; }
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--primary-hover));
+      color: white;
+      padding: 2rem;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+    }
+    header h1 { font-size: 1.75rem; margin-bottom: 0.5rem; }
+    header .meta { opacity: 0.9; font-size: 0.9rem; }
+    .badge {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    .badge-draft { background: #fef3c7; color: #92400e; }
+    .badge-pass { background: #dcfce7; color: #166534; }
+    .badge-partial { background: #fef9c3; color: #854d0e; }
+    .badge-fail { background: #fee2e2; color: #991b1b; }
+    .badge-blocked { background: #f3f4f6; color: #6b7280; }
+    .badge-not-tested { background: #f1f5f9; color: #64748b; }
+    .summary {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .summary-card {
+      background: var(--card-bg);
+      padding: 1.5rem;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      text-align: center;
+    }
+    .summary-card .number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    .summary-card .label { color: var(--text-muted); font-size: 0.875rem; }
+    .summary-card .number.pass { color: var(--success); }
+    .summary-card .number.partial { color: var(--partial); }
+    .summary-card .number.fail { color: var(--danger); }
+    .section {
+      background: var(--card-bg);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      margin-bottom: 1.5rem;
+      overflow: hidden;
+    }
+    .section-header {
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid var(--border);
+      background: #f8fafc;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+    .section-content { padding: 1.5rem; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.875rem;
+    }
+    th, td {
+      padding: 0.75rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    th {
+      background: #f8fafc;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+    }
+    tr:hover { background: #f8fafc; }
+    .id { font-family: monospace; font-weight: 600; color: var(--primary); }
+    .evidence-tag {
+      display: inline-block;
+      background: #e0e7ff;
+      color: #3730a3;
+      padding: 0.125rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-family: monospace;
+      margin: 0.125rem;
+    }
+    .blocked-note {
+      background: #fef3c7;
+      border-left: 4px solid var(--warning);
+      padding: 1rem;
+      margin: 1rem 0;
+      border-radius: 0 8px 8px 0;
+    }
+    .blocked-note h4 { color: #92400e; margin-bottom: 0.5rem; }
+    .blocked-note p { color: #a16207; font-size: 0.9rem; }
+    .screenshot-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1rem;
+    }
+    .screenshot-item {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      background: white;
+    }
+    .screenshot-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .screenshot-item .caption {
+      padding: 0.75rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      background: #f8fafc;
+      border-top: 1px solid var(--border);
+    }
+    .performance-table td:nth-child(3) { font-family: monospace; font-size: 0.8rem; }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: var(--text-muted);
+      font-size: 0.875rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>RoundTable QA Report</h1>
+      <div class="meta">
+        <strong>Date:</strong> 2026-06-05 &nbsp;|&nbsp;
+        <strong>Version:</strong> v2 (Recovery) &nbsp;|&nbsp;
+        <strong>Status:</strong> <span class="badge badge-draft">Review Draft</span>
+      </div>
+    </header>
+
+    <div class="summary">
+      <div class="summary-card">
+        <div class="number">16</div>
+        <div class="label">Total Tests</div>
+      </div>
+      <div class="summary-card">
+        <div class="number pass">10</div>
+        <div class="label">PASS</div>
+      </div>
+      <div class="summary-card">
+        <div class="number partial">5</div>
+        <div class="label">PARTIAL</div>
+      </div>
+      <div class="summary-card">
+        <div class="number">0</div>
+        <div class="label">FAIL</div>
+      </div>
+      <div class="summary-card">
+        <div class="number">1</div>
+        <div class="label">NOT TESTED</div>
+      </div>
+      <div class="summary-card">
+        <div class="number">1</div>
+        <div class="label">BLOCKED</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">Functional Matrix (16 items)</div>
+      <div class="section-content">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Test</th>
+              <th>What It Tests</th>
+              <th>Pass Criteria</th>
+              <th>Evidence</th>
+              <th>Result</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="id">F-01</td>
+              <td>First-visit disclaimer and consent</td>
+              <td>Whether a first-time user receives the required disclaimer before using RoundTable.</td>
+              <td>Disclaimer appears before main experience; required content and privacy link visible; accepting closes it and unlocks homepage.</td>
+              <td><span class="evidence-tag">02_homepage_after_disclaimer.png</span></td>
+              <td><span class="badge badge-pass">PASS</span></td>
+            </tr>
+            <tr>
+              <td class="id">F-02</td>
+              <td>Popular topic card to chat</td>
+              <td>Whether a user can start a RoundTable directly from a recommended topic.</td>
+              <td>Clicking topic enters chat without error; selected topic preserved; experts appear; chat ready for interaction.</td>
+              <td><span class="evidence-tag">03_chat_entered.png</span></td>
+              <td><span class="badge badge-pass">PASS</span></td>
+            </tr>
+            <tr>
+              <td class="id">F-03</td>
+              <td>Custom topic expert recommendations</td>
+              <td>Whether a custom question produces usable expert recommendations.</td>
+              <td>Submission reaches selection page; experts, scores, and reasons shown; reasons relevant to topic; no empty cards.</td>
+              <td><span class="evidence-tag">10_expert_selection.png</span></td>
+              <td><span class="badge badge-pass">PASS</span></td>
+            </tr>
+            <tr>
+              <td class="id">F-04</td>
+              <td>Manual expert selection override</td>
+              <td>Whether the user can change the automatically recommended expert set.</td>
+              <td>User can remove and add experts; visible selected set updates correctly; chat starts with final selection.</td>
+              <td><span class="evidence-tag">11_manual_selection.png</span></td>
+              <td><span class="badge badge-pass">PASS</span></td>
+            </tr>
+            <tr>
+              <td class="id">F-05</td>
+              <td>Start discussion from expert selection</td>
+              <td>Whether the selected topic and experts carry into the custom-topic chat.</td>
+              <td>Clicking start enters chat without error; topic matches submitted topic; experts match final selection.</td>
+              <td><span class="evidence-tag">12_custom_topic_chat.png</span></td>
+              <td><span class="badge badge-pass">PASS</span></td>
+            </tr>
+            <tr>
+              <td class="id">F-06</td>
+              <td>Character voice output</td>
+              <td>Whether the user actually hears the speaking character.</td>
+              <td>Browser output contains audible, non-silent speech; spoken content can be transcribed; speaker indicator matches voice.</td>
+              <td><span class="evidence-tag">04_chat_second_speaker.png</span> <span class="evidence-tag">06_response_received.png</span></td>
+              <td><span class="badge badge-partial">PARTIAL</span></td>
+            </tr>
+            <tr>
+              <td class="id">F-07</td>
+              <td>Expert-to-expert speaker rotation</td>
+              <td>Whether multiple experts take turns correctly.</td>
+              <td>At least two experts visibly and audibly take separate turns; UI indicator and voice match each turn.</td>
+              <td><span class="evidence-tag">04_chat_second_speaker.png</span> Audible speech NOT verified - audio capture blocked.</td>
+              <td><span class="badge badge-partial">PARTIAL</span></td>
+            </tr>
+            <tr>
+              <td class="id">F-08</td>
+              <td>Text interjection and semantic response</td>
+              <td>Whether the user can interrupt by text and receive a relevant response.</td>
+              <td>Text submits successfully; system acknowledges; expert response addresses user's message.</td>
+              <td><span class="evidence-tag">05_text_interjection_response.png</span> <span class="evidence-tag">06_response_received.png</span></td>
+              <td><span class="badge badge-pass">PASS</span></td>
+            </tr>
+            <tr>
+              <td class="id">F-09</td>
+              <td>Pause and resume</td>
+              <td>Whether the user can stop and continue the discussion.</td>
+              <td>Pause stops speech within timeout; UI shows paused state; resume restarts without losing session.</td>
+              <td><span class="evidence-tag">13_paused.png</span> <span class="evidence-tag">14_resumed.png</span> UI state only - actual speech stop/resume NOT verified.</td>
+              <td><span class="badge badge-partial">PARTIAL</span></td>
+            </tr>
+            <tr>
+              <td class="id">F-10</td>
+              <td>Early summary behavior</td>
+              <td>Whether requesting a summary too early produces a clear and usable state.</td>
+              <td>Summary opens without error; clearly explains insufficient content; close/back works; no blank modal.</td>
+              <td><span class="evidence-tag">07_summary_early.png</span></td>
+              <td><span class="badge badge-pass">PASS</span></td>
+            </tr>
+            <tr>
+              <td class="id">F-11</td>
+              <td>Back and confirm exit</td>
+              <td>Whether accidental session exit is prevented and confirmed exit works.</td>
+              <td>Back opens confirmation dialog; cancel keeps session; confirm returns to expected page.</td>
+              <td><span class="evidence-tag">08_confirm_back.png</span> <span class="evidence-tag">16_confirm_back_custom.png</span></td>
+              <td><span class="badge badge-pass">PASS</span></td>
+            </tr>
+            <tr>
+              <td class="id">F-12</td>
+              <td>Mobile viewport usability</td>
+              <td>Whether the core experience remains usable on the target mobile viewport.</td>
+              <td>Core content and controls visible and operable; no blocking overlap, clipping, or unreachable control.</td>
+              <td><span class="evidence-tag">15_mobile_view.png</span></td>
+              <td><span class="badge badge-pass">PASS</span></td>
+            </tr>
+            <tr>
+              <td class="id">F-13</td>
+              <td>Homepage voice input and STT</td>
+              <td>Whether a user can submit a custom topic by speaking on the homepage.</td>
+              <td>Mic permission succeeds; injected speech captured; transcription materially correct; submitted to expert flow.</td>
+              <td>CDP fake device test (see technical-evidence.md)</td>
+              <td><span class="badge badge-partial">PARTIAL</span></td>
+            </tr>
+            <tr>
+              <td class="id">F-14</td>
+              <td>Chat push-to-talk and STT</td>
+              <td>Whether a user can speak during chat and receive a relevant response. <strong>Click-to-toggle required.</strong></td>
+              <td>Click-to-toggle: first click starts recording, second click stops and submits; speech captured and transcribed; expert response received.</td>
+              <td>CDP fake device test, DOM verification (see technical-evidence.md)</td>
+              <td><span class="badge badge-partial">PARTIAL</span></td>
+            </tr>
+            <tr>
+              <td class="id">F-15</td>
+              <td>Full summary with sufficient history</td>
+              <td>Whether a completed/long-enough discussion produces a useful summary.</td>
+              <td>After sufficient discussion, summary contains correct topic and meaningful points; not empty or generic.</td>
+              <td>Early summary verified (F-10); full summary requires longer run.</td>
+              <td><span class="badge badge-not-tested">NOT TESTED</span></td>
+            </tr>
+            <tr>
+              <td class="id">F-16</td>
+              <td>User-flow stability</td>
+              <td>Whether the tested journey remains stable without user-visible failures.</td>
+              <td>No crash, frozen state, unexpected reload, visible error, or blocked action during journey.</td>
+              <td>All 16 screenshots show stable UI; no errors observed.</td>
+              <td><span class="badge badge-pass">PASS</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="blocked-note">
+      <h4>⚠️ Infrastructure Blockers (Not Product Issues)</h4>
+      <p><strong>F-06, F-13, F-14 (Audio):</strong> Browser audio output capture is blocked by sandbox environment limitations. PulseAudio is not available, and Chromium runs in a confined environment. The fake microphone capability was verified via CDP (Chromium accepts <code>--use-file-for-fake-audio-capture</code> and creates a fake audio input device), but end-to-end STT transcription and audio output verification could not be completed. This is an infrastructure constraint, not a product defect.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-header">User-Observable Performance Coverage</div>
+      <div class="section-content">
+        <p style="margin-bottom: 1rem; color: var(--text-muted); font-size: 0.875rem;">
+          <strong>Note:</strong> Timing values below represent single-run visual observation only. No elapsed-time measurements were taken with a stopwatch or automated timer. Audio-related endpoints (speech start/stop) are marked NOT MEASURED because browser audio output could not be captured in the sandbox environment. Actual speech verification requires audio capture infrastructure not available in this test environment.
+        </p>
+        <table class="performance-table">
+          <thead>
+            <tr>
+              <th>Area</th>
+              <th>User Action → Result</th>
+              <th>Measurement</th>
+              <th>Runs</th>
+              <th>Median</th>
+              <th>Slowest</th>
+              <th>Evidence</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Initial page</td>
+              <td>Navigate to /group → First content visible</td>
+              <td>Screenshot-based</td>
+              <td>1</td>
+              <td>N/A</td>
+              <td>N/A</td>
+              <td>Screenshot inspection</td>
+            </tr>
+            <tr>
+              <td>Consent</td>
+              <td>Navigate → Consent modal visible</td>
+              <td>Visual</td>
+              <td>1</td>
+              <td>N/A</td>
+              <td>N/A</td>
+              <td>02_homepage_after_disclaimer.png</td>
+            </tr>
+            <tr>
+              <td>Home readiness</td>
+              <td>Accept consent → Topic cards usable</td>
+              <td>Visual</td>
+              <td>1</td>
+              <td>N/A</td>
+              <td>N/A</td>
+              <td>01_homepage.png</td>
+            </tr>
+            <tr>
+              <td>Hot topic to chat</td>
+              <td>Click topic → Chat UI visible</td>
+              <td>Visual</td>
+              <td>1</td>
+              <td>N/A</td>
+              <td>N/A</td>
+              <td>03_chat_entered.png</td>
+            </tr>
+            <tr>
+              <td>Text interjection</td>
+              <td>Click send → Reply text visible</td>
+              <td>Visual</td>
+              <td>1</td>
+              <td>N/A</td>
+              <td>N/A</td>
+              <td>05-06_screenshots</td>
+            </tr>
+            <tr>
+              <td>Pause (UI state)</td>
+              <td>Click pause → UI shows paused state</td>
+              <td>NOT MEASURED - visual only, actual speech stop not verified</td>
+              <td>1</td>
+              <td>N/A</td>
+              <td>N/A</td>
+              <td>Screenshot 13 - UI state only</td>
+            </tr>
+            <tr>
+              <td>Resume (UI state)</td>
+              <td>Click resume → UI shows resumed state</td>
+              <td>NOT MEASURED - visual only, actual speech resume not verified</td>
+              <td>1</td>
+              <td>N/A</td>
+              <td>N/A</td>
+              <td>Screenshot 14 - UI state only</td>
+            </tr>
+            <tr>
+              <td>Summary</td>
+              <td>Click summary → Content visible</td>
+              <td>Visual</td>
+              <td>1</td>
+              <td>N/A</td>
+              <td>N/A</td>
+              <td>07_summary_early.png</td>
+            </tr>
+          </tbody>
+        </table>
+        <p style="margin-top: 1rem; color: var(--text-muted); font-size: 0.875rem;">
+          <strong>Note:</strong> Performance timing is based on single-run visual verification. Timing measurements require multiple runs with median and slowest calculation per the performance criteria specification. Audio-based measurements (voice output timing) require infrastructure that is currently blocked.
+        </p>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">Screenshots (16)</div>
+      <div class="section-content">
+        <div class="screenshot-grid">
+          <div class="screenshot-item">
+            <img src="screenshots/01_homepage.png" alt="Homepage">
+            <div class="caption">01_homepage.png - Homepage with topic cards</div>
+          </div>
+          <div class="screenshot-item">
+            <img src="screenshots/02_homepage_after_disclaimer.png" alt="Disclaimer">
+            <div class="caption">02_disclaimer.png - Consent dialog</div>
+          </div>
+          <div class="screenshot-item">
+            <img src="screenshots/03_chat_entered.png" alt="Chat entered">
+            <div class="caption">03_chat_entered.png - Hot topic chat</div>
+          </div>
+          <div class="screenshot-item">
+            <img src="screenshots/04_chat_second_speaker.png" alt="Second speaker">
+            <div class="caption">04_second_speaker.png - Speaker rotation</div>
+          </div>
+          <div class="screenshot-item">
+            <img src="screenshots/05_text_interjection_response.png" alt="Text interjection">
+            <div class="caption">05_text_interjection.png - Text input sent</div>
+          </div>
+          <div class="screenshot-item">
+            <img src="screenshots/06_text_response_received.png" alt="Response">
+            <div class="caption">06_response_received.png - Expert reply</div>
+          </div>
+          <div class="screenshot-item">
+            <img src="screenshots/07_summary_early.png" alt="Early summary">
+            <div class="caption">07_summary_early.png - Summary modal</div>
+          </div>
+          <div class="screenshot-item">
+            <img src="screenshots/08_confirm_back.png" alt="Confirm back">
+            <div class="caption">08_confirm_back.png - Exit confirmation</div>
+          </div>
+          <div class="screenshot-item">
+            <img src="screenshots/09_custom_topic_entered.png" alt="Custom topic">
+            <div class="caption">09_custom_topic.png - Custom topic input</div>
+          </div>
+          <div class="screenshot-item">
+            <img src="screenshots/10_expert_selection.png" alt="Expert selection">
+            <div class="caption">10_expert_selection.png - Recommendations</div>
+          </div>
+          <div class="screenshot-item">
+            <img src="screenshots/11_manual_selection.png" alt="Manual selection">
+            <div class="caption">11_manual_selection.png - Manual override</div>
+          </div>
+          <div class="screenshot-item">
+            <img src="screenshots/12_custom_topic_chat.png" alt="Custom chat">
+            <div class="caption">12_custom_topic_chat.png - Custom topic chat</div>
+          </div>
+          <div class="screenshot-item">
+            <img src="screenshots/13_paused.png" alt="Paused">
+            <div class="caption">13_paused.png - Pause state</div>
+          </div>
+          <div class="screenshot-item">
+            <img src="screenshots/14_resumed.png" alt="Resumed">
+            <div class="caption">14_resumed.png - Resume state</div>
+          </div>
+          <div class="screenshot-item">
+            <img src="screenshots/15_mobile_view.png" alt="Mobile view">
+            <div class="caption">15_mobile_view.png - Mobile viewport</div>
+          </div>
+          <div class="screenshot-item">
+            <img src="screenshots/16_confirm_back_custom.png" alt="Custom confirm">
+            <div class="caption">16_confirm_back_custom.png - Custom topic exit</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">Fake Microphone Testing (F-13, F-14)</div>
+      <div class="section-content">
+        <h3>WAV Fixture</h3>
+        <ul>
+          <li><strong>File:</strong> <code>mandarin-stt-sleep-test.wav</code></li>
+          <li><strong>Format:</strong> PCM mono, 48kHz, 16-bit</li>
+          <li><strong>Size:</strong> 950,478 bytes (~9.9 seconds)</li>
+          <li><strong>Content:</strong> "這是一段語音辨識測試。我最近晚上睡不好，半夜常常醒來，想請專家提供改善睡眠的建議。"</li>
+        </ul>
+
+        <h3 style="margin-top: 1.5rem;">Test Commands</h3>
+        <pre style="background: #1e293b; color: #e2e8f0; padding: 1rem; border-radius: 8px; overflow-x: auto; font-size: 0.8rem;">
+chromium \
+  --headless=new \
+  --no-sandbox \
+  --use-fake-ui-for-media-stream \
+  --use-fake-device-for-media-stream \
+  --use-file-for-fake-audio-capture=/path/to/mandarin-stt-sleep-test.wav \
+  --user-data-dir=/tmp/chromium-fake-mic \
+  --remote-debugging-port=9225 \
+  "https://doppel-health.zeabur.app/group"</pre>
+
+        <h3 style="margin-top: 1.5rem;">CDP Verification Results</h3>
+        <pre style="background: #1e293b; color: #e2e8f0; padding: 1rem; border-radius: 8px; overflow-x: auto; font-size: 0.8rem;">
+Audio input devices detected:
+- "Fake Default Audio Input" (deviceId: "default")
+- "Fake Audio Input 1"
+- "Fake Audio Input 2"
+
+getUserMedia(audio: true):
+- Result: SUCCESS
+- Track label: "Fake Default Audio Input"
+- Track readyState: "live"
+- Track muted: false</pre>
+
+        <h3 style="margin-top: 1.5rem;">Click-to-Toggle (F-14)</h3>
+        <p>Verified via DOM observation:</p>
+        <ul>
+          <li>Voice button exists with <code>aria-label="語音輸入"</code></li>
+          <li>First click activates recording mode → UI shows "點擊停止" (click to stop) indicator</li>
+          <li>Button state changes after activation (button remounts with different state)</li>
+          <li>Second click should stop recording and submit for STT (infrastructure limits full E2E verification)</li>
+        </ul>
+
+        <h3 style="margin-top: 1.5rem;">Browser/System Audio Capture Attempts</h3>
+        <table>
+          <thead>
+            <tr><th>Method</th><th>Result</th><th>Reason</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>PulseAudio (pactl)</td><td>NOT AVAILABLE</td><td>Daemon not running in sandbox</td></tr>
+            <tr><td>parec</td><td>NOT FOUND</td><td>Tool not installed</td></tr>
+            <tr><td>ffmpeg audio capture</td><td>BLOCKED</td><td>Cannot capture browser audio output</td></tr>
+            <tr><td>CDP audio capture</td><td>BLOCKED</td><td>WebRTC cannot capture tab audio in headless</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <footer>
+      <p>RoundTable QA Report v2 — 2026-06-05<br>
+      Generated by OpenClaw Agent | Model: minimax/MiniMax-M2.7</p>
+    </footer>
+  </div>
+</body>
+</html>
