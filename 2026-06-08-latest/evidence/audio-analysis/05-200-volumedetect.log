@@ -1,0 +1,22 @@
+[mp3 @ 0x5a927da16880] Estimating duration from bitrate, this may be inaccurate
+Input #0, mp3, from 'reports/roundtable-user-qa-2026-06-08-latest/audio/05-200.mp3':
+  Duration: 00:00:07.63, start: 0.000000, bitrate: 127 kb/s
+  Stream #0:0: Audio: mp3, 44100 Hz, mono, fltp, 128 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (mp3 (mp3float) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+Output #0, null, to 'pipe:':
+  Metadata:
+    encoder         : Lavf59.27.100
+  Stream #0:0: Audio: pcm_s16le, 44100 Hz, mono, s16, 705 kb/s
+    Metadata:
+      encoder         : Lavc59.37.100 pcm_s16le
+size=N/A time=00:00:07.62 bitrate=N/A speed= 586x    
+video:0kB audio:657kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: unknown
+[Parsed_volumedetect_0 @ 0x5a927da2ac00] n_samples: 336384
+[Parsed_volumedetect_0 @ 0x5a927da2ac00] mean_volume: -23.2 dB
+[Parsed_volumedetect_0 @ 0x5a927da2ac00] max_volume: -6.4 dB
+[Parsed_volumedetect_0 @ 0x5a927da2ac00] histogram_6db: 26
+[Parsed_volumedetect_0 @ 0x5a927da2ac00] histogram_7db: 88
+[Parsed_volumedetect_0 @ 0x5a927da2ac00] histogram_8db: 186
+[Parsed_volumedetect_0 @ 0x5a927da2ac00] histogram_9db: 390

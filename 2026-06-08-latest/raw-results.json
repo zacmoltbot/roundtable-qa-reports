@@ -1,0 +1,522 @@
+{
+  "session": "roundtable-user-facing-qa-latest-2026-06-08",
+  "target": "https://doppel-health.zeabur.app/group",
+  "status": "REVIEW_DRAFT_COMPLETE",
+  "ruleVersion": "latest as of 2026-06-08, derived from V3 runbook/review log",
+  "modelPolicy": "inherited default model",
+  "scope": "End-user /group flow only; excludes /admin and /create",
+  "started": "2026-06-08T06:00:00.038Z",
+  "finished": "2026-06-08T06:04:23.220Z",
+  "overall": {
+    "productVerdict": "FAIL_WITH_BLOCKED_AUDIO_VERIFICATION",
+    "qaExecutionStatus": "COMPLETE_WITH_ENVIRONMENT_CONSTRAINT",
+    "counts": {
+      "PASS": 12,
+      "UNDETERMINED": 3,
+      "FAIL": 1
+    },
+    "criticalFinding": "F-15 failed again: after multiple expert turns plus text and two voice interactions, full-summary modal showed only the topic and no meaningful summary points."
+  },
+  "taxonomy": {
+    "PASS": "Complete test executed; all pass criteria passed.",
+    "PARTIAL": "Complete test executed, with demonstrated product pass/fail split.",
+    "FAIL": "Complete test executed; required product outcome failed.",
+    "UNDETERMINED": "No product verdict because required user outcome could not be executed or verified.",
+    "BLOCKED": "QA execution could not complete because a required environment/capability was unavailable.",
+    "NOT_TESTED": "Test was not executed."
+  },
+  "functionalMatrix": [
+    {
+      "id": "F-01",
+      "group": "Page 1 - Topic Selection / Homepage",
+      "test": "First-visit disclaimer and consent",
+      "productResult": "PASS",
+      "qaExecutionStatus": "COMPLETE",
+      "verified": "Disclaimer appeared before use; emergency/service/privacy content, privacy link, and consent action were visible; accepting unlocked homepage.",
+      "missingFailed": "None.",
+      "reason": "All criteria verified in first-visit run.",
+      "evidence": [
+        "screenshots/01-first-visit-consent.png",
+        "screenshots/02-home-ready.png"
+      ]
+    },
+    {
+      "id": "F-02",
+      "group": "Page 1 - Topic Selection / Homepage",
+      "test": "Popular topic card to chat",
+      "productResult": "PASS",
+      "qaExecutionStatus": "COMPLETE",
+      "verified": "Hot topic preserved in chat and controls became usable in 3 timed runs.",
+      "missingFailed": "None.",
+      "reason": "All criteria verified.",
+      "evidence": [
+        "screenshots/16-hot-topic-chat.png",
+        "evidence/browser-run-latest-20260608.json"
+      ]
+    },
+    {
+      "id": "F-13",
+      "group": "Page 1 - Topic Selection / Homepage",
+      "test": "Homepage voice input and STT",
+      "productResult": "PASS",
+      "qaExecutionStatus": "COMPLETE",
+      "verified": "Fake mic Mandarin WAV activated recording; STT 200 returned materially correct sleep-problem transcript; transcript appeared and could enter recommendation flow.",
+      "missingFailed": "None.",
+      "reason": "End-to-end homepage STT path verified.",
+      "evidence": [
+        "screenshots/03-home-mic-recording.png",
+        "screenshots/04-home-stt-outcome.png",
+        "evidence/browser-run-latest-20260608.json"
+      ]
+    },
+    {
+      "id": "F-03",
+      "group": "Page 2 - Expert Matching / Selection",
+      "test": "Custom topic expert recommendations",
+      "productResult": "PASS",
+      "qaExecutionStatus": "COMPLETE",
+      "verified": "Recommendations, categories, expert cards, and reasons appeared for the custom sleep topic in 3 timed runs.",
+      "missingFailed": "None.",
+      "reason": "All criteria verified.",
+      "evidence": [
+        "screenshots/05-expert-recommendations.png",
+        "evidence/browser-run-latest-20260608.json"
+      ]
+    },
+    {
+      "id": "F-04",
+      "group": "Page 2 - Expert Matching / Selection",
+      "test": "Manual expert selection override",
+      "productResult": "PASS",
+      "qaExecutionStatus": "COMPLETE",
+      "verified": "Selected expert count changed 3 -> 2 -> 3; final set carried forward.",
+      "missingFailed": "None.",
+      "reason": "Manual remove/add override verified.",
+      "evidence": [
+        "screenshots/06-manual-expert-selection.png",
+        "evidence/browser-run-latest-20260608.json"
+      ]
+    },
+    {
+      "id": "F-05",
+      "group": "Page 2 - Expert Matching / Selection",
+      "test": "Start discussion from expert selection",
+      "productResult": "PASS",
+      "qaExecutionStatus": "COMPLETE",
+      "verified": "Start Discussion entered /group/chat with selected experts and topic; chat controls became usable.",
+      "missingFailed": "None.",
+      "reason": "All criteria verified.",
+      "evidence": [
+        "screenshots/07-custom-topic-chat.png",
+        "evidence/browser-run-latest-20260608.json"
+      ]
+    },
+    {
+      "id": "F-06",
+      "group": "Page 3 - Group Chat",
+      "test": "Character voice output",
+      "productResult": "UNDETERMINED",
+      "qaExecutionStatus": "BLOCKED",
+      "verified": "10 non-empty TTS/MP3 assets captured; ffprobe/volumedetect shows non-silent audio; TTS query text matches visible discussion topic/speaker context.",
+      "missingFailed": "Actual browser/system speaker output to a user was not captured; missing/cut-off playback cannot be ruled out. Local Whisper transcription timed out and is not used as proof.",
+      "reason": "Environment constraint remains: headless Chromium/host lacks reliable real output capture; assets are supporting evidence only.",
+      "evidence": [
+        "audio/03-200.mp3",
+        "evidence/audio-analysis/03-200-volumedetect.log",
+        "evidence/browser-run-latest-20260608.json"
+      ]
+    },
+    {
+      "id": "F-07",
+      "group": "Page 3 - Group Chat",
+      "test": "Expert-to-expert speaker rotation",
+      "productResult": "UNDETERMINED",
+      "qaExecutionStatus": "BLOCKED",
+      "verified": "Multiple visible speaker states progressed; multiple non-empty TTS assets were captured across discussion turns.",
+      "missingFailed": "Separate audible turns, voice-to-speaker match at device output, and absence of audible overlap/stall were not verified.",
+      "reason": "Actual device/browser audio output capture unavailable.",
+      "evidence": [
+        "screenshots/07-custom-topic-chat.png",
+        "audio/03-200.mp3",
+        "audio/04-200.mp3",
+        "evidence/audio-analysis/04-200-volumedetect.log"
+      ]
+    },
+    {
+      "id": "F-08",
+      "group": "Page 3 - Group Chat",
+      "test": "Text interjection and semantic response",
+      "productResult": "PASS",
+      "qaExecutionStatus": "COMPLETE",
+      "verified": "Text was submitted; subsequent TTS response content addressed half-night waking and daytime fatigue.",
+      "missingFailed": "None for content path; real speaker playback remains covered by F-06.",
+      "reason": "Semantic response content verified via captured TTS response text/audio asset.",
+      "evidence": [
+        "screenshots/11-text-interjection-outcome.png",
+        "audio/05-200.mp3",
+        "evidence/browser-run-latest-20260608.json"
+      ]
+    },
+    {
+      "id": "F-09",
+      "group": "Page 3 - Group Chat",
+      "test": "Pause and resume",
+      "productResult": "UNDETERMINED",
+      "qaExecutionStatus": "BLOCKED",
+      "verified": "Pause and resume UI states appeared; session remained intact.",
+      "missingFailed": "Actual audible speech stop/resume and no duplicated audio were not verified.",
+      "reason": "UI state alone is insufficient for product verdict under latest rule.",
+      "evidence": [
+        "screenshots/09-paused-ui.png",
+        "screenshots/10-resumed-ui.png"
+      ]
+    },
+    {
+      "id": "F-10",
+      "group": "Page 3 - Group Chat",
+      "test": "Early summary behavior",
+      "productResult": "PASS",
+      "qaExecutionStatus": "COMPLETE",
+      "verified": "Summary opened early and clearly stated conversation content was too limited; modal remained readable with actions.",
+      "missingFailed": "None.",
+      "reason": "All criteria verified.",
+      "evidence": [
+        "screenshots/08-early-summary.png",
+        "evidence/browser-run-latest-20260608.json"
+      ]
+    },
+    {
+      "id": "F-11",
+      "group": "Page 3 - Group Chat",
+      "test": "Back and confirm exit",
+      "productResult": "PASS",
+      "qaExecutionStatus": "COMPLETE",
+      "verified": "Back opened confirmation dialog with cancel/confirm actions; cancel state was captured after flow.",
+      "missingFailed": "None.",
+      "reason": "Exit-prevention dialog verified.",
+      "evidence": [
+        "screenshots/15-back-confirm.png",
+        "evidence/browser-run-latest-20260608.json"
+      ]
+    },
+    {
+      "id": "F-14",
+      "group": "Page 3 - Group Chat",
+      "test": "Chat push-to-talk and STT",
+      "productResult": "PASS",
+      "qaExecutionStatus": "COMPLETE",
+      "verified": "Recording UI activated; two stop actions returned STT 200; transcripts materially matched Mandarin sleep request; later expert responses addressed sleep interruption.",
+      "missingFailed": "None for STT path; actual audible reply playback remains covered by F-06.",
+      "reason": "Click-to-toggle PTT and repeat STT interaction verified.",
+      "evidence": [
+        "screenshots/12-chat-mic-recording.png",
+        "screenshots/13-chat-stt-outcome.png",
+        "screenshots/13b-chat-stt-repeat-outcome.png",
+        "evidence/browser-run-latest-20260608.json"
+      ]
+    },
+    {
+      "id": "F-15",
+      "group": "Page 3 - Group Chat",
+      "test": "Full summary with sufficient history",
+      "productResult": "FAIL",
+      "qaExecutionStatus": "COMPLETE",
+      "verified": "Full-summary test executed after custom topic, expert turns, text interjection, and two voice interactions; summary modal opened.",
+      "missingFailed": "Summary contained only the topic and no meaningful conversation points.",
+      "reason": "Confirmed product issue: useful non-empty summary content absent despite sufficient tested history.",
+      "evidence": [
+        "screenshots/14-full-summary-attempt.png",
+        "evidence/browser-run-latest-20260608.json"
+      ]
+    },
+    {
+      "id": "F-12",
+      "group": "Cross-page / Overall Experience",
+      "test": "Mobile viewport usability",
+      "productResult": "PASS",
+      "qaExecutionStatus": "COMPLETE",
+      "verified": "390x844 viewport had no horizontal overflow; core homepage controls remained usable.",
+      "missingFailed": "None for tested mobile scope.",
+      "reason": "Mobile smoke criteria verified.",
+      "evidence": [
+        "screenshots/17-mobile-home.png",
+        "evidence/browser-run-latest-20260608.json"
+      ]
+    },
+    {
+      "id": "F-16",
+      "group": "Cross-page / Overall Experience",
+      "test": "User-flow stability",
+      "productResult": "PASS",
+      "qaExecutionStatus": "COMPLETE",
+      "verified": "Completed latest-rule journey without user-visible crash, freeze, unexpected reload, or blocked core action.",
+      "missingFailed": "Engineering warnings: 72 failed requests, mostly third-party ad/activeview aborts; 3 zero-byte TTS responses; 2 response.body capture errors.",
+      "reason": "Warnings did not block observed core user flow; kept in appendix.",
+      "evidence": [
+        "evidence/browser-run-latest-20260608.json"
+      ]
+    }
+  ],
+  "performanceSummary": [
+    {
+      "area": "Initial page",
+      "runsSeconds": [
+        3.272,
+        4.854,
+        1.502
+      ],
+      "medianSeconds": 3.272,
+      "slowestSeconds": 4.854,
+      "status": "VERIFIED"
+    },
+    {
+      "area": "Consent",
+      "runsSeconds": [
+        3.869,
+        4.934,
+        2.04
+      ],
+      "medianSeconds": 3.869,
+      "slowestSeconds": 4.934,
+      "status": "VERIFIED"
+    },
+    {
+      "area": "Home readiness",
+      "runsSeconds": [
+        1.253,
+        4.549,
+        5.807
+      ],
+      "medianSeconds": 4.549,
+      "slowestSeconds": 5.807,
+      "status": "VERIFIED"
+    },
+    {
+      "area": "Hot topic",
+      "runsSeconds": [
+        4.42,
+        4.814,
+        4.675
+      ],
+      "medianSeconds": 4.675,
+      "slowestSeconds": 4.814,
+      "status": "VERIFIED"
+    },
+    {
+      "area": "Custom topic",
+      "runsSeconds": [
+        4.644,
+        4.598,
+        4.064
+      ],
+      "medianSeconds": 4.598,
+      "slowestSeconds": 4.644,
+      "status": "VERIFIED"
+    },
+    {
+      "area": "Start discussion",
+      "runsSeconds": [
+        1.257
+      ],
+      "medianSeconds": 1.257,
+      "slowestSeconds": 1.257,
+      "status": "VERIFIED"
+    },
+    {
+      "area": "Text interjection",
+      "runsSeconds": [
+        1.836
+      ],
+      "medianSeconds": 1.836,
+      "slowestSeconds": 1.836,
+      "status": "VERIFIED"
+    },
+    {
+      "area": "Homepage mic",
+      "runsSeconds": [
+        3.339
+      ],
+      "medianSeconds": 3.339,
+      "slowestSeconds": 3.339,
+      "status": "VERIFIED"
+    },
+    {
+      "area": "Homepage STT",
+      "runsSeconds": [
+        14.014
+      ],
+      "medianSeconds": 14.014,
+      "slowestSeconds": 14.014,
+      "status": "VERIFIED"
+    },
+    {
+      "area": "Chat mic",
+      "runsSeconds": [
+        1.239
+      ],
+      "medianSeconds": 1.239,
+      "slowestSeconds": 1.239,
+      "status": "VERIFIED"
+    },
+    {
+      "area": "Chat mic reply",
+      "runsSeconds": [
+        7.114
+      ],
+      "medianSeconds": 7.114,
+      "slowestSeconds": 7.114,
+      "status": "VERIFIED"
+    },
+    {
+      "area": "Early summary",
+      "runsSeconds": [
+        1.251
+      ],
+      "medianSeconds": 1.251,
+      "slowestSeconds": 1.251,
+      "status": "VERIFIED"
+    },
+    {
+      "area": "Pause UI",
+      "runsSeconds": [
+        0.625
+      ],
+      "medianSeconds": 0.625,
+      "slowestSeconds": 0.625,
+      "status": "VERIFIED"
+    },
+    {
+      "area": "Resume UI",
+      "runsSeconds": [
+        0.107
+      ],
+      "medianSeconds": 0.107,
+      "slowestSeconds": 0.107,
+      "status": "VERIFIED"
+    },
+    {
+      "area": "First audible expert speech",
+      "runsSeconds": [],
+      "status": "BLOCKED",
+      "reason": "Actual device output unavailable; returned assets do not prove heard playback."
+    },
+    {
+      "area": "Speaker transition / pause / resume audible timing",
+      "runsSeconds": [],
+      "status": "BLOCKED",
+      "reason": "Actual device output unavailable."
+    }
+  ],
+  "engineeringAppendix": {
+    "sttResponses": [
+      {
+        "status": 200,
+        "body": "{\"text\":\"這是一段語音辨識測試。我最近晚上睡不好，半夜常常醒來，想請專家提供改善睡眠的建議。這是一段語音辨識測試，我最近晚上睡不好，半夜常常醒。\",\"language\":\"zh\"}"
+      },
+      {
+        "status": 200,
+        "body": "{\"text\":\"這是一段語音辨識測試。我最近晚上睡不好，半夜常常醒來想想。\",\"language\":\"zh\"}"
+      },
+      {
+        "status": 200,
+        "body": "{\"text\":\"這是一段語音辨識測試。我最近晚上睡不好半夜。\",\"language\":\"zh\"}"
+      }
+    ],
+    "audioResponses": [
+      {
+        "file": "audio/01-200.mp3",
+        "status": 200,
+        "bytes": 0,
+        "text": "哎呀，又見到您啦！真開心，這麼快又再會面了。"
+      },
+      {
+        "file": "audio/02-206.mp3",
+        "status": 206,
+        "bytes": 96547,
+        "text": ""
+      },
+      {
+        "file": "audio/03-200.mp3",
+        "status": 200,
+        "bytes": 218591,
+        "text": "大家好，我是白大衛，做內科健康陪伴的，主要從生活習慣切入。其實半夜醒來這件事，要先想想自己的生活有沒有什麼變化。"
+      },
+      {
+        "file": "audio/04-200.mp3",
+        "status": 200,
+        "bytes": 89442,
+        "text": "不對，光是生活習慣變化這句話說得太輕巧了點"
+      },
+      {
+        "file": "audio/05-200.mp3",
+        "status": 200,
+        "bytes": 122043,
+        "text": "其實半夜醒來和白天疲累，這兩個訊號要一起看，不是單一的睡眠問題。"
+      },
+      {
+        "file": "audio/06-200.mp3",
+        "status": 200,
+        "bytes": 96129,
+        "text": "我覺得除了生活習慣，我們還要看看半夜醒來的「內容」是什麼？"
+      },
+      {
+        "file": "audio/07-200.mp3",
+        "status": 200,
+        "bytes": 74395,
+        "text": "睡眠中斷的背後，可能還有更深層的情緒或壓力因素。"
+      },
+      {
+        "file": "audio/08-200.mp3",
+        "status": 200,
+        "bytes": 94039,
+        "text": "不過要小心，半夜醒來也可能是一些身體問題的預警信號。"
+      },
+      {
+        "file": "audio/09-200.mp3",
+        "status": 200,
+        "bytes": 124968,
+        "text": "這種情況下，要先看看有沒有服用什麼新的藥物，這是一個很常見的變因。"
+      },
+      {
+        "file": "audio/10-200.mp3",
+        "status": 200,
+        "bytes": 108668,
+        "text": "從預防醫學角度，我們會先評估是否有潛在的睡眠呼吸中止症。"
+      },
+      {
+        "file": "audio/11-206.mp3",
+        "status": 206,
+        "bytes": 68544,
+        "text": ""
+      },
+      {
+        "file": "audio/12-200.mp3",
+        "status": 200,
+        "bytes": 0,
+        "text": ""
+      },
+      {
+        "file": "audio/13-200.mp3",
+        "status": 200,
+        "bytes": 0,
+        "text": ""
+      }
+    ],
+    "audioNonZero": 10,
+    "audioZero": 3,
+    "failedRequests": 72,
+    "errors": [
+      {
+        "phase": "audio-response-save",
+        "url": "blob:https://doppel-health.zeabur.app/ba501870-b885-4431-9a6a-28e60cd874aa",
+        "message": "response.body: Protocol error (Network.getResponseBody): No resource with given identifier found"
+      },
+      {
+        "phase": "audio-response-save",
+        "url": "https://doppel-health.zeabur.app/api/tts",
+        "message": "response.body: Protocol error (Network.getResponseBody): No resource with given identifier found"
+      }
+    ],
+    "whisperNote": "Local Whisper turbo and tiny transcription attempts timed out in this run; audio proof relies on ffprobe/volumedetect plus captured TTS response text, not user-heard playback."
+  }
+}

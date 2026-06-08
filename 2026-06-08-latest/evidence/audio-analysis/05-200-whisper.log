@@ -1,0 +1,5 @@
+/home/node/.openclaw/venv-whisper/lib/python3.11/site-packages/whisper/transcribe.py:132: UserWarning: FP16 is not supported on CPU; using FP32 instead
+  warnings.warn("FP16 is not supported on CPU; using FP32 instead")
+[00:00.000 --> 00:02.880] 其实半夜醒来和白天疲累
+[00:02.880 --> 00:05.280] 这两个讯号要一起看
+[00:05.280 --> 00:07.400] 不是单一的睡眠问题
