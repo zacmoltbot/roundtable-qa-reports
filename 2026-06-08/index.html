@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RoundTable /group QA Report - 2026-06-08T05:26:55.490Z</title>
+  <style>
+    :root { --ink:#17202a; --muted:#5f6c7b; --line:#d9e1e8; --ok:#0f7a4f; --warn:#a45b00; --fail:#b42318; --bg:#f7f9fb; --panel:#ffffff; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font: 14px/1.55 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: var(--ink); background: var(--bg); }
+    header { padding: 28px 36px 18px; background: #ffffff; border-bottom: 1px solid var(--line); }
+    h1 { margin: 0 0 8px; font-size: 26px; letter-spacing: 0; }
+    h2 { margin: 0 0 14px; font-size: 18px; }
+    h3 { margin: 18px 0 8px; font-size: 15px; }
+    main { padding: 24px 36px 44px; max-width: 1280px; }
+    section { margin: 0 0 24px; }
+    .meta, .note { color: var(--muted); }
+    .grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+    .metric { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 14px; min-height: 86px; }
+    .metric strong { display: block; font-size: 24px; line-height: 1.1; }
+    .badge { display: inline-flex; align-items: center; min-height: 24px; border-radius: 999px; padding: 2px 10px; font-weight: 700; font-size: 12px; border: 1px solid currentColor; }
+    .pass, .pass-with-warnings { color: var(--ok); }
+    .warn { color: var(--warn); }
+    .fail { color: var(--fail); }
+    table { width: 100%; border-collapse: collapse; background: var(--panel); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+    th, td { text-align: left; vertical-align: top; padding: 9px 10px; border-bottom: 1px solid var(--line); }
+    th { background: #eef3f7; font-size: 12px; text-transform: uppercase; color: #3d4c5c; letter-spacing: .04em; }
+    tr:last-child td { border-bottom: 0; }
+    code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 12px; overflow-wrap: anywhere; }
+    .screens { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+    figure { margin: 0; background: var(--panel); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+    figcaption { padding: 8px 10px; color: var(--muted); border-bottom: 1px solid var(--line); }
+    img { display: block; width: 100%; height: auto; }
+    .two { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    pre { margin: 0; padding: 12px; overflow: auto; background: #101820; color: #edf5ff; border-radius: 8px; max-height: 260px; }
+    @media (max-width: 900px) { header, main { padding-left: 18px; padding-right: 18px; } .grid, .screens, .two { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>RoundTable /group QA Report</h1>
+    <div class="meta">Target: <code>https://doppel-health.zeabur.app/group</code> · Scope: End-user /group portal only. Excludes /admin and /create. · Run: 2026-06-08T05:24:38.859Z → 2026-06-08T05:26:55.490Z</div>
+  </header>
+  <main>
+    <section>
+      <h2>Executive Summary</h2>
+      <div class="grid">
+        <div class="metric"><span class="badge pass-with-warnings">PASS_WITH_WARNINGS</span><strong>13/16</strong><span class="meta">checks passed</span></div>
+        <div class="metric"><strong>3</strong><span class="meta">warnings</span></div>
+        <div class="metric"><strong>0</strong><span class="meta">failures</span></div>
+        <div class="metric"><strong>8</strong><span class="meta">journey network issues</span></div>
+      </div>
+      <p class="note">This rerun tests the real end-user path from <code>/group</code>. It excludes <code>/admin</code> and <code>/create</code>. The load probe only uses low-risk GET requests and does not stress the generative chat API.</p>
+    </section>
+
+    <section>
+      <h2>Functional Checks</h2>
+      <table>
+        <thead><tr><th>Viewport</th><th>Status</th><th>Check</th><th>Evidence</th></tr></thead>
+        <tbody>
+          <tr><td>desktop</td><td><span class="badge pass">PASS</span></td><td>Portal page loads from /group</td><td><code>https://doppel-health.zeabur.app/group</code></td></tr><tr><td>desktop</td><td><span class="badge pass">PASS</span></td><td>Portal has visible user-facing content</td><td><code>782 visible text chars</code></td></tr><tr><td>desktop</td><td><span class="badge pass">PASS</span></td><td>Scope stays out of /admin and /create</td><td><code>https://doppel-health.zeabur.app/group</code></td></tr><tr><td>desktop</td><td><span class="badge pass">PASS</span></td><td>Portal can enter chat experience</td><td><code>topic-click; https://doppel-health.zeabur.app/group</code></td></tr><tr><td>desktop</td><td><span class="badge pass">PASS</span></td><td>Chat view has an input affordance</td><td><code>1 input-like elements</code></td></tr><tr><td>desktop</td><td><span class="badge warn">WARN</span></td><td>User message send path is usable</td><td><code>{&quot;attempted&quot;:true,&quot;clicked&quot;:false,&quot;button&quot;:&quot;&quot;,&quot;before&quot;:&quot;https://doppel-health.zeabur.app/group&quot;}</code></td></tr><tr><td>desktop</td><td><span class="badge warn">WARN</span></td><td>No failed network requests during journey</td><td><code>5 request failures</code></td></tr><tr><td>desktop</td><td><span class="badge pass">PASS</span></td><td>No HTTP 4xx/5xx responses during journey</td><td><code>0 bad responses</code></td></tr><tr><td>mobile</td><td><span class="badge pass">PASS</span></td><td>Portal page loads from /group</td><td><code>https://doppel-health.zeabur.app/group</code></td></tr><tr><td>mobile</td><td><span class="badge pass">PASS</span></td><td>Portal has visible user-facing content</td><td><code>782 visible text chars</code></td></tr><tr><td>mobile</td><td><span class="badge pass">PASS</span></td><td>Scope stays out of /admin and /create</td><td><code>https://doppel-health.zeabur.app/group</code></td></tr><tr><td>mobile</td><td><span class="badge pass">PASS</span></td><td>Portal can enter chat experience</td><td><code>topic-input; https://doppel-health.zeabur.app/group/chat?profileIds=8463a8dc-5ed1-4eb9-be30-a6078f70d952,be7b273d-d444-4223-b5b7-c4241f1f9699&amp;topic=%E7%9D%A1%E7%9C%A0%E5%93%81%E8%B3%AA%EF%BC%8C%E5%8F%AF%E8%83%BD%E6%AF%94%E7%9D%A1%E7%9C%A0%E6%99%82%E9%96%93%E6%9B%B4%E9%87%8D%E8%A6%81%EF%BC%9F&amp;displayTopic=%E7%9D%A1%E7%9C%A0%E5%93%81%E8%B3%AA%EF%BC%8C%E5%8F%AF%E8%83%BD%E6%AF%94%E7%9D%A1%E7%9C%A0%E6%99%82%E9%96%93%E6%9B%B4%E9%87%8D%E8%A6%81%EF%BC%9F&amp;preheatSessionId=ps-1780896376490-1wl4wdjt</code></td></tr><tr><td>mobile</td><td><span class="badge pass">PASS</span></td><td>Chat view has an input affordance</td><td><code>0 input-like elements</code></td></tr><tr><td>mobile</td><td><span class="badge pass">PASS</span></td><td>User message send path is usable</td><td><code>{&quot;attempted&quot;:true,&quot;clicked&quot;:true,&quot;button&quot;:&quot;/送出|傳送|Send|提交|發送|➤|→/i&quot;,&quot;before&quot;:&quot;https://doppel-health.zeabur.app/group/chat?profileIds=8463a8dc-5ed1-4eb9-be30-a6078f70d952,be7b273d-d444-4223-b5b7-c4241f1f9699&amp;topic=%E7%9D%A1%E7%9C%A0%E5%93%81%E8%B3%AA%EF%BC%8C%E5%8F%AF%E8%83%BD%E6%AF%94%E7%9D%A1%E7%9C%A0%E6%99%82%E9%96%93%E6%9B%B4%E9%87%8D%E8%A6%81%EF%BC%9F&amp;displayTopic=%E7%9D%A1%E7%9C%A0%E5%93%81%E8%B3%AA%EF%BC%8C%E5%8F%AF%E8%83%BD%E6%AF%94%E7%9D%A1%E7%9C%A0%E6%99%82%E9%96%93%E6%9B%B4%E9%87%8D%E8%A6%81%EF%BC%9F&amp;preheatSessionId=ps-1780896376490-1wl4wdjt&quot;}</code></td></tr><tr><td>mobile</td><td><span class="badge warn">WARN</span></td><td>No failed network requests during journey</td><td><code>3 request failures</code></td></tr><tr><td>mobile</td><td><span class="badge pass">PASS</span></td><td>No HTTP 4xx/5xx responses during journey</td><td><code>0 bad responses</code></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Performance Probe</h2>
+      <table>
+        <thead><tr><th>Endpoint</th><th>Concurrency</th><th>OK</th><th>Error</th><th>P50</th><th>P95</th><th>Max</th><th>Status Codes</th></tr></thead>
+        <tbody>
+          <tr><td><code>https://doppel-health.zeabur.app/group</code></td><td>1</td><td>1/1</td><td>0</td><td>1559 ms</td><td>1559 ms</td><td>1559 ms</td><td><code>{&quot;200&quot;:1}</code></td></tr><tr><td><code>https://doppel-health.zeabur.app/group</code></td><td>5</td><td>5/5</td><td>0</td><td>1448 ms</td><td>1473 ms</td><td>1473 ms</td><td><code>{&quot;200&quot;:5}</code></td></tr><tr><td><code>https://doppel-health.zeabur.app/group</code></td><td>10</td><td>10/10</td><td>0</td><td>960 ms</td><td>1210 ms</td><td>1210 ms</td><td><code>{&quot;200&quot;:10}</code></td></tr><tr><td><code>https://doppel-health.zeabur.app/api/theme-cards</code></td><td>1</td><td>1/1</td><td>0</td><td>844 ms</td><td>844 ms</td><td>844 ms</td><td><code>{&quot;200&quot;:1}</code></td></tr><tr><td><code>https://doppel-health.zeabur.app/api/theme-cards</code></td><td>5</td><td>5/5</td><td>0</td><td>872 ms</td><td>1178 ms</td><td>1178 ms</td><td><code>{&quot;200&quot;:5}</code></td></tr><tr><td><code>https://doppel-health.zeabur.app/api/theme-cards</code></td><td>10</td><td>10/10</td><td>0</td><td>872 ms</td><td>1204 ms</td><td>1204 ms</td><td><code>{&quot;200&quot;:10}</code></td></tr><tr><td><code>https://doppel-health.zeabur.app/api/topic-chips</code></td><td>1</td><td>1/1</td><td>0</td><td>537 ms</td><td>537 ms</td><td>537 ms</td><td><code>{&quot;200&quot;:1}</code></td></tr><tr><td><code>https://doppel-health.zeabur.app/api/topic-chips</code></td><td>5</td><td>5/5</td><td>0</td><td>560 ms</td><td>562 ms</td><td>562 ms</td><td><code>{&quot;200&quot;:5}</code></td></tr><tr><td><code>https://doppel-health.zeabur.app/api/topic-chips</code></td><td>10</td><td>10/10</td><td>0</td><td>556 ms</td><td>583 ms</td><td>583 ms</td><td><code>{&quot;200&quot;:10}</code></td></tr><tr><td><code>https://doppel-health.zeabur.app/api/ad-config</code></td><td>1</td><td>1/1</td><td>0</td><td>236 ms</td><td>236 ms</td><td>236 ms</td><td><code>{&quot;200&quot;:1}</code></td></tr><tr><td><code>https://doppel-health.zeabur.app/api/ad-config</code></td><td>5</td><td>5/5</td><td>0</td><td>247 ms</td><td>256 ms</td><td>256 ms</td><td><code>{&quot;200&quot;:5}</code></td></tr><tr><td><code>https://doppel-health.zeabur.app/api/ad-config</code></td><td>10</td><td>10/10</td><td>0</td><td>258 ms</td><td>280 ms</td><td>280 ms</td><td><code>{&quot;200&quot;:10}</code></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Screenshots</h2>
+      <h3>desktop 1365x768</h3><div class="screens">
+        <figure><figcaption>Portal</figcaption><img src="screenshots/desktop-portal.png" alt="desktop portal screenshot"></figure>
+        <figure><figcaption>Chat</figcaption><img src="screenshots/desktop-chat.png" alt="desktop chat screenshot"></figure>
+        <figure><figcaption>Final</figcaption><img src="screenshots/desktop-final.png" alt="desktop final screenshot"></figure>
+      </div><h3>mobile 390x844</h3><div class="screens">
+        <figure><figcaption>Portal</figcaption><img src="screenshots/mobile-portal.png" alt="mobile portal screenshot"></figure>
+        <figure><figcaption>Chat</figcaption><img src="screenshots/mobile-chat.png" alt="mobile chat screenshot"></figure>
+        <figure><figcaption>Final</figcaption><img src="screenshots/mobile-final.png" alt="mobile final screenshot"></figure>
+      </div>
+    </section>
+
+    <section>
+      <h2>Console / Network Notes</h2>
+      <div class="two">
+        <div>
+          <h3>desktop</h3>
+          <pre>{
+  &quot;consoleMessages&quot;: [],
+  &quot;networkFailures&quot;: [
+    {
+      &quot;url&quot;: &quot;https://securepubads.g.doubleclick.net/pcs/view?xai=AKAOjsut9ZTzPkC3gagBb_MHZqccRPTTvH4_3xHT1S6A0s01Q5EwogNYD-S-qBmPJx5lqZFBd52EVkWjoOjXovOPGflPleAndmjGaUplmQpmaDLIEgBi4ZEERsw15FeAOcxWwADdNx-aYtCei2zuVlxu9e2aR7emhH7QUqGwQp661aHn6NhmQUvNzvunI9wEbezxOqV7dZIWkU0o_K1sfqz5i5pRSbIpPatrfIyEGpPkKbxksZusIWORe3M4BnTGcHiKNs_pUEE6X8ZeZjP0jSgbJVXmXA60ZWK1ocnCCbMVtt1CEqmvwRGMW33YXJLV6zOVQAPh9KNgSYucWts2fjGC46y3sn-MwBcPPxejQ2mYcCR9COIjta3byBkzIdkN3eXDn6OqBaP2U3F34OxikRUN33XH82iNpyxvxtYWCK8xZErr&amp;sai=AMfl-YQuwV-Vhk91LcaaZekwtwWj3jB2Nc5ESd75lu72YqJOjbjoIZntWFShwEmYMDfsSExIlOsijw7V1OlDvE5So1HeZjTBLJDUUxDPEnrWiV8QbHMSGMV1SGTDXy7cVXm5kRcPOTRGKinYpGd5R1eq1U62lYjoKyWBmqrLWZsjIHlbQP7ClfC-NzBThNb0G-td44G3uPJgSPWgNMYD5M3Qkjmfsciis2jF_pRpljMnqrHOrWcId4qgff_JKUdXnkQdtVQTZq2LfUiasFq6fQyD1GQNecK1Hz2S6BTefg76GAWEEkev_jYEf0Jc5B3p_C2xTTziMF6bZh3ltq1a5OeiDiBph2YuI-HUuRDUftEKV3ao3P5IY_TbpGflCDOyrqG7GM_vGf_yJAQn9QiV&amp;sig=Cg0ArKJSzBX69OUmNU55EAE&amp;uach_m=%5BUACH%5D&amp;adurl=&quot;,
+      &quot;method&quot;: &quot;GET&quot;,
+      &quot;failure&quot;: &quot;net::ERR_ABORTED&quot;
+    },
+    {
+      &quot;url&quot;: &quot;https://pagead2.googlesyndication.com/pagead/gen_204?id=av-js&amp;type=fle-fetch-start2&quot;,
+      &quot;method&quot;: &quot;GET&quot;,
+      &quot;failure&quot;: &quot;net::ERR_ABORTED&quot;
+    },
+    {
+      &quot;url&quot;: &quot;https://pagead2.googlesyndication.com/pagead/gen_204?id=av-js&amp;type=colleague-executed&amp;name=4&quot;,
+      &quot;method&quot;: &quot;GET&quot;,
+      &quot;failure&quot;: &quot;net::ERR_ABORTED&quot;
+    },
+    {
+      &quot;url&quot;: &quot;https://securepubads.g.doubleclick.net/pcs/view?xai=AKAOjstzI8tvask9j4buUOshwG7JDCuoTShLfhcy-nubGoqxBUI5X6EwBQ-anPtgEEaqYSxTMuj7cdFJ-BkXgo_m6Zg6qTACdU1F7w9oSrrYVCO65DexxuRc1y4kSLrH9BJdY4f5atYJqlIvCWNgwQX-1YgxQnc0UReO3eb_tjDBEJHdBUZ5EG6nD6ZJSRQDMPlwZd1qr6Q8C--VTCrLpSlNkcsycBIUGvnX25WeKAXY3kUarq8ZbOWHLZkNk04TR5tVDUjQJF1L_pKi2uLzVdNC22sbRSdcrwKyjQXRpcYB8lD9Iy-AbsJ59KqWaS6QI0rY57Zt-Im7HLQp5fv4y3w18KBrh5LJ4BiWR5Mt_6eTxVwpu7ndP9A8lFJ77LygcD95xZ-2DOnojVJndcE9STGNXmAnmWgPVl295LBFVJQcvkVBtAo&amp;sai=AMfl-YQRuyUUnThxZA0PCwpcThKHjK9XZe0r0cEpY2qutJwVuzQDY1jSM1vhrOfPQYcN0t4eyWQUrF-ljnqYlINgyvKbug_TF_WKu580dMn3mrXeeopRfG4z5DGmSncOVtgSuF5Ib_R7Wu7hm5NWcL-VToDzqsRwts9QqzmWLn0eJkpCS8FOYmKpCW4j18omoWhOh65FoTLg074e94jVYSy-rHRgnRrscXSBrZnsKYAQsXLmV_6P0Q7DGxxz9jGQOOouapFHrHmMG7DAv1mZuBvpfkwq-RYLZtHBcjvIWFFaQ84iZ5TTHPFSjbh-1jVL8ZGEXPh4XWYXrTMG-c7hqFuHUksz1rzuORFj4eGNnMjHW0O91vY5QxYrmcWHnN7ex9GEng3T7WHZwuCCEog9&amp;sig=Cg0ArKJSzFSBqwkZPiIhEAE&amp;uach_m=%5BUACH%5D&amp;dett=2&amp;adurl=&quot;,
+      &quot;method&quot;: &quot;GET&quot;,
+      &quot;failure&quot;: &quot;net::ERR_ABORTED&quot;
+    },
+    {
+      &quot;url&quot;: &quot;https://pagead2.googlesyndication.com/pagead/gen_204?id=av-js&amp;type=reach&amp;proto=CAlgAWACaAM%3D&quot;,
+      &quot;method&quot;: &quot;GET&quot;,
+      &quot;failure&quot;: &quot;net::ERR_ABORTED&quot;
+    }
+  ],
+  &quot;badResponses&quot;: [],
+  &quot;timings&quot;: {
+    &quot;domContentLoadedMs&quot;: 2905,
+    &quot;portalSettledMs&quot;: 5923
+  },
+  &quot;performance&quot;: {
+    &quot;navigation&quot;: {
+      &quot;domContentLoaded&quot;: 2736,
+      &quot;loadEventEnd&quot;: 4477,
+      &quot;responseStart&quot;: 1413,
+      &quot;transferSize&quot;: 17527
+    },
+    &quot;paints&quot;: {
+      &quot;first-paint&quot;: 6068,
+      &quot;first-contentful-paint&quot;: 6068
+    }
+  }
+}</pre>
+        </div><div>
+          <h3>mobile</h3>
+          <pre>{
+  &quot;consoleMessages&quot;: [],
+  &quot;networkFailures&quot;: [
+    {
+      &quot;url&quot;: &quot;https://doppel-health.zeabur.app/api/scenes/theme-card-1402f237-f5a6-431f-b1dd-2a16cbece12e.webm&quot;,
+      &quot;method&quot;: &quot;GET&quot;,
+      &quot;failure&quot;: &quot;net::ERR_ABORTED&quot;
+    },
+    {
+      &quot;url&quot;: &quot;https://doppel-health.zeabur.app/api/scenes/theme-card-d7cad316-3a4d-4575-a71d-74736ce6fcdf.webm&quot;,
+      &quot;method&quot;: &quot;GET&quot;,
+      &quot;failure&quot;: &quot;net::ERR_ABORTED&quot;
+    },
+    {
+      &quot;url&quot;: &quot;https://doppel-health.zeabur.app/api/tts?text=%E5%A4%A7%E5%AE%B6%E5%A5%BD%EF%BC%8C%E6%88%91%E6%98%AF%E8%B3%B4%E7%8F%8A%E8%92%82%EF%BC%8C%E5%81%9A%E9%9D%92%E5%B0%91%E5%B9%B4%E7%9D%A1%E7%9C%A0%E4%BF%AE%E5%BE%A9%E7%9A%84%E3%80%82%E6%88%91%E7%9C%8B%E5%88%B0%E7%9A%84%E6%98%AF%EF%BC%8C%E5%85%89%E6%98%AF%E6%99%82%E9%96%93%E9%95%B7%E5%BA%A6%E5%85%B6%E5%AF%A6%E8%A7%A3%E6%B1%BA%E4%B8%8D%E4%BA%86%E5%95%8F%E9%A1%8C%E3%80%82&amp;language=zh&amp;speechPace=%E9%81%A9%E4%B8%AD&amp;speechSpeed=1&amp;voiceId=e4a66454f7a44f63a2cc9e8c044d701d&quot;,
+      &quot;method&quot;: &quot;GET&quot;,
+      &quot;failure&quot;: &quot;net::ERR_ABORTED&quot;
+    }
+  ],
+  &quot;badResponses&quot;: [],
+  &quot;timings&quot;: {
+    &quot;domContentLoadedMs&quot;: 2159,
+    &quot;portalSettledMs&quot;: 5163
+  },
+  &quot;performance&quot;: {
+    &quot;navigation&quot;: {
+      &quot;domContentLoaded&quot;: 2140,
+      &quot;loadEventEnd&quot;: 2710,
+      &quot;responseStart&quot;: 1232,
+      &quot;transferSize&quot;: 17527
+    },
+    &quot;paints&quot;: {
+      &quot;first-paint&quot;: 2640,
+      &quot;first-contentful-paint&quot;: 2640
+    }
+  }
+}</pre>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Artifacts</h2>
+      <p class="note">Raw data: <code>raw-results.json</code> · HTTP probe: <code>http-concurrency.json</code> · Screenshots: <code>screenshots/</code></p>
+    </section>
+  </main>
+</body>
+</html>

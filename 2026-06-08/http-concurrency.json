@@ -1,0 +1,577 @@
+{
+  "startedAt": "2026-06-08T05:24:38.859Z",
+  "finishedAt": "2026-06-08T05:26:55.490Z",
+  "urls": [
+    "https://doppel-health.zeabur.app/group",
+    "https://doppel-health.zeabur.app/api/theme-cards",
+    "https://doppel-health.zeabur.app/api/topic-chips",
+    "https://doppel-health.zeabur.app/api/ad-config"
+  ],
+  "levels": [
+    1,
+    5,
+    10
+  ],
+  "results": {
+    "https://doppel-health.zeabur.app/group": {
+      "1": {
+        "concurrency": 1,
+        "total": 1,
+        "ok": 1,
+        "error": 0,
+        "p50": 1559,
+        "p95": 1559,
+        "max": 1559,
+        "statuses": {
+          "200": 1
+        },
+        "requests": [
+          {
+            "url": "https://doppel-health.zeabur.app/group",
+            "status": 200,
+            "ok": true,
+            "ms": 1559
+          }
+        ]
+      },
+      "5": {
+        "concurrency": 5,
+        "total": 5,
+        "ok": 5,
+        "error": 0,
+        "p50": 1448,
+        "p95": 1473,
+        "max": 1473,
+        "statuses": {
+          "200": 5
+        },
+        "requests": [
+          {
+            "url": "https://doppel-health.zeabur.app/group",
+            "status": 200,
+            "ok": true,
+            "ms": 662
+          },
+          {
+            "url": "https://doppel-health.zeabur.app/group",
+            "status": 200,
+            "ok": true,
+            "ms": 1473
+          },
+          {
+            "url": "https://doppel-health.zeabur.app/group",
+            "status": 200,
+            "ok": true,
+            "ms": 1458
+          },
+          {
+            "url": "https://doppel-health.zeabur.app/group",
+            "status": 200,
+            "ok": true,
+            "ms": 1102
+          },
+          {
+            "url": "https://doppel-health.zeabur.app/group",
+            "status": 200,
+            "ok": true,
+            "ms": 1448
+          }
+        ]
+      },
+      "10": {
+        "concurrency": 10,
+        "total": 10,
+        "ok": 10,
+        "error": 0,
+        "p50": 960,
+        "p95": 1210,
+        "max": 1210,
+        "statuses": {
+          "200": 10
+        },
+        "requests": [
+          {
+            "url": "https://doppel-health.zeabur.app/group",
+            "status": 200,
+            "ok": true,
+            "ms": 625
+          },
+          {
+            "url": "https://doppel-health.zeabur.app/group",
+            "status": 200,
+            "ok": true,
+            "ms": 669
+          },
+          {
+            "url": "https://doppel-health.zeabur.app/group",
+            "status": 200,
+            "ok": true,
+            "ms": 960
+          },
+          {
+            "url": "https://doppel-health.zeabur.app/group",
+            "status": 200,
+            "ok": true,
+            "ms": 641
+          },
+          {
+            "url": "https://doppel-health.zeabur.app/group",
+            "status": 200,
+            "ok": true,
+            "ms": 650
+          },
+          {
+            "url": "https://doppel-health.zeabur.app/group",
+            "status": 200,
+            "ok": true,
+            "ms": 1130
+          },
+          {
+            "url": "https://doppel-health.zeabur.app/group",
+            "status": 200,
+            "ok": true,
+            "ms": 1195
+          },
+          {
+            "url": "https://doppel-health.zeabur.app/group",
+            "status": 200,
+            "ok": true,
+            "ms": 1136
+          },
+          {
+            "url": "https://doppel-health.zeabur.app/group",
+            "status": 200,
+            "ok": true,
+            "ms": 1210
+          },
+          {
+            "url": "https://doppel-health.zeabur.app/group",
+            "status": 200,
+            "ok": true,
+            "ms": 1162
+          }
+        ]
+      }
+    },
+    "https://doppel-health.zeabur.app/api/theme-cards": {
+      "1": {
+        "concurrency": 1,
+        "total": 1,
+        "ok": 1,
+        "error": 0,
+        "p50": 844,
+        "p95": 844,
+        "max": 844,
+        "statuses": {
+          "200": 1
+        },
+        "requests": [
+          {
+            "url": "https://doppel-health.zeabur.app/api/theme-cards",
+            "status": 200,
+            "ok": true,
+            "ms": 844
+          }
+        ]
+      },
+      "5": {
+        "concurrency": 5,
+        "total": 5,
+        "ok": 5,
+        "error": 0,
+        "p50": 872,
+        "p95": 1178,
+        "max": 1178,
+        "statuses": {
+          "200": 5
+        },
+        "requests": [
+          {
+            "url": "https://doppel-health.zeabur.app/api/theme-cards",
+            "status": 200,
+            "ok": true,
+            "ms": 1134
+          },
+          {
+            "url": "https://doppel-health.zeabur.app/api/theme-cards",
+            "status": 200,
+            "ok": true,
+            "ms": 872
+          },
+          {
+            "url": "https://doppel-health.zeabur.app/api/theme-cards",
+            "status": 200,
+            "ok": true,
+            "ms": 871
+          },
+          {
+            "url": "https://doppel-health.zeabur.app/api/theme-cards",
+            "status": 200,
+            "ok": true,
+            "ms": 856
+          },
+          {
+            "url": "https://doppel-health.zeabur.app/api/theme-cards",
+            "status": 200,
+            "ok": true,
+            "ms": 1178
+          }
+        ]
+      },
+      "10": {
+        "concurrency": 10,
+        "total": 10,
+        "ok": 10,
+        "error": 0,
+        "p50": 872,
+        "p95": 1204,
+        "max": 1204,
+        "statuses": {
+          "200": 10
+        },
+        "requests": [
+          {
+            "url": "https://doppel-health.zeabur.app/api/theme-cards",
+            "status": 200,
+            "ok": true,
+            "ms": 1154
+          },
+          {
+            "url": "https://doppel-health.zeabur.app/api/theme-cards",
+            "status": 200,
+            "ok": true,
+            "ms": 864
+          },
+          {
+            "url": "https://doppel-health.zeabur.app/api/theme-cards",
+            "status": 200,
+            "ok": true,
+            "ms": 859
+          },
+          {
+            "url": "https://doppel-health.zeabur.app/api/theme-cards",
+            "status": 200,
+            "ok": true,
+            "ms": 856
+          },
+          {
+            "url": "https://doppel-health.zeabur.app/api/theme-cards",
+            "status": 200,
+            "ok": true,
+            "ms": 872
+          },
+          {
+            "url": "https://doppel-health.zeabur.app/api/theme-cards",
+            "status": 200,
+            "ok": true,
+            "ms": 876
+          },
+          {
+            "url": "https://doppel-health.zeabur.app/api/theme-cards",
+            "status": 200,
+            "ok": true,
+            "ms": 1204
+          },
+          {
+            "url": "https://doppel-health.zeabur.app/api/theme-cards",
+            "status": 200,
+            "ok": true,
+            "ms": 1198
+          },
+          {
+            "url": "https://doppel-health.zeabur.app/api/theme-cards",
+            "status": 200,
+            "ok": true,
+            "ms": 1174
+          },
+          {
+            "url": "https://doppel-health.zeabur.app/api/theme-cards",
+            "status": 200,
+            "ok": true,
+            "ms": 866
+          }
+        ]
+      }
+    },
+    "https://doppel-health.zeabur.app/api/topic-chips": {
+      "1": {
+        "concurrency": 1,
+        "total": 1,
+        "ok": 1,
+        "error": 0,
+        "p50": 537,
+        "p95": 537,
+        "max": 537,
+        "statuses": {
+          "200": 1
+        },
+        "requests": [
+          {
+            "url": "https://doppel-health.zeabur.app/api/topic-chips",
+            "status": 200,
+            "ok": true,
+            "ms": 537
+          }
+        ]
+      },
+      "5": {
+        "concurrency": 5,
+        "total": 5,
+        "ok": 5,
+        "error": 0,
+        "p50": 560,
+        "p95": 562,
+        "max": 562,
+        "statuses": {
+          "200": 5
+        },
+        "requests": [
+          {
+            "url": "https://doppel-health.zeabur.app/api/topic-chips",
+            "status": 200,
+            "ok": true,
+            "ms": 537
+          },
+          {
+            "url": "https://doppel-health.zeabur.app/api/topic-chips",
+            "status": 200,
+            "ok": true,
+            "ms": 560
+          },
+          {
+            "url": "https://doppel-health.zeabur.app/api/topic-chips",
+            "status": 200,
+            "ok": true,
+            "ms": 561
+          },
+          {
+            "url": "https://doppel-health.zeabur.app/api/topic-chips",
+            "status": 200,
+            "ok": true,
+            "ms": 560
+          },
+          {
+            "url": "https://doppel-health.zeabur.app/api/topic-chips",
+            "status": 200,
+            "ok": true,
+            "ms": 562
+          }
+        ]
+      },
+      "10": {
+        "concurrency": 10,
+        "total": 10,
+        "ok": 10,
+        "error": 0,
+        "p50": 556,
+        "p95": 583,
+        "max": 583,
+        "statuses": {
+          "200": 10
+        },
+        "requests": [
+          {
+            "url": "https://doppel-health.zeabur.app/api/topic-chips",
+            "status": 200,
+            "ok": true,
+            "ms": 554
+          },
+          {
+            "url": "https://doppel-health.zeabur.app/api/topic-chips",
+            "status": 200,
+            "ok": true,
+            "ms": 554
+          },
+          {
+            "url": "https://doppel-health.zeabur.app/api/topic-chips",
+            "status": 200,
+            "ok": true,
+            "ms": 555
+          },
+          {
+            "url": "https://doppel-health.zeabur.app/api/topic-chips",
+            "status": 200,
+            "ok": true,
+            "ms": 539
+          },
+          {
+            "url": "https://doppel-health.zeabur.app/api/topic-chips",
+            "status": 200,
+            "ok": true,
+            "ms": 567
+          },
+          {
+            "url": "https://doppel-health.zeabur.app/api/topic-chips",
+            "status": 200,
+            "ok": true,
+            "ms": 569
+          },
+          {
+            "url": "https://doppel-health.zeabur.app/api/topic-chips",
+            "status": 200,
+            "ok": true,
+            "ms": 556
+          },
+          {
+            "url": "https://doppel-health.zeabur.app/api/topic-chips",
+            "status": 200,
+            "ok": true,
+            "ms": 583
+          },
+          {
+            "url": "https://doppel-health.zeabur.app/api/topic-chips",
+            "status": 200,
+            "ok": true,
+            "ms": 571
+          },
+          {
+            "url": "https://doppel-health.zeabur.app/api/topic-chips",
+            "status": 200,
+            "ok": true,
+            "ms": 571
+          }
+        ]
+      }
+    },
+    "https://doppel-health.zeabur.app/api/ad-config": {
+      "1": {
+        "concurrency": 1,
+        "total": 1,
+        "ok": 1,
+        "error": 0,
+        "p50": 236,
+        "p95": 236,
+        "max": 236,
+        "statuses": {
+          "200": 1
+        },
+        "requests": [
+          {
+            "url": "https://doppel-health.zeabur.app/api/ad-config",
+            "status": 200,
+            "ok": true,
+            "ms": 236
+          }
+        ]
+      },
+      "5": {
+        "concurrency": 5,
+        "total": 5,
+        "ok": 5,
+        "error": 0,
+        "p50": 247,
+        "p95": 256,
+        "max": 256,
+        "statuses": {
+          "200": 5
+        },
+        "requests": [
+          {
+            "url": "https://doppel-health.zeabur.app/api/ad-config",
+            "status": 200,
+            "ok": true,
+            "ms": 242
+          },
+          {
+            "url": "https://doppel-health.zeabur.app/api/ad-config",
+            "status": 200,
+            "ok": true,
+            "ms": 248
+          },
+          {
+            "url": "https://doppel-health.zeabur.app/api/ad-config",
+            "status": 200,
+            "ok": true,
+            "ms": 247
+          },
+          {
+            "url": "https://doppel-health.zeabur.app/api/ad-config",
+            "status": 200,
+            "ok": true,
+            "ms": 236
+          },
+          {
+            "url": "https://doppel-health.zeabur.app/api/ad-config",
+            "status": 200,
+            "ok": true,
+            "ms": 256
+          }
+        ]
+      },
+      "10": {
+        "concurrency": 10,
+        "total": 10,
+        "ok": 10,
+        "error": 0,
+        "p50": 258,
+        "p95": 280,
+        "max": 280,
+        "statuses": {
+          "200": 10
+        },
+        "requests": [
+          {
+            "url": "https://doppel-health.zeabur.app/api/ad-config",
+            "status": 200,
+            "ok": true,
+            "ms": 237
+          },
+          {
+            "url": "https://doppel-health.zeabur.app/api/ad-config",
+            "status": 200,
+            "ok": true,
+            "ms": 261
+          },
+          {
+            "url": "https://doppel-health.zeabur.app/api/ad-config",
+            "status": 200,
+            "ok": true,
+            "ms": 251
+          },
+          {
+            "url": "https://doppel-health.zeabur.app/api/ad-config",
+            "status": 200,
+            "ok": true,
+            "ms": 243
+          },
+          {
+            "url": "https://doppel-health.zeabur.app/api/ad-config",
+            "status": 200,
+            "ok": true,
+            "ms": 248
+          },
+          {
+            "url": "https://doppel-health.zeabur.app/api/ad-config",
+            "status": 200,
+            "ok": true,
+            "ms": 264
+          },
+          {
+            "url": "https://doppel-health.zeabur.app/api/ad-config",
+            "status": 200,
+            "ok": true,
+            "ms": 271
+          },
+          {
+            "url": "https://doppel-health.zeabur.app/api/ad-config",
+            "status": 200,
+            "ok": true,
+            "ms": 258
+          },
+          {
+            "url": "https://doppel-health.zeabur.app/api/ad-config",
+            "status": 200,
+            "ok": true,
+            "ms": 280
+          },
+          {
+            "url": "https://doppel-health.zeabur.app/api/ad-config",
+            "status": 200,
+            "ok": true,
+            "ms": 271
+          }
+        ]
+      }
+    }
+  }
+}
