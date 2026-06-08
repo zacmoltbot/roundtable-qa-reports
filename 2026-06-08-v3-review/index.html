@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RoundTable V3 Review Report - 2026-06-08</title>
+  <style>
+    :root{--bg:#f6f8fb;--card:#fff;--ink:#172033;--muted:#657084;--line:#dfe5ed;--pass:#127a42;--warn:#a96300;--fail:#b42318;--block:#8a4b00;--nt:#5f6470;--p1:#315f95;--p2:#6f559b;--p3:#0f766e;--cross:#6b5b35}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 system-ui,-apple-system,Segoe UI,sans-serif}.wrap{max-width:1240px;margin:auto;padding:28px}h1{font-size:32px;margin:0 0 6px}h2{margin:30px 0 12px}h3{margin:0 0 8px}.lead{color:var(--muted)}.banner,.card,.stage{background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:0 6px 24px #1720330b}.banner{padding:20px;border-left:7px solid var(--warn)}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:18px 0}.card{padding:16px}.n{font-size:26px;font-weight:800}.badge{display:inline-block;padding:3px 9px;border-radius:999px;font-weight:750;font-size:12px}.PASS{color:var(--pass);background:#e4f6ed}.WARN,.INCONCLUSIVE{color:var(--warn);background:#fff3dc}.FAIL{color:var(--fail);background:#fde9e7}.BLOCKED{color:var(--block);background:#ffedda}.NOTTESTED{color:var(--nt);background:#eceff3}.COMPLETE{color:#125a9a;background:#e7f2ff}.PARTIAL{color:#6b4e00;background:#fff5cc}.stage{overflow:hidden;margin:18px 0}.stage-head{padding:15px 18px;color:#fff}.p1 .stage-head{background:var(--p1)}.p2 .stage-head{background:var(--p2)}.p3 .stage-head{background:var(--p3)}.cross .stage-head{background:var(--cross)}.rows{padding:8px}.row{display:grid;grid-template-columns:70px 1.15fr 125px 150px 1.45fr 1.45fr 1.55fr;gap:10px;padding:13px 8px;border-bottom:1px solid #edf0f4}.row:last-child{border:0}.label{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);font-weight:800}.cell{min-width:0}.evidence a{display:block;color:#1261a0;overflow-wrap:anywhere}.table{overflow:auto}.table table{border-collapse:collapse;width:100%;min-width:860px;background:#fff}.table th,.table td{text-align:left;padding:10px;border:1px solid var(--line);vertical-align:top}.note{padding:14px;background:#fff8e5;border-left:5px solid #c78100;border-radius:8px}.links a{display:block;margin:4px 0;color:#1261a0}.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.gallery img{width:100%;border-radius:12px;border:1px solid var(--line)}code{background:#edf1f6;padding:2px 5px;border-radius:5px}@media(max-width:900px){.grid,.gallery{grid-template-columns:1fr}.row{display:block}.cell{margin:9px 0}}
+  </style>
+</head>
+<body>
+<main class="wrap">
+  <h1>RoundTable V3 Review Report</h1>
+  <p class="lead">Target: <code>https://doppel-health.zeabur.app/group</code> · Run evidence: 2026-06-08 05:24-05:26 UTC · Report status: Review Draft, not lockdown.</p>
+
+  <section class="banner">
+    <h3>Corrected verdict: INCONCLUSIVE FOR V3 USER QA / LIMITED HEALTH EVIDENCE PASSED</h3>
+    <p><strong>What changed:</strong> the previous 6/8 report treated a low-risk health smoke as if it were enough for review. Under the V3 rules, this is not a complete RoundTable user QA run. The evidence supports portal load, disclaimer visibility, mobile chat entry, one mobile text-send smoke, strict desktop chat entry, and low-risk GET concurrency. It does not cover most V3 functional criteria.</p>
+    <p><strong>Lockdown status:</strong> not okay for lockdown yet. This report is the corrected V3-style accounting of what was and was not tested.</p>
+  </section>
+
+  <div class="grid">
+    <div class="card"><div class="n">3</div>Product PASS from current evidence</div>
+    <div class="card"><div class="n">0</div>Product FAIL found in this limited run</div>
+    <div class="card"><div class="n">11</div>V3 items NOT TESTED</div>
+    <div class="card"><div class="n">2</div>V3 items INCONCLUSIVE</div>
+  </div>
+
+  <h2>What I Missed</h2>
+  <div class="table">
+    <table>
+      <tr><th>V3 rule</th><th>What I sent before</th><th>Gap</th><th>Correction in this report</th></tr>
+      <tr><td>Separate Product Result from QA Execution Status.</td><td>Single <code>PASS_WITH_WARNINGS</code> health verdict.</td><td>It hid that most user QA criteria were not executed.</td><td>Each F-item now has Product Result and QA Execution separately.</td></tr>
+      <tr><td>Functional Matrix must include What It Tests, Pass Criteria, Verified, Missing, Reason, Evidence.</td><td>Only health checks and warnings.</td><td>No V3 pass criteria, no non-PASS explanation.</td><td>16-item matrix below follows the V3 structure.</td></tr>
+      <tr><td>Main verdict must prioritize user-observable outcomes.</td><td>Mixed browser/network diagnostics with user journey.</td><td>HTTP 200 and <code>ERR_ABORTED</code> evidence was overweighted.</td><td>Network probe is now appendix/supporting evidence.</td></tr>
+      <tr><td>User-facing timings only: action to visible/usable/audible result.</td><td>Included DOM/content/network timings.</td><td>Those are technical timings, not V3 UX timings.</td><td>Only available user-facing timing is listed; missing timings are marked not tested.</td></tr>
+      <tr><td>Audio/STT must not be inferred from request or play attempt.</td><td>No V3 audio/STT rerun.</td><td>F-06/F-07/F-09/F-13/F-14 cannot be claimed.</td><td>They are NOT TESTED, except chat text-send smoke remains separate from STT.</td></tr>
+      <tr><td>Review draft stays open until Edward says lockdown.</td><td>Report sounded ready for review without the V3 caveat.</td><td>Could be misread as a complete QA pass.</td><td>Report explicitly says not lockdown.</td></tr>
+    </table>
+  </div>
+
+  <h2>Functional Matrix</h2>
+  <p class="note"><strong>Taxonomy applied:</strong> <code>PASS</code> only when V3 pass criteria were directly verified. Unexecuted tests are <code>NOT TESTED</code>. Incomplete evidence is <code>INCONCLUSIVE</code>, not product PASS.</p>
+
+  <div id="matrix"></div>
+
+  <h2>User-Facing Timing Coverage</h2>
+  <div class="table">
+    <table>
+      <tr><th>Area</th><th>V3 definition</th><th>Observed 6/8 evidence</th><th>Status</th></tr>
+      <tr><td>Initial page</td><td>Begin navigation -&gt; first meaningful page content visible.</td><td>Desktop and mobile portal loaded with visible topic cards/disclaimer content. Exact user-visible timestamp was not instrumented; technical portal-settled values were desktop 5.923s.</td><td><span class="badge INCONCLUSIVE">INCONCLUSIVE</span></td></tr>
+      <tr><td>Hot topic / chat entry</td><td>Click topic -&gt; chat topic and controls visible/usable.</td><td>Mobile reached <code>/group/chat</code>; supplemental strict desktop smoke confirmed <code>加入這場討論</code> enters chat.</td><td><span class="badge PASS">PASS</span></td></tr>
+      <tr><td>Text interjection</td><td>Send click -&gt; relevant expert response visible or audibly verified.</td><td>Mobile send button was clicked. Relevant expert response was not verified.</td><td><span class="badge INCONCLUSIVE">INCONCLUSIVE</span></td></tr>
+      <tr><td>Custom topic, summary, STT, audio, pause/resume</td><td>User action -&gt; visible/usable/audible result.</td><td>Not executed in the 6/8 health smoke.</td><td><span class="badge NOTTESTED">NOT TESTED</span></td></tr>
+    </table>
+  </div>
+
+  <h2>Health Evidence Appendix</h2>
+  <div class="table">
+    <table>
+      <tr><th>Probe</th><th>Concurrency</th><th>Result</th><th>p50 / p95 / max</th></tr>
+      <tr><td><code>/group</code></td><td>1 / 5 / 10</td><td>16/16 HTTP 200, 0 errors</td><td>1559 / 1559 / 1559 ms; 1448 / 1473 / 1473 ms; 960 / 1210 / 1210 ms</td></tr>
+      <tr><td><code>/api/theme-cards</code></td><td>1 / 5 / 10</td><td>16/16 HTTP 200, 0 errors</td><td>844 / 844 / 844 ms; 872 / 1178 / 1178 ms; 872 / 1204 / 1204 ms</td></tr>
+      <tr><td><code>/api/topic-chips</code></td><td>1 / 5 / 10</td><td>16/16 HTTP 200, 0 errors</td><td>537 / 537 / 537 ms; 560 / 562 / 562 ms; 556 / 583 / 583 ms</td></tr>
+      <tr><td><code>/api/ad-config</code></td><td>1 / 5 / 10</td><td>16/16 HTTP 200, 0 errors</td><td>236 / 236 / 236 ms; 247 / 256 / 256 ms; 258 / 280 / 280 ms</td></tr>
+    </table>
+  </div>
+
+  <h2>Evidence Screenshots</h2>
+  <div class="gallery">
+    <figure><img src="../2026-06-08/screenshots/desktop-portal.png" alt="Desktop portal"><figcaption>Desktop portal / disclaimer evidence</figcaption></figure>
+    <figure><img src="../2026-06-08/screenshots/mobile-chat.png" alt="Mobile chat"><figcaption>Mobile chat entry evidence</figcaption></figure>
+    <figure><img src="../2026-06-08/desktop-strict-chat.png" alt="Strict desktop chat"><figcaption>Supplemental strict desktop chat entry</figcaption></figure>
+  </div>
+
+  <h2>Artifacts</h2>
+  <div class="card links">
+    <a href="../2026-06-08/">Original 6/8 health report</a>
+    <a href="../2026-06-08/raw-results.json">Original raw health results</a>
+    <a href="../2026-06-08/http-concurrency.json">Original HTTP concurrency probe</a>
+  </div>
+</main>
+
+<script>
+const stages=[
+  ["Page 1 - Topic Selection / Homepage","p1","Consent, recommended topic, and homepage voice/text entry."],
+  ["Page 2 - Expert Matching / Selection","p2","Custom recommendations, manual override, and selected expert carryover."],
+  ["Page 3 - Group Chat","p3","Speech, turns, interjections, controls, summaries, STT, and exit."],
+  ["Cross-page / Overall Experience","cross","Mobile usability and visible journey stability."]
+];
+const rows=[
+["F-01","Page 1 - Topic Selection / Homepage","First-visit disclaimer and consent","PASS","COMPLETE","Disclaimer and privacy-link content visible; accept button visible on desktop/mobile portal evidence.","Did not separately verify expand/read behavior beyond visible captured content.","Current health evidence is enough for basic consent presence but not every microinteraction.","../2026-06-08/screenshots/desktop-portal.png"],
+["F-02","Page 1 - Topic Selection / Homepage","Popular topic card to chat","PASS","COMPLETE","Mobile reached /group/chat from topic flow; strict desktop smoke confirmed Join Discussion enters chat.","No repeated 3-run V3 timing set.","Core user outcome verified; performance repeat coverage missing.","../2026-06-08/screenshots/mobile-chat.png"],
+["F-13","Page 1 - Topic Selection / Homepage","Homepage voice input and STT","NOT TESTED","NOT TESTED","Homepage voice button existed.","No fake-mic Mandarin WAV STT, transcript, or expert-selection submission was executed.","6/8 health smoke did not run V3 STT flow.","../2026-06-08/raw-results.json"],
+["F-03","Page 2 - Expert Matching / Selection","Custom topic expert recommendations","NOT TESTED","NOT TESTED","Desktop accidentally opened custom topic input state.","No custom topic submission, recommendation cards, scores, or relevance check.","Old desktop journey stopped before true recommendation flow.","../2026-06-08/raw-results.json"],
+["F-04","Page 2 - Expert Matching / Selection","Manual expert selection override","NOT TESTED","NOT TESTED","None.","No remove/add expert action; no final set carryover proof.","Not in the 6/8 health scope.","../2026-06-08/raw-results.json"],
+["F-05","Page 2 - Expert Matching / Selection","Start discussion from expert selection","NOT TESTED","NOT TESTED","None.","No custom-topic start-discussion path verified.","Not in the 6/8 health scope.","../2026-06-08/raw-results.json"],
+["F-06","Page 3 - Group Chat","Character voice output","NOT TESTED","NOT TESTED","A mobile TTS request abort was observed but not treated as product evidence.","No actual browser/system audio capture; no non-silence/transcript/content match.","6/8 run did not perform V3 audio verification.","../2026-06-08/raw-results.json"],
+["F-07","Page 3 - Group Chat","Expert-to-expert speaker rotation","NOT TESTED","NOT TESTED","None.","No multiple expert turn sequence with visible + audible verification.","Not in the 6/8 health scope.","../2026-06-08/raw-results.json"],
+["F-08","Page 3 - Group Chat","Text interjection and semantic response","INCONCLUSIVE","PARTIAL EXECUTION","Mobile send button clicked after entering chat.","No proof that a semantically relevant expert response appeared or was heard.","Send-path smoke is insufficient for V3 PASS.","../2026-06-08/screenshots/mobile-final.png"],
+["F-09","Page 3 - Group Chat","Pause and resume","NOT TESTED","NOT TESTED","Pause button was visible in mobile chat.","No pause click, resume click, speech stop/resume, or duplication check.","Not in the 6/8 health scope.","../2026-06-08/screenshots/mobile-chat.png"],
+["F-10","Page 3 - Group Chat","Early summary behavior","NOT TESTED","NOT TESTED","Summary button was visible in mobile chat.","No summary click or insufficient-content modal check.","Not in the 6/8 health scope.","../2026-06-08/screenshots/mobile-chat.png"],
+["F-11","Page 3 - Group Chat","Back and confirm exit","NOT TESTED","NOT TESTED","Back button was visible in mobile chat.","No confirm/cancel/return flow executed.","Not in the 6/8 health scope.","../2026-06-08/screenshots/mobile-chat.png"],
+["F-14","Page 3 - Group Chat","Chat push-to-talk and STT","NOT TESTED","NOT TESTED","No PTT/STT evidence collected.","No click-to-toggle recording, Mandarin WAV STT, transcript, or repeat response proof.","Not in the 6/8 health scope.","../2026-06-08/raw-results.json"],
+["F-15","Page 3 - Group Chat","Full summary with sufficient history","NOT TESTED","NOT TESTED","None.","No sufficient-history discussion or full-summary content check.","Not in the 6/8 health scope.","../2026-06-08/raw-results.json"],
+["F-12","Cross-page / Overall Experience","Mobile viewport usability","PASS","COMPLETE","Mobile 390x844 portal and chat screenshots show core controls visible and operable enough for smoke flow.","No full mobile sweep across all V3 flows.","Core mobile smoke passed; deeper V3 mobile coverage still missing.","../2026-06-08/screenshots/mobile-chat.png"],
+["F-16","Cross-page / Overall Experience","User-flow stability","INCONCLUSIVE","PARTIAL EXECUTION","No 4xx/5xx responses; no visible crash in captured portal/chat smoke; low-risk GET probe all 200.","Desktop automation misclassified topic-input state as chat; 8 ERR_ABORTED requests; no full V3 journey.","Limited smoke did not show a user-visible crash, but full journey stability was not tested.","../2026-06-08/http-concurrency.json"]
+];
+const matrix=document.getElementById("matrix");
+for(const [name,cls,desc] of stages){
+  const s=document.createElement("section");s.className="stage "+cls;
+  s.innerHTML=`<div class="stage-head"><h3>${name}</h3><div>${desc}</div></div><div class="rows"></div>`;
+  const box=s.querySelector(".rows");
+  for(const r of rows.filter(x=>x[1]===name)){
+    const pr=r[3].replaceAll(" ","");
+    const qe=r[4].replaceAll(" ","");
+    box.innerHTML+=`<div class="row"><div class="cell"><div class="label">ID</div><strong>${r[0]}</strong></div><div class="cell"><div class="label">What it tests</div><strong>${r[2]}</strong></div><div class="cell"><div class="label">Product result</div><span class="badge ${pr}">${r[3]}</span></div><div class="cell"><div class="label">QA execution</div><span class="badge ${qe}">${r[4]}</span></div><div class="cell"><div class="label">Verified / passed</div>${r[5]}</div><div class="cell"><div class="label">Missing / failed</div>${r[6]}</div><div class="cell evidence"><div class="label">Reason / evidence</div>${r[7]}<a href="${r[8]}">${r[8]}</a></div></div>`;
+  }
+  matrix.appendChild(s);
+}
+</script>
+</body>
+</html>
