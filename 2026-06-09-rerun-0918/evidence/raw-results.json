@@ -1,0 +1,1092 @@
+{
+  "runId": "roundtable-health-2026-06-09-rerun-0918",
+  "target": "https://doppel-health.zeabur.app/group",
+  "started": "2026-06-09T09:19:35.711Z",
+  "rule": "latest runbook checked 2026-06-09",
+  "environment": {
+    "wavExists": true
+  },
+  "homepage": {
+    "disclaimerVisible": true,
+    "stt": {
+      "result": "PASS",
+      "ms": 10209,
+      "textSample": "熱門話題\n睡眠品質，可能比睡眠時間更重要？\n睡眠修復\n家庭照護\n加入這場討論\n喝豆漿、吃豆腐防乳癌有秘訣！\n營養管理\n內科健康\n加入這場討論\n60歲像40歲，正在從幻想變成生意?\n營養管理\n中醫養生\n預防保健\n加入這場討論\n長時間看螢幕讓眼睛太疲勞，怎麼改善？\n復健治療\n內科健康\n家庭照護\n加入這場討論\n長時間坐辦公室導致肩頸痠痛，該如何舒緩？\n睡眠修復\n內科健康\n中醫養生\n加入這場討論\n您想討論什麼健康主題？\n\n這是一段語音辨識測試。我最近晚上睡不好，半夜常常醒來，想請專家提供改善睡眠的建議。這是一段語音辨識測試，我最近晚上。\n\n尋找專家\n本內容由人工智慧(AI)生成，可能包括不準確資訊，僅供創意與個人化參考。做出決定前請自行查證，本公司不保證內容之絕對正確性，互動過程請避免輸入個人資料。"
+    }
+  },
+  "attempts": [
+    {
+      "run": 1,
+      "started": "2026-06-09T09:20:09.647Z",
+      "failedRequests": [
+        {
+          "url": "https://securepubads.g.doubleclick.net/pcs/view?xai=AKAOjsujyf61ncnaeoCBr9tdFx2W7YyOJ3dBsqCaOQzUijKtfYUVjdb94Au1uNpLk61NRK49huE074XWajOkZcJwiSwnE0PiJAB-fZjUD36Ei_Dp9mcuJBXA0E4G0dlzWJwFbqql9LYozcRqF3UqVyTZ5_ofoi7P6tpBF2fw6bKx8Z0ylfoLyzMo2avvMVvIn0ZIaLUjeKOQg4WwPTyLSusi67wMCmtCKwaEl86li5nGatmmNh8OE3JhMVu-Tfh9feraz29oXK37Kmke0wHWNEM9LKI4mgqrlkGL3kx76RG3eEF2uJdDzEBRJxJhKKa5NvSv71xheD0TiVcUV_2b0LDzB_R-xvRJwu7mKyPvI_NothD95JGn8ilxE-XQrj9_ruWb_GInEtsLLxmn9_y7-tMRRc1KspLCyJXlXOACOJkKZYY0&sai=AMfl-YTjC4Q2hqzXSPHyof-qfLZDGyLdQw1zsWQkLrNNcnileu8FOuIwHc4-9bG_Yq8dq7ytzj4Zv4DzAgPkBFZE94QGXQHqYZhKtWGKg_Y8KotM8pehRhYn1tELoUNkmM5o-5i9FB3pln2Z_Fri8gwEB6IJALXHrRntj3XrT3wT44i40PvnInaOIM6ugC2pbesng4oDygp4rtVuEBI1U2GQKwMLgBzeN9BXSOcDiQ4utBljWgMaHKuE7wqNCZARZ2QQho8NdVQiAXH_swa653lH-a9i_dLhpucl7IoKuDGwbsmOfZdy9BS2ZYqbhLskN8wfI2pq5wPk78-kmhw4UDLMDrGNrsSqqhcYnHrikfJlWia-PLgMkijrQOsfAapBZfs8TT6cil9Np9v9tkvW&sig=Cg0ArKJSzOUiKJ2k6pp8EAE&uach_m=%5BUACH%5D&adurl=",
+          "reason": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://pagead2.googlesyndication.com/pagead/gen_204?id=av-js&type=fle-fetch-start2",
+          "reason": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://pagead2.googlesyndication.com/pagead/gen_204?id=av-js&type=colleague-executed&name=4",
+          "reason": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://securepubads.g.doubleclick.net/pcs/view?xai=AKAOjst43gUzIx3TX4i3-LYnq3l4rjCN4e4-0v2fRUafxu-8ZWQztJiYu4ILeSHWoESDCCflqtkGMWba5mY4yhNgtIhrA5CqjVBAnyySCEmRdFv5pjk9_2Bk_yWBUEFo3RdkIand32cAOULk57Qd2CLh8-y1DovM50Bge_SpToQuJUv9CNLWpSPHd9w8oXUjdSTJGR6Q9DaSk0UOwSsl4xsi_Bzh61g7jIAnXNmTtcb_uZClt_y2ROzscTOQTDyAK29HbI059zC2lvTTUFKuK6MDPuL4bPzkw0kD8L0UaKJR03jjt9BJmGAPt2zftqI7r9M4JgeYn8_kjQ0axBGOtMS2jpHr-UcKr26tZEenUS4tvG6fJRzSUsAYG_FEneFXp9B3EgTp0OYfI0pD53azt22AiEQK0t3CTGBgigKeCRM_NWPArMY&sai=AMfl-YSGdi_vuPbmlARHMnMRGZ_nNsqbJ62MvFWhJqb4itr0PtDGSjUBqtl1dQGAzOnDqBYHVI4HzwTlk9BguzOzywudH6CpEp49_3L8Uwi-mV4tZWeJ4fAa6QYT4_mImkCsJcHFctxCoZtcazbdLt-XLYp_jZimalPX50CPM-6fwmdTKqbeDXLKRfG3WksmCg81bF7oHtdbmmfSCpH-o6rta_7o4m_hW7zFA7LLrQkeKqCQKPWep66J6c5GZN-Mwr8FfukCpVy4Eux24EEvJZHzuzobB4kAETgsnYiQwrMls-iKVhbKbb1IcSLn0_1gMXtdo3LUXeKIfLv-SjQqKYc0l9Y31ukUOdKOm6lWkQ1E0wWtkz50aEThCCCXl-xMwB4bFp5hbBQ3BEeDI6vW&sig=Cg0ArKJSzOv-xKjikRZfEAE&uach_m=%5BUACH%5D&dett=2&adurl=",
+          "reason": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://pagead2.googlesyndication.com/pagead/gen_204?id=av-js&type=reach&proto=CAlgAWACaAM%3D",
+          "reason": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://pagead2.googlesyndication.com/pcs/activeview?xai=AKAOjstt-JOaPPR8zRrQxcQu3ucbSZcaB19kmPboX-R2-8FiQU2JoVdl_UtRUfJBDRzAsANp0InraZqqNMW5NRx5o_U1iRmrhAteN_UvTWvLK5JufeypKAxAGl4PAs5pHHxJeTqn4_YXW4Vv1PV-sfVZ9fhc2I9sHHRh69UCSMJxU5jve64U5o5MuLo13G0z9g&sig=Cg0ArKJSzHVPGVGJQXzfEAE&id=lidartos&mcvt=1782&p=1254,356,1344,1084&tm=4637&tu=2855.5&mtos=1782,1782,1782,1782,1782&tos=1782,0,0,0,0&v=20260603&bin=7&avms=nio&bs=1440,1000&mc=1&vu=1&app=0&itpl=0&adk=3077673317&rs=4&la=0&cr=0&uach=WyJMaW51eCIsIiIsIng4NiIsIiIsIjE0OS4wLjc4MjcuNTMiLG51bGwsMCxudWxsLCI2NCIsW1siQ2hyb21pdW0iLCIxNDkuMC43ODI3LjUzIl0sWyJOb3QpQTtCcmFuZCIsIjI0LjAuMC4wIl1dLDBd&vs=4&r=b&co=7692961301&rst=1780996813290&rpt=557&isd=0&lsd=0&ec=1&met=mue&wmsd=0&pbe=0&fle=0&vae=0&spb=0&sfl=0&ffslot=0&reach=8&io2=0",
+          "reason": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://pagead2.googlesyndication.com/pagead/gen_204?id=av-js&type=fle-fetch-pagehide2",
+          "reason": "net::ERR_ABORTED"
+        }
+      ],
+      "badResponses": [],
+      "cardsMs": 3229,
+      "beforeStart": {
+        "url": "https://doppel-health.zeabur.app/group/select?topic=%E6%88%91%E6%9C%80%E8%BF%91%E6%99%9A%E4%B8%8A%E7%9D%A1%E4%B8%8D%E5%A5%BD%EF%BC%8C%E5%8D%8A%E5%A4%9C%E5%B8%B8%E5%B8%B8%E9%86%92%E4%BE%86%EF%BC%8C%E6%83%B3%E8%AB%8B%E5%B0%88%E5%AE%B6%E6%8F%90%E4%BE%9B%E6%94%B9%E5%96%84%E7%9D%A1%E7%9C%A0%E7%9A%84%E5%BB%BA%E8%AD%B0%E3%80%82&projectTheme=%E5%81%A5%E5%BA%B7%E9%86%AB%E7%99%82",
+        "text": "返回\n正在為你尋找適合的專家\n討論話題：我最近晚上睡不好，半夜常常醒來，想請專家提供改善睡眠的建議。\n配對中...\n開始討論\n配對中...\n全部\n家庭照護\n復健治療\n內科健康\n睡眠修復\n預防保健\n中醫養生\n營養管理\n本內容由人工智慧(AI)生成，可能包括不準確資訊，僅供創意與個人化參考。做出決定前請自行查證，本公司不保證內容之絕對正確性，互動過程請避免輸入個人資料。",
+        "buttons": [
+          {
+            "i": 0,
+            "text": "返回",
+            "aria": "返回",
+            "disabled": false
+          },
+          {
+            "i": 1,
+            "text": "開始討論",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "i": 2,
+            "text": "配對中...",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "i": 3,
+            "text": "全部",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "i": 4,
+            "text": "家庭照護",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "i": 5,
+            "text": "復健治療",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "i": 6,
+            "text": "內科健康",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "i": 7,
+            "text": "睡眠修復",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "i": 8,
+            "text": "預防保健",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "i": 9,
+            "text": "中醫養生",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "i": 10,
+            "text": "營養管理",
+            "aria": null,
+            "disabled": false
+          }
+        ]
+      },
+      "result": "FAIL",
+      "error": "page.waitForURL: Timeout 45000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation until \"load\"\n============================================================",
+      "after": {
+        "url": "https://doppel-health.zeabur.app/group/select?topic=%E6%88%91%E6%9C%80%E8%BF%91%E6%99%9A%E4%B8%8A%E7%9D%A1%E4%B8%8D%E5%A5%BD%EF%BC%8C%E5%8D%8A%E5%A4%9C%E5%B8%B8%E5%B8%B8%E9%86%92%E4%BE%86%EF%BC%8C%E6%83%B3%E8%AB%8B%E5%B0%88%E5%AE%B6%E6%8F%90%E4%BE%9B%E6%94%B9%E5%96%84%E7%9D%A1%E7%9C%A0%E7%9A%84%E5%BB%BA%E8%AD%B0%E3%80%82&projectTheme=%E5%81%A5%E5%BA%B7%E9%86%AB%E7%99%82",
+        "text": "返回\n已選的AI虛擬專家\n你也可從下方換成其他專家\n討論話題：我最近晚上睡不好，半夜常常醒來，想請專家提供改善睡眠的建議。\n家庭照護\n林珍妮\n家庭健康與健康識能整合專家 / 梳理反覆不適與慢性健康困擾 / 建立以家庭為核心的健康照護方式\n開始討論\n推薦\n全部\n家庭照護\n復健治療\n內科健康\n睡眠修復\n預防保健\n中醫養生\n營養管理\n家庭照護\n林珍妮\n75%\n符合\n家庭照護\n林珍妮\n探索身體警訊與多元引導\n家庭健康與健康識能整合專家\n梳理反覆不適與慢性健康困擾\n建立以家庭為核心的健康照護方式\n營養管理\n林安娜\n營養管理\n林安娜\n讓健康飲食真正融入生活節奏\n家庭營養規劃專家\n讓健康飲食真正走進日常生活\n建立身體營養基礎\n中醫養生\n沈露西\n中醫養生\n沈露西\n從節氣與體質重新理解身體狀態\n邏輯嚴密的經絡分析者\n專注根源調理的治本之道\n結合傳統智慧的精準養生\n營養管理\n周丹尼\n營養管理\n周丹尼\n高壓生活型態整合營養專家\n重新回到穩定生活節奏\n系統化方法改善失衡狀態\n長期維持的健康運作系統\n預防保健\n宋艾倫\n預防保健\n宋艾倫\n讓健康風險在發生前被看見\n預防醫學與健康管理專家\n重新理解身體狀態\n建立可執行的健康策略\n睡眠修復\n賴珊蒂\n睡眠修復\n賴珊蒂\n優化睡眠品質與深層修復\n理解情緒與睡眠節律的睡眠專家\n用低壓力方式慢慢修復睡眠狀態\n幫助身體重新建立穩定作息節奏\n內科健康\n白大衛\n內科健康\n白大衛\n調理內在平衡與穩固體質\n理解生活脈絡的健康專家\n從日常慢慢調整身體狀態\n建立能長久維持的健康節奏\n復健治療\n郭馬克\n復健治療\n郭馬克\n專精復健訓練與機能重建\n專注重建身體平衡的復健專家\n協助身體慢慢找回生活節奏\n重啟自然而穩定的身體運作\n本內容由人工智慧(AI)生成，可能包括不準確資訊，僅供創意與個人化參考。做出決定前請自行查證，本公司不保證內容之絕對正確性，互動過程請避免輸入個人資料。",
+        "buttons": [
+          {
+            "i": 0,
+            "text": "返回",
+            "aria": "返回",
+            "disabled": false
+          },
+          {
+            "i": 1,
+            "text": "",
+            "aria": "返回 林珍妮",
+            "disabled": false
+          },
+          {
+            "i": 2,
+            "text": "開始討論",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "i": 3,
+            "text": "推薦",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "i": 4,
+            "text": "全部",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "i": 5,
+            "text": "家庭照護",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "i": 6,
+            "text": "復健治療",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "i": 7,
+            "text": "內科健康",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "i": 8,
+            "text": "睡眠修復",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "i": 9,
+            "text": "預防保健",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "i": 10,
+            "text": "中醫養生",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "i": 11,
+            "text": "營養管理",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "i": 12,
+            "text": "",
+            "aria": "View details",
+            "disabled": false
+          },
+          {
+            "i": 13,
+            "text": "",
+            "aria": "Back to front side",
+            "disabled": false
+          },
+          {
+            "i": 14,
+            "text": "",
+            "aria": "View details",
+            "disabled": false
+          },
+          {
+            "i": 15,
+            "text": "",
+            "aria": "Back to front side",
+            "disabled": false
+          },
+          {
+            "i": 16,
+            "text": "",
+            "aria": "View details",
+            "disabled": false
+          },
+          {
+            "i": 17,
+            "text": "",
+            "aria": "Back to front side",
+            "disabled": false
+          },
+          {
+            "i": 18,
+            "text": "",
+            "aria": "View details",
+            "disabled": false
+          },
+          {
+            "i": 19,
+            "text": "",
+            "aria": "Back to front side",
+            "disabled": false
+          },
+          {
+            "i": 20,
+            "text": "",
+            "aria": "View details",
+            "disabled": false
+          },
+          {
+            "i": 21,
+            "text": "",
+            "aria": "Back to front side",
+            "disabled": false
+          },
+          {
+            "i": 22,
+            "text": "",
+            "aria": "View details",
+            "disabled": false
+          },
+          {
+            "i": 23,
+            "text": "",
+            "aria": "Back to front side",
+            "disabled": false
+          },
+          {
+            "i": 24,
+            "text": "",
+            "aria": "View details",
+            "disabled": false
+          },
+          {
+            "i": 25,
+            "text": "",
+            "aria": "Back to front side",
+            "disabled": false
+          },
+          {
+            "i": 26,
+            "text": "",
+            "aria": "View details",
+            "disabled": false
+          },
+          {
+            "i": 27,
+            "text": "",
+            "aria": "Back to front side",
+            "disabled": false
+          }
+        ]
+      },
+      "finished": "2026-06-09T09:21:06.360Z"
+    },
+    {
+      "run": 2,
+      "started": "2026-06-09T09:21:06.627Z",
+      "failedRequests": [
+        {
+          "url": "https://securepubads.g.doubleclick.net/pcs/view?xai=AKAOjssLy0X09xuIW4_I5sTWY8X5Iq281bv9xYcUX4lkTvWd7uuHAnnEVDnekKVwZHtvwHYfvOGbOS_PFTo0bKIj5da9vVRachty7tJKl-tvD0v9hmhaIy67vi33mVp8DcTOWRxwHdtd7GnfpCDGxLbG3Y48S_h9QvWyvepP85yDgbcgWg7ePFRhiSlGCoiv91CwDCw86X1l1VPutM941OY63SUSZYK5ttXHaCU_-7-bL6dirrnwOL1JweAhhC20qYvWa04OnDYzcYchG8nX06aVIZGVDe3SisRAt6iRgz6uUykxQo8ofjuvvK3w4-B21jLqWbQEEVGJv87VLUWtBf0zJ0k1K89_4XUo5yDfsNIB4EKIKBCF2hFU8GCityr_mfYIa3Afo8sgA7tvcOpOFJhOfKWG_qaFljAb8LH_bLzDybD6&sai=AMfl-YRfh-vOIVWdlU64qRrmxipKadsA1rUqb37deRZMs1dN9FXr6KNtIw3XADsmiHMUL8kI9TI0orITOW7dp2vBf88Uky8HTlryVsMlQ3Vxj-ZqVv44eZj4MzfeDoqHQ5rovgJ_geUgyFUul1FdTtCW4czn8OFuwZa5oNYdvRlnuyLDTMax3im4HXmCk7cZhAkBRip8pmDl4SYDnQmcqCnu8Q_HVoSe6zhCDmQoOxz4o67JjhWVIoyndlDnudfMKJOuuIP0R42U720b-7NXWZynA433CVX3nkf_5U0gut2zHXlo5Uyl6LX_6IlUXbsmPtjH1g3T40_hERHqhuyAPydfzGvCtzZ2Q61WABfKoU57BvTzZwXiTarW3pCFhJi2VCalEImBD4w1VCzfKdEm&sig=Cg0ArKJSzG6yYdf0NAgTEAE&uach_m=%5BUACH%5D&adurl=",
+          "reason": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://pagead2.googlesyndication.com/pagead/gen_204?id=av-js&type=fle-fetch-start2",
+          "reason": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://pagead2.googlesyndication.com/pagead/gen_204?id=av-js&type=colleague-executed&name=4",
+          "reason": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://securepubads.g.doubleclick.net/pcs/view?xai=AKAOjsvQEAr26uGFTroXheIF8pNpFmOSuKGs-PdSs2xgQa1_vJsfpiB1ompnTqDpuLf01I4-7qslukgcOekh-cFDvGOI_7yDy5mrUaga9tKzH_hS4liKTjiISWUixMDs76y9GhscqsC5Mxos9pHgl7JrBwrEqT3CBGZ6Tsdmw43cilNvQP7xdMfAvSoYrGHH2B-ER7QGEgtPiXY16ZzSRfokllijQJHksGfMy-SDJ4aAePMH4ph_mdYlv8Y1G8IPD0sVCAsL0mDCRlOOCdO8qsa68SEpHIF9nRxkZHXzb8mjz4MWBDXGG3axh9654E_Ns4qheEx2hl03QbmiqYaPu73Ku3iUNBQaKYFUDfoptAwMUyh6ot3giM7V4dh-jC4N7ZkZ8vZi5PXAZsv4_t5N8NdL00YVp6PMr8-W5dCmCdrmlnYZGaU&sai=AMfl-YSkLZyZ3dSELpp7VV0yjCwjTsYKYmiab8xkhYij-B5BjzQk1o_2-id6PyfoiNOmWeQSnBsHJm66ZuB7TdiZRZZ8Oo4X3Xdu8UiV-ZrI2gM58B2KvnzC4asyif3t1bVO0AARRYC2KTIYUnnX5niHviunbvfMTpF7mf8eK8UqR91sHBtcKgzcfqKznjJC8wTdfsoCKRMmcCTPpktqa8SE9xEs_PJj2AKeXv8vEPQDdpGHIphTCi2zk9zdM_MBy60YALuwgTjiDs7lJ8PljRSlVA65z8RywTdqDcrRfH-rKO4gWk-pw4G58jEgBsiiaDFi0c8D32d0LOKqw4YBj-4eHq2Hk5y_JBCURjBnWQg9X8DhGPElTeVH8VAyy9XpTb4VmdWrl94yVMVee18_&sig=Cg0ArKJSzCgIUFsbfPD1EAE&uach_m=%5BUACH%5D&dett=2&adurl=",
+          "reason": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://pagead2.googlesyndication.com/pagead/gen_204?id=av-js&type=reach&proto=CAlgAWACaAM%3D",
+          "reason": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://pagead2.googlesyndication.com/pagead/gen_204?id=av-js&type=fle-fetch-pagehide2",
+          "reason": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://pagead2.googlesyndication.com/pcs/activeview?xai=AKAOjsthY8X4cGmzBdcw5o1DXAmP5L0qhGMBn6wLuTmi-Yu4YQ-mKUDohQtPbLmU058Duw8gfBreLultHkT-gvWc-fC87JRmxdgQJPDzLdHQkbn84_Phex1B3JRPGEeDOsryKjqdm3RThYhYmxxRs0EZnc4BkWyugzc4DsqqWk0zkEDRg897Ra0B-c6466A4HQ&sig=Cg0ArKJSzBtYrc6TG1T8EAE&id=lidartos&mcvt=2079&p=836,356,926,1084&tm=5070.199999988079&tu=2991.5&mtos=2079,2079,2079,2079,2079&tos=2079,0,0,0,0&v=20260603&bin=7&avms=nio&bs=1440,1000&mc=1&vu=1&app=0&itpl=0&adk=3077673317&rs=4&la=0&cr=0&uach=WyJMaW51eCIsIiIsIng4NiIsIiIsIjE0OS4wLjc4MjcuNTMiLG51bGwsMCxudWxsLCI2NCIsW1siQ2hyb21pdW0iLCIxNDkuMC43ODI3LjUzIl0sWyJOb3QpQTtCcmFuZCIsIjI0LjAuMC4wIl1dLDBd&vs=4&r=b&co=7692967001&rst=1780996869965&rpt=610&isd=0&lsd=0&ec=1&met=mue&wmsd=0&pbe=0&fle=0&vae=0&spb=0&sfl=0&ffslot=0&reach=8&io2=0",
+          "reason": "net::ERR_ABORTED"
+        }
+      ],
+      "badResponses": [],
+      "cardsMs": 3695,
+      "beforeStart": {
+        "url": "https://doppel-health.zeabur.app/group/select?topic=%E6%88%91%E6%9C%80%E8%BF%91%E6%99%9A%E4%B8%8A%E7%9D%A1%E4%B8%8D%E5%A5%BD%EF%BC%8C%E5%8D%8A%E5%A4%9C%E5%B8%B8%E5%B8%B8%E9%86%92%E4%BE%86%EF%BC%8C%E6%83%B3%E8%AB%8B%E5%B0%88%E5%AE%B6%E6%8F%90%E4%BE%9B%E6%94%B9%E5%96%84%E7%9D%A1%E7%9C%A0%E7%9A%84%E5%BB%BA%E8%AD%B0%E3%80%82&projectTheme=%E5%81%A5%E5%BA%B7%E9%86%AB%E7%99%82",
+        "text": "返回\n已選的AI虛擬專家\n你也可從下方換成其他專家\n討論話題：我最近晚上睡不好，半夜常常醒來，想請專家提供改善睡眠的建議。\n開始討論\n推薦\n全部\n家庭照護\n復健治療\n內科健康\n睡眠修復\n預防保健\n中醫養生\n營養管理\n營養管理\n林安娜\n營養管理\n林安娜\n讓健康飲食真正融入生活節奏\n家庭營養規劃專家\n讓健康飲食真正走進日常生活\n建立身體營養基礎\n中醫養生\n沈露西\n中醫養生\n沈露西\n從節氣與體質重新理解身體狀態\n邏輯嚴密的經絡分析者\n專注根源調理的治本之道\n結合傳統智慧的精準養生\n營養管理\n周丹尼\n營養管理\n周丹尼\n高壓生活型態整合營養專家\n重新回到穩定生活節奏\n系統化方法改善失衡狀態\n長期維持的健康運作系統\n預防保健\n宋艾倫\n預防保健\n宋艾倫\n讓健康風險在發生前被看見\n預防醫學與健康管理專家\n重新理解身體狀態\n建立可執行的健康策略\n睡眠修復\n賴珊蒂\n睡眠修復\n賴珊蒂\n優化睡眠品質與深層修復\n理解情緒與睡眠節律的睡眠專家\n用低壓力方式慢慢修復睡眠狀態\n幫助身體重新建立穩定作息節奏\n內科健康\n白大衛\n內科健康\n白大衛\n調理內在平衡與穩固體質\n理解生活脈絡的健康專家\n從日常慢慢調整身體狀態\n建立能長久維持的健康節奏\n復健治療\n郭馬克\n復健治療\n郭馬克\n專精復健訓練與機能重建\n專注重建身體平衡的復健專家\n協助身體慢慢找回生活節奏\n重啟自然而穩定的身體運作\n家庭照護\n林珍妮\n家庭照護\n林珍妮\n探索身體警訊與多元引導\n家庭健康與健康識能整合專家\n梳理反覆不適與慢性健康困擾\n建立以家庭為核心的健康照護方式\n本內容由人工智慧(AI)生成，可能包括不準確資訊，僅供創意與個人化參考。做出決定前請自行查證，本公司不保證內容之絕對正確性，互動過程請避免輸入個人資料。",
+        "buttons": [
+          {
+            "i": 0,
+            "text": "返回",
+            "aria": "返回",
+            "disabled": false
+          },
+          {
+            "i": 1,
+            "text": "開始討論",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "i": 2,
+            "text": "推薦",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "i": 3,
+            "text": "全部",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "i": 4,
+            "text": "家庭照護",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "i": 5,
+            "text": "復健治療",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "i": 6,
+            "text": "內科健康",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "i": 7,
+            "text": "睡眠修復",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "i": 8,
+            "text": "預防保健",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "i": 9,
+            "text": "中醫養生",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "i": 10,
+            "text": "營養管理",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "i": 11,
+            "text": "",
+            "aria": "View details",
+            "disabled": false
+          },
+          {
+            "i": 12,
+            "text": "",
+            "aria": "Back to front side",
+            "disabled": false
+          },
+          {
+            "i": 13,
+            "text": "",
+            "aria": "View details",
+            "disabled": false
+          },
+          {
+            "i": 14,
+            "text": "",
+            "aria": "Back to front side",
+            "disabled": false
+          },
+          {
+            "i": 15,
+            "text": "",
+            "aria": "View details",
+            "disabled": false
+          },
+          {
+            "i": 16,
+            "text": "",
+            "aria": "Back to front side",
+            "disabled": false
+          },
+          {
+            "i": 17,
+            "text": "",
+            "aria": "View details",
+            "disabled": false
+          },
+          {
+            "i": 18,
+            "text": "",
+            "aria": "Back to front side",
+            "disabled": false
+          },
+          {
+            "i": 19,
+            "text": "",
+            "aria": "View details",
+            "disabled": false
+          },
+          {
+            "i": 20,
+            "text": "",
+            "aria": "Back to front side",
+            "disabled": false
+          },
+          {
+            "i": 21,
+            "text": "",
+            "aria": "View details",
+            "disabled": false
+          },
+          {
+            "i": 22,
+            "text": "",
+            "aria": "Back to front side",
+            "disabled": false
+          },
+          {
+            "i": 23,
+            "text": "",
+            "aria": "View details",
+            "disabled": false
+          },
+          {
+            "i": 24,
+            "text": "",
+            "aria": "Back to front side",
+            "disabled": false
+          },
+          {
+            "i": 25,
+            "text": "",
+            "aria": "View details",
+            "disabled": false
+          },
+          {
+            "i": 26,
+            "text": "",
+            "aria": "Back to front side",
+            "disabled": false
+          }
+        ]
+      },
+      "result": "FAIL",
+      "error": "page.waitForURL: Timeout 45000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation until \"load\"\n============================================================",
+      "after": {
+        "url": "https://doppel-health.zeabur.app/group/select?topic=%E6%88%91%E6%9C%80%E8%BF%91%E6%99%9A%E4%B8%8A%E7%9D%A1%E4%B8%8D%E5%A5%BD%EF%BC%8C%E5%8D%8A%E5%A4%9C%E5%B8%B8%E5%B8%B8%E9%86%92%E4%BE%86%EF%BC%8C%E6%83%B3%E8%AB%8B%E5%B0%88%E5%AE%B6%E6%8F%90%E4%BE%9B%E6%94%B9%E5%96%84%E7%9D%A1%E7%9C%A0%E7%9A%84%E5%BB%BA%E8%AD%B0%E3%80%82&projectTheme=%E5%81%A5%E5%BA%B7%E9%86%AB%E7%99%82",
+        "text": "返回\n已選的AI虛擬專家\n你也可從下方換成其他專家\n討論話題：我最近晚上睡不好，半夜常常醒來，想請專家提供改善睡眠的建議。\n睡眠修復\n賴珊蒂\n理解情緒與睡眠節律的睡眠專家 / 用低壓力方式慢慢修復睡眠狀態 / 幫助身體重新建立穩定作息節奏\n中醫養生\n沈露西\n邏輯嚴密的經絡分析者 / 專注根源調理的治本之道 / 結合傳統智慧的精準養生\n預防保健\n宋艾倫\n預防醫學與健康管理專家 / 重新理解身體狀態 / 建立可執行的健康策略\n開始討論\n推薦\n全部\n家庭照護\n復健治療\n內科健康\n睡眠修復\n預防保健\n中醫養生\n營養管理\n睡眠修復\n賴珊蒂\n95%\n符合\n睡眠修復\n賴珊蒂\n優化睡眠品質與深層修復\n理解情緒與睡眠節律的睡眠專家\n用低壓力方式慢慢修復睡眠狀態\n幫助身體重新建立穩定作息節奏\n中醫養生\n沈露西\n85%\n符合\n中醫養生\n沈露西\n從節氣與體質重新理解身體狀態\n邏輯嚴密的經絡分析者\n專注根源調理的治本之道\n結合傳統智慧的精準養生\n預防保健\n宋艾倫\n80%\n符合\n預防保健\n宋艾倫\n讓健康風險在發生前被看見\n預防醫學與健康管理專家\n重新理解身體狀態\n建立可執行的健康策略\n家庭照護\n林珍妮\n75%\n符合\n家庭照護\n林珍妮\n探索身體警訊與多元引導\n家庭健康與健康識能整合專家\n梳理反覆不適與慢性健康困擾\n建立以家庭為核心的健康照護方式\n內科健康\n白大衛\n70%\n符合\n內科健康\n白大衛\n調理內在平衡與穩固體質\n理解生活脈絡的健康專家\n從日常慢慢調整身體狀態\n建立能長久維持的健康節奏\n營養管理\n林安娜\n65%\n符合\n營養管理\n林安娜\n讓健康飲食真正融入生活節奏\n家庭營養規劃專家\n讓健康飲食真正走進日常生活\n建立身體營養基礎\n復健治療\n郭馬克\n60%\n符合\n復健治療\n郭馬克\n專精復健訓練與機能重建\n專注重建身體平衡的復健專家\n協助身體慢慢找回生活節奏\n重啟自然而穩定的身體運作\n營養管理\n周丹尼\n55%\n符合\n營養管理\n周丹尼\n高壓生活型態整合營養專家\n重新回到穩定生活節奏\n系統化方法改善失衡狀態\n長期維持的健康運作系統\n本內容由人工智慧(AI)生成，可能包括不準確資訊，僅供創意與個人化參考。做出決定前請自行查證，本公司不保證內容之絕對正確性，互動過程請避免輸入個人資料。",
+        "buttons": [
+          {
+            "i": 0,
+            "text": "返回",
+            "aria": "返回",
+            "disabled": false
+          },
+          {
+            "i": 1,
+            "text": "",
+            "aria": "返回 賴珊蒂",
+            "disabled": false
+          },
+          {
+            "i": 2,
+            "text": "",
+            "aria": "返回 沈露西",
+            "disabled": false
+          },
+          {
+            "i": 3,
+            "text": "",
+            "aria": "返回 宋艾倫",
+            "disabled": false
+          },
+          {
+            "i": 4,
+            "text": "開始討論",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "i": 5,
+            "text": "推薦",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "i": 6,
+            "text": "全部",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "i": 7,
+            "text": "家庭照護",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "i": 8,
+            "text": "復健治療",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "i": 9,
+            "text": "內科健康",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "i": 10,
+            "text": "睡眠修復",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "i": 11,
+            "text": "預防保健",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "i": 12,
+            "text": "中醫養生",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "i": 13,
+            "text": "營養管理",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "i": 14,
+            "text": "",
+            "aria": "View details",
+            "disabled": false
+          },
+          {
+            "i": 15,
+            "text": "",
+            "aria": "Back to front side",
+            "disabled": false
+          },
+          {
+            "i": 16,
+            "text": "",
+            "aria": "View details",
+            "disabled": false
+          },
+          {
+            "i": 17,
+            "text": "",
+            "aria": "Back to front side",
+            "disabled": false
+          },
+          {
+            "i": 18,
+            "text": "",
+            "aria": "View details",
+            "disabled": false
+          },
+          {
+            "i": 19,
+            "text": "",
+            "aria": "Back to front side",
+            "disabled": false
+          },
+          {
+            "i": 20,
+            "text": "",
+            "aria": "View details",
+            "disabled": false
+          },
+          {
+            "i": 21,
+            "text": "",
+            "aria": "Back to front side",
+            "disabled": false
+          },
+          {
+            "i": 22,
+            "text": "",
+            "aria": "View details",
+            "disabled": false
+          },
+          {
+            "i": 23,
+            "text": "",
+            "aria": "Back to front side",
+            "disabled": false
+          },
+          {
+            "i": 24,
+            "text": "",
+            "aria": "View details",
+            "disabled": false
+          },
+          {
+            "i": 25,
+            "text": "",
+            "aria": "Back to front side",
+            "disabled": false
+          },
+          {
+            "i": 26,
+            "text": "",
+            "aria": "View details",
+            "disabled": false
+          },
+          {
+            "i": 27,
+            "text": "",
+            "aria": "Back to front side",
+            "disabled": false
+          },
+          {
+            "i": 28,
+            "text": "",
+            "aria": "View details",
+            "disabled": false
+          },
+          {
+            "i": 29,
+            "text": "",
+            "aria": "Back to front side",
+            "disabled": false
+          }
+        ]
+      },
+      "finished": "2026-06-09T09:22:03.675Z"
+    },
+    {
+      "run": 3,
+      "started": "2026-06-09T09:22:03.992Z",
+      "failedRequests": [
+        {
+          "url": "https://securepubads.g.doubleclick.net/pcs/view?xai=AKAOjstrop00gkLbGO8p3UqF7TvncL27rrssrYN6PeYjPS3GeScII05_71JIOQVFlI5tI2Nhkm77MGPRFszIuwFgc8jY70xD2Y6x4hZRLdSrLkK87y10V8gZnVVRO90tONJm0Zyl6I9drF060WZheyA8iYoA6ciwW_QR97KIoMUv8xuiw9AugFJvYyI722n0Q1Puhv7iCp09VMOsPUzXe_Gd9BgHXm5y6mSOn9eI5vXZN_axPEsmtIKFOc1TIHoZwhsdQd5Cy2V_QFxqdlfRask6FOSDzAzc6CDt0oL1ylYAYW95ukdReF0zcP2VXOlCPJu0ZHBPWBPJ43VWJBY2FnXZ3tY875TSrUhpNAj77ynXMEta3NJ-3ItlFtgbAChQkuwNWlJzZ33ZszQAmtJ2PPkEiKUs66VSwUFfmyMy4HXF-cqe&sai=AMfl-YT80RTLpKGEH9XyOXedO76LyTZIolicR0UHgymkcYwU5XUg6PdnuSYmeLLsQ5AfcKel6a-J1bDzUn74UbhLpYPxrey6384pjaKV6pG3OeSCJJFN6cTBxb-_PTAlTkCFPq7pt3MPL95DdY0biIGYt0fqIGhxNsqVEHMlUXqiEf00KIip3Ep4P8sSbQYYV-4phw8pGQyBe6xHxPAzbvsZwSRxX5gXYwZFqwAANSD3wu5JHPZoETyc5MBThx9CPvD3oXPgeNhGrxZinw8MzETXSejvcwKb4CfdDJyOpoHOwtLObAfewdfk2CWwl_jKL2BHa25w6efT3mB0LSm9hsuInCx-Bt_RrmzrCHLU8bgrzyWS1_CtB1NQVS9X_7IU0FzJyb_RcoFV9xCzqzdP&sig=Cg0ArKJSzAgEqKPimX9PEAE&uach_m=%5BUACH%5D&adurl=",
+          "reason": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://pagead2.googlesyndication.com/pagead/gen_204?id=av-js&type=fle-fetch-start2",
+          "reason": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://pagead2.googlesyndication.com/pagead/gen_204?id=av-js&type=colleague-executed&name=4",
+          "reason": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://securepubads.g.doubleclick.net/pcs/view?xai=AKAOjsvcc1du9zGmyG8RdRf7zXs2PjXJOwCzRpajJ2DQjQztn3xvZYCsaLslT8l3iEm6Q57SBIktlAfz3Yxi2CoX7pMsPvjnnslm_8DtyE5hIGhM5fmIR1gwdsCTzg2x1dTZbvxpfD8WThl4YiL5R38bOB9KnBi27hAxf5QwWZhJXaDVPjU9I1EjL7g5xwhUXyL71CI09i_E1FUKS0_E0VXJc6I6Kh2AA0V1ZGSk3qEJYsZC7oZeuIcjkhZCsVPNX9RBfUaMrPL_r2mdNIxEK5B-nG-WzVmWRMkJcltgrSg_zQ_5grVUnZRpq32YQaL1jtsskU9pEw6LAVWuAlqTM9dWgl0pxMWTqmKXs4BpWjYJgdZL-Kq2rtewex0dZf9WdaNAPYHXsEGOQDAaxybHxMTpyQS7g9FUZyAdXQJY4VIDZ0jCxtc&sai=AMfl-YQJ84Ps5nBCzqqjiGqyrkxifr_foNr9wssMfzDyQijlZZr9RPGqaRWm7SYaU8xn3uD7-J7Mdd0cSClG74fdYqRlzYmL8rUYZTNpG268g97doFVUfuHDdOu11QyJ0yTzJMn3CNVf5puWuunwnNmGRqTo_VVbFaDAf1nukGi_E_uxROvsDZb5dMh_BS8j87_L-p2iHMGckmPymMMqp9DM1GBn_FrrOZeIZ2r1sHn1jcrOuddglqVCkjy3OzldqYkt_QVG8sN7BIbG2x2-a0O98vJIxSqjgd7vWcsq5OYUwiE2UrB-y8w2mDTwUFnHXXZMUiDuhO2WHdhrSobYU6i1zctMHmLzMfzvr13lk--2UQ8ga8gV7E0N_LwsJ9pvFg249IiZ9VG6yij44ofp&sig=Cg0ArKJSzAlkMzTfTjINEAE&uach_m=%5BUACH%5D&dett=2&adurl=",
+          "reason": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://pagead2.googlesyndication.com/pagead/gen_204?id=av-js&type=reach&proto=CAlgAWACaAM%3D",
+          "reason": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://pagead2.googlesyndication.com/pagead/gen_204?id=av-js&type=fle-fetch-pagehide2",
+          "reason": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://pagead2.googlesyndication.com/pcs/activeview?xai=AKAOjssCbPn9gJ9RiahzJgwBaZ90HLAib0MN8KM_zQtwci5SGt-AeHIUWa1CM__EI44Ixmw0f_GVykB3Ra06O3baXJOkQJAyPPxFAbuRLP7lwPGt4cTUAKA9Ca9PFpA4tmtyHUltgQIsZDk8J5XJtGufMNgoN_nZIt0OrSdDWZf3QvYZTYaUQvRBworn6dk1KA&sig=Cg0ArKJSzEirBAaXhBc7EAE&id=lidartos&mcvt=1844&p=984,356,1074,1084&tm=4995.5&tu=3151.7999999970198&mtos=1844,1844,1844,1844,1844&tos=1844,0,0,0,0&v=20260603&bin=7&avms=nio&bs=1440,1000&mc=1&vu=1&app=0&itpl=0&adk=3077673317&rs=4&la=0&cr=0&uach=WyJMaW51eCIsIiIsIng4NiIsIiIsIjE0OS4wLjc4MjcuNTMiLG51bGwsMCxudWxsLCI2NCIsW1siQ2hyb21pdW0iLCIxNDkuMC43ODI3LjUzIl0sWyJOb3QpQTtCcmFuZCIsIjI0LjAuMC4wIl1dLDBd&vs=4&r=b&co=7692972701&rst=1780996927350&rpt=527&isd=0&lsd=0&ec=1&met=mue&wmsd=0&pbe=0&fle=0&vae=0&spb=0&sfl=0&ffslot=0&reach=8&io2=0",
+          "reason": "net::ERR_ABORTED"
+        }
+      ],
+      "badResponses": [],
+      "cardsMs": 3397,
+      "beforeStart": {
+        "url": "https://doppel-health.zeabur.app/group/select?topic=%E6%88%91%E6%9C%80%E8%BF%91%E6%99%9A%E4%B8%8A%E7%9D%A1%E4%B8%8D%E5%A5%BD%EF%BC%8C%E5%8D%8A%E5%A4%9C%E5%B8%B8%E5%B8%B8%E9%86%92%E4%BE%86%EF%BC%8C%E6%83%B3%E8%AB%8B%E5%B0%88%E5%AE%B6%E6%8F%90%E4%BE%9B%E6%94%B9%E5%96%84%E7%9D%A1%E7%9C%A0%E7%9A%84%E5%BB%BA%E8%AD%B0%E3%80%82&projectTheme=%E5%81%A5%E5%BA%B7%E9%86%AB%E7%99%82",
+        "text": "返回\n已選的AI虛擬專家\n你也可從下方換成其他專家\n討論話題：我最近晚上睡不好，半夜常常醒來，想請專家提供改善睡眠的建議。\n開始討論\n推薦\n全部\n家庭照護\n復健治療\n內科健康\n睡眠修復\n預防保健\n中醫養生\n營養管理\n營養管理\n林安娜\n營養管理\n林安娜\n讓健康飲食真正融入生活節奏\n家庭營養規劃專家\n讓健康飲食真正走進日常生活\n建立身體營養基礎\n中醫養生\n沈露西\n中醫養生\n沈露西\n從節氣與體質重新理解身體狀態\n邏輯嚴密的經絡分析者\n專注根源調理的治本之道\n結合傳統智慧的精準養生\n營養管理\n周丹尼\n營養管理\n周丹尼\n高壓生活型態整合營養專家\n重新回到穩定生活節奏\n系統化方法改善失衡狀態\n長期維持的健康運作系統\n預防保健\n宋艾倫\n預防保健\n宋艾倫\n讓健康風險在發生前被看見\n預防醫學與健康管理專家\n重新理解身體狀態\n建立可執行的健康策略\n睡眠修復\n賴珊蒂\n睡眠修復\n賴珊蒂\n優化睡眠品質與深層修復\n理解情緒與睡眠節律的睡眠專家\n用低壓力方式慢慢修復睡眠狀態\n幫助身體重新建立穩定作息節奏\n內科健康\n白大衛\n內科健康\n白大衛\n調理內在平衡與穩固體質\n理解生活脈絡的健康專家\n從日常慢慢調整身體狀態\n建立能長久維持的健康節奏\n復健治療\n郭馬克\n復健治療\n郭馬克\n專精復健訓練與機能重建\n專注重建身體平衡的復健專家\n協助身體慢慢找回生活節奏\n重啟自然而穩定的身體運作\n家庭照護\n林珍妮\n家庭照護\n林珍妮\n探索身體警訊與多元引導\n家庭健康與健康識能整合專家\n梳理反覆不適與慢性健康困擾\n建立以家庭為核心的健康照護方式\n本內容由人工智慧(AI)生成，可能包括不準確資訊，僅供創意與個人化參考。做出決定前請自行查證，本公司不保證內容之絕對正確性，互動過程請避免輸入個人資料。",
+        "buttons": [
+          {
+            "i": 0,
+            "text": "返回",
+            "aria": "返回",
+            "disabled": false
+          },
+          {
+            "i": 1,
+            "text": "開始討論",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "i": 2,
+            "text": "推薦",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "i": 3,
+            "text": "全部",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "i": 4,
+            "text": "家庭照護",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "i": 5,
+            "text": "復健治療",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "i": 6,
+            "text": "內科健康",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "i": 7,
+            "text": "睡眠修復",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "i": 8,
+            "text": "預防保健",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "i": 9,
+            "text": "中醫養生",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "i": 10,
+            "text": "營養管理",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "i": 11,
+            "text": "",
+            "aria": "View details",
+            "disabled": false
+          },
+          {
+            "i": 12,
+            "text": "",
+            "aria": "Back to front side",
+            "disabled": false
+          },
+          {
+            "i": 13,
+            "text": "",
+            "aria": "View details",
+            "disabled": false
+          },
+          {
+            "i": 14,
+            "text": "",
+            "aria": "Back to front side",
+            "disabled": false
+          },
+          {
+            "i": 15,
+            "text": "",
+            "aria": "View details",
+            "disabled": false
+          },
+          {
+            "i": 16,
+            "text": "",
+            "aria": "Back to front side",
+            "disabled": false
+          },
+          {
+            "i": 17,
+            "text": "",
+            "aria": "View details",
+            "disabled": false
+          },
+          {
+            "i": 18,
+            "text": "",
+            "aria": "Back to front side",
+            "disabled": false
+          },
+          {
+            "i": 19,
+            "text": "",
+            "aria": "View details",
+            "disabled": false
+          },
+          {
+            "i": 20,
+            "text": "",
+            "aria": "Back to front side",
+            "disabled": false
+          },
+          {
+            "i": 21,
+            "text": "",
+            "aria": "View details",
+            "disabled": false
+          },
+          {
+            "i": 22,
+            "text": "",
+            "aria": "Back to front side",
+            "disabled": false
+          },
+          {
+            "i": 23,
+            "text": "",
+            "aria": "View details",
+            "disabled": false
+          },
+          {
+            "i": 24,
+            "text": "",
+            "aria": "Back to front side",
+            "disabled": false
+          },
+          {
+            "i": 25,
+            "text": "",
+            "aria": "View details",
+            "disabled": false
+          },
+          {
+            "i": 26,
+            "text": "",
+            "aria": "Back to front side",
+            "disabled": false
+          }
+        ]
+      },
+      "result": "FAIL",
+      "error": "page.waitForURL: Timeout 45000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation until \"load\"\n============================================================",
+      "after": {
+        "url": "https://doppel-health.zeabur.app/group/select?topic=%E6%88%91%E6%9C%80%E8%BF%91%E6%99%9A%E4%B8%8A%E7%9D%A1%E4%B8%8D%E5%A5%BD%EF%BC%8C%E5%8D%8A%E5%A4%9C%E5%B8%B8%E5%B8%B8%E9%86%92%E4%BE%86%EF%BC%8C%E6%83%B3%E8%AB%8B%E5%B0%88%E5%AE%B6%E6%8F%90%E4%BE%9B%E6%94%B9%E5%96%84%E7%9D%A1%E7%9C%A0%E7%9A%84%E5%BB%BA%E8%AD%B0%E3%80%82&projectTheme=%E5%81%A5%E5%BA%B7%E9%86%AB%E7%99%82",
+        "text": "返回\n已選的AI虛擬專家\n你也可從下方換成其他專家\n討論話題：我最近晚上睡不好，半夜常常醒來，想請專家提供改善睡眠的建議。\n睡眠修復\n賴珊蒂\n理解情緒與睡眠節律的睡眠專家 / 用低壓力方式慢慢修復睡眠狀態 / 幫助身體重新建立穩定作息節奏\n預防保健\n宋艾倫\n預防醫學與健康管理專家 / 重新理解身體狀態 / 建立可執行的健康策略\n中醫養生\n沈露西\n邏輯嚴密的經絡分析者 / 專注根源調理的治本之道 / 結合傳統智慧的精準養生\n開始討論\n推薦\n全部\n家庭照護\n復健治療\n內科健康\n睡眠修復\n預防保健\n中醫養生\n營養管理\n睡眠修復\n賴珊蒂\n95%\n符合\n睡眠修復\n賴珊蒂\n優化睡眠品質與深層修復\n理解情緒與睡眠節律的睡眠專家\n用低壓力方式慢慢修復睡眠狀態\n幫助身體重新建立穩定作息節奏\n預防保健\n宋艾倫\n85%\n符合\n預防保健\n宋艾倫\n讓健康風險在發生前被看見\n預防醫學與健康管理專家\n重新理解身體狀態\n建立可執行的健康策略\n中醫養生\n沈露西\n80%\n符合\n中醫養生\n沈露西\n從節氣與體質重新理解身體狀態\n邏輯嚴密的經絡分析者\n專注根源調理的治本之道\n結合傳統智慧的精準養生\n家庭照護\n林珍妮\n75%\n符合\n家庭照護\n林珍妮\n探索身體警訊與多元引導\n家庭健康與健康識能整合專家\n梳理反覆不適與慢性健康困擾\n建立以家庭為核心的健康照護方式\n營養管理\n林安娜\n70%\n符合\n營養管理\n林安娜\n讓健康飲食真正融入生活節奏\n家庭營養規劃專家\n讓健康飲食真正走進日常生活\n建立身體營養基礎\n內科健康\n白大衛\n70%\n符合\n內科健康\n白大衛\n調理內在平衡與穩固體質\n理解生活脈絡的健康專家\n從日常慢慢調整身體狀態\n建立能長久維持的健康節奏\n營養管理\n周丹尼\n65%\n符合\n營養管理\n周丹尼\n高壓生活型態整合營養專家\n重新回到穩定生活節奏\n系統化方法改善失衡狀態\n長期維持的健康運作系統\n復健治療\n郭馬克\n復健治療\n郭馬克\n專精復健訓練與機能重建\n專注重建身體平衡的復健專家\n協助身體慢慢找回生活節奏\n重啟自然而穩定的身體運作\n本內容由人工智慧(AI)生成，可能包括不準確資訊，僅供創意與個人化參考。做出決定前請自行查證，本公司不保證內容之絕對正確性，互動過程請避免輸入個人資料。",
+        "buttons": [
+          {
+            "i": 0,
+            "text": "返回",
+            "aria": "返回",
+            "disabled": false
+          },
+          {
+            "i": 1,
+            "text": "",
+            "aria": "返回 賴珊蒂",
+            "disabled": false
+          },
+          {
+            "i": 2,
+            "text": "",
+            "aria": "返回 宋艾倫",
+            "disabled": false
+          },
+          {
+            "i": 3,
+            "text": "",
+            "aria": "返回 沈露西",
+            "disabled": false
+          },
+          {
+            "i": 4,
+            "text": "開始討論",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "i": 5,
+            "text": "推薦",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "i": 6,
+            "text": "全部",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "i": 7,
+            "text": "家庭照護",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "i": 8,
+            "text": "復健治療",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "i": 9,
+            "text": "內科健康",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "i": 10,
+            "text": "睡眠修復",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "i": 11,
+            "text": "預防保健",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "i": 12,
+            "text": "中醫養生",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "i": 13,
+            "text": "營養管理",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "i": 14,
+            "text": "",
+            "aria": "View details",
+            "disabled": false
+          },
+          {
+            "i": 15,
+            "text": "",
+            "aria": "Back to front side",
+            "disabled": false
+          },
+          {
+            "i": 16,
+            "text": "",
+            "aria": "View details",
+            "disabled": false
+          },
+          {
+            "i": 17,
+            "text": "",
+            "aria": "Back to front side",
+            "disabled": false
+          },
+          {
+            "i": 18,
+            "text": "",
+            "aria": "View details",
+            "disabled": false
+          },
+          {
+            "i": 19,
+            "text": "",
+            "aria": "Back to front side",
+            "disabled": false
+          },
+          {
+            "i": 20,
+            "text": "",
+            "aria": "View details",
+            "disabled": false
+          },
+          {
+            "i": 21,
+            "text": "",
+            "aria": "Back to front side",
+            "disabled": false
+          },
+          {
+            "i": 22,
+            "text": "",
+            "aria": "View details",
+            "disabled": false
+          },
+          {
+            "i": 23,
+            "text": "",
+            "aria": "Back to front side",
+            "disabled": false
+          },
+          {
+            "i": 24,
+            "text": "",
+            "aria": "View details",
+            "disabled": false
+          },
+          {
+            "i": 25,
+            "text": "",
+            "aria": "Back to front side",
+            "disabled": false
+          },
+          {
+            "i": 26,
+            "text": "",
+            "aria": "View details",
+            "disabled": false
+          },
+          {
+            "i": 27,
+            "text": "",
+            "aria": "Back to front side",
+            "disabled": false
+          },
+          {
+            "i": 28,
+            "text": "",
+            "aria": "View details",
+            "disabled": false
+          },
+          {
+            "i": 29,
+            "text": "",
+            "aria": "Back to front side",
+            "disabled": false
+          }
+        ]
+      },
+      "finished": "2026-06-09T09:23:00.974Z"
+    }
+  ],
+  "errors": [],
+  "finished": "2026-06-09T09:23:01.013Z"
+}
