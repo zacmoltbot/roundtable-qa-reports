@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RoundTable Health AT Smoke Report - 2026-06-11</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #172026;
+      --muted: #5f6b73;
+      --line: #d7dee4;
+      --panel: #f7f9fb;
+      --pass: #0a7a42;
+      --warn: #9a5b00;
+      --fail: #b42318;
+      --accent: #146c94;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Noto Sans CJK TC", "Noto Sans TC", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: #ffffff;
+      line-height: 1.55;
+    }
+    main { max-width: 1120px; margin: 0 auto; padding: 32px 20px 56px; }
+    header { border-bottom: 1px solid var(--line); padding-bottom: 22px; margin-bottom: 24px; }
+    h1 { margin: 0 0 8px; font-size: 30px; line-height: 1.2; letter-spacing: 0; }
+    h2 { margin: 30px 0 12px; font-size: 20px; letter-spacing: 0; }
+    h3 { margin: 18px 0 8px; font-size: 16px; letter-spacing: 0; }
+    p { margin: 8px 0; }
+    a { color: var(--accent); }
+    .meta { color: var(--muted); font-size: 14px; }
+    .summary {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 12px;
+      margin: 20px 0 6px;
+    }
+    .metric {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 14px;
+      background: var(--panel);
+      min-height: 92px;
+    }
+    .label { color: var(--muted); font-size: 13px; margin-bottom: 6px; }
+    .value { font-size: 22px; font-weight: 700; }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 2px 10px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 13px;
+      border: 1px solid currentColor;
+      white-space: nowrap;
+    }
+    .pass { color: var(--pass); }
+    .warn { color: var(--warn); }
+    .fail { color: var(--fail); }
+    table { width: 100%; border-collapse: collapse; margin: 10px 0 18px; font-size: 14px; }
+    th, td { border: 1px solid var(--line); padding: 10px; vertical-align: top; text-align: left; }
+    th { background: #eef3f6; }
+    ul { padding-left: 20px; }
+    li { margin: 5px 0; }
+    .note {
+      border-left: 4px solid var(--warn);
+      background: #fff8ea;
+      padding: 12px 14px;
+      margin: 14px 0;
+    }
+    .evidence {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 14px;
+    }
+    figure { margin: 0; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: #fff; }
+    figure img { display: block; width: 100%; height: auto; }
+    figcaption { padding: 8px 10px; color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); }
+    code { background: #eef3f6; padding: 1px 5px; border-radius: 4px; }
+    footer { margin-top: 32px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>RoundTable Health AT Smoke Report</h1>
+    <p class="meta">Run time: 2026-06-11 16:31 Asia/Taipei / 08:31 UTC. Target: <a href="https://doppel-health.zeabur.app/group">https://doppel-health.zeabur.app/group</a></p>
+    <p class="meta">Scope: bounded Health smoke AT for the real user <code>/group</code> flow. This is not a full latest-version user QA run and not a lockdown report.</p>
+  </header>
+
+  <section>
+    <h2>Verdict</h2>
+    <div class="summary">
+      <div class="metric">
+        <div class="label">Product Result</div>
+        <div class="value warn">PARTIAL</div>
+      </div>
+      <div class="metric">
+        <div class="label">QA Execution Status</div>
+        <div class="value warn">COMPLETED WITH TIMEOUT</div>
+      </div>
+      <div class="metric">
+        <div class="label">Passed Flows</div>
+        <div class="value">4 / 5</div>
+      </div>
+      <div class="metric">
+        <div class="label">Longest User Wait</div>
+        <div class="value fail">91.3s</div>
+      </div>
+    </div>
+    <div class="note">
+      A-D passed: disclaimer/topic input, expert matching, manual expert remove/add, and entering chat. Flow E did not reach a verifiable user-visible reply within the 90s wait window after text input, so this smoke cannot be reported as full PASS.
+    </div>
+  </section>
+
+  <section>
+    <h2>Functional Matrix</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Flow</th>
+          <th>What It Tests</th>
+          <th>Pass Criteria</th>
+          <th>Result</th>
+          <th>Evidence</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Page 1 - Topic Selection</td>
+          <td>Disclaimer accepted, text input mode opens, custom sleep-related topic is entered.</td>
+          <td>The typed topic is present in the actual textarea value before submitting.</td>
+          <td><span class="badge pass">PASS</span></td>
+          <td><code>02-topic-entered.png</code>; DOM value verified by runner.</td>
+        </tr>
+        <tr>
+          <td>Page 2 - Expert Matching</td>
+          <td>Custom topic routes to expert selection and selected experts appear.</td>
+          <td><code>/group/select</code> becomes usable with at least 2 selected experts and Start Discussion available.</td>
+          <td><span class="badge pass">PASS</span></td>
+          <td>Ready in 4.704s. Selected: 賴珊蒂, 宋艾倫, 沈露西.</td>
+        </tr>
+        <tr>
+          <td>Page 2 - Manual Selection</td>
+          <td>Selected expert can be removed and added back.</td>
+          <td>Selected expert count decreases after remove and returns to at least 2 after add-back.</td>
+          <td><span class="badge pass">PASS</span></td>
+          <td>Before: 賴珊蒂, 宋艾倫, 沈露西. After remove: 宋艾倫, 沈露西. After add: 宋艾倫, 沈露西, 賴珊蒂.</td>
+        </tr>
+        <tr>
+          <td>Page 3 - Group Chat Entry</td>
+          <td>Start Discussion opens the group chat page and makes text input available.</td>
+          <td><code>/group/chat</code> loads and text input button is visible.</td>
+          <td><span class="badge pass">PASS</span></td>
+          <td>Reached chat in 91.285s. This is functionally pass but performance risk.</td>
+        </tr>
+        <tr>
+          <td>Page 3 - Text Message Reply</td>
+          <td>User sends a follow-up and receives a visible semantically relevant response.</td>
+          <td>Reply appears within the 90s wait window after sending the follow-up.</td>
+          <td><span class="badge warn">TIMEOUT</span></td>
+          <td>Runner timed out: <code>page.waitForFunction: Timeout 90000ms exceeded.</code> No post-reply screenshot was produced.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>User-Facing Timing</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>User Action</th>
+          <th>User-Visible Result</th>
+          <th>Measured Time</th>
+          <th>Assessment</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Open Health <code>/group</code></td>
+          <td>Homepage usable with popular topics and input controls.</td>
+          <td>5.882s</td>
+          <td>PASS</td>
+        </tr>
+        <tr>
+          <td>Submit custom topic</td>
+          <td>Expert selection page usable.</td>
+          <td>4.704s</td>
+          <td>PASS</td>
+        </tr>
+        <tr>
+          <td>Start discussion</td>
+          <td>Chat page usable with text input visible.</td>
+          <td>91.285s</td>
+          <td>PASS functionally; slow enough to flag as UX/performance risk.</td>
+        </tr>
+        <tr>
+          <td>Send text follow-up</td>
+          <td>Visible relevant reply appears.</td>
+          <td>&gt;90s / not verified</td>
+          <td>TIMEOUT</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>Non-PASS Detail</h2>
+    <h3>Flow E - Text Message Reply</h3>
+    <ul>
+      <li><strong>Verified / Passed:</strong> Chat page was reached and text input control was available before the follow-up attempt.</li>
+      <li><strong>Missing / Failed:</strong> No user-visible reply was verified within the 90s wait window after the follow-up.</li>
+      <li><strong>Reason for Result:</strong> The AT runner timed out waiting for the body text to grow after sending the follow-up. Because no post-send screenshot was captured, this is reported as timeout evidence, not as a fully diagnosed backend or product root cause.</li>
+      <li><strong>Evidence:</strong> <code>raw-results.json</code> records <code>page.waitForFunction: Timeout 90000ms exceeded.</code>; <code>05-chat-ready.png</code> shows the last confirmed usable chat state.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Evidence Screenshots</h2>
+    <div class="evidence">
+      <figure>
+        <img src="01-home-loaded.png" alt="Health group homepage loaded">
+        <figcaption>01 - Homepage loaded with disclaimer and topic controls.</figcaption>
+      </figure>
+      <figure>
+        <img src="02-topic-entered.png" alt="Custom topic entered">
+        <figcaption>02 - Custom sleep topic entered and submit control available.</figcaption>
+      </figure>
+      <figure>
+        <img src="03-page2-ready.png" alt="Expert matching page ready">
+        <figcaption>03 - Expert matching page ready with selected experts.</figcaption>
+      </figure>
+      <figure>
+        <img src="04-flow-c-manual-selection.png" alt="Manual expert selection">
+        <figcaption>04 - Manual remove/add expert flow verified.</figcaption>
+      </figure>
+      <figure>
+        <img src="05-chat-ready.png" alt="Group chat ready">
+        <figcaption>05 - Group chat reached; text input control available.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section>
+    <h2>Artifacts</h2>
+    <ul>
+      <li><a href="raw-results.json">raw-results.json</a></li>
+      <li>Screenshot set: <code>01-home-loaded.png</code> through <code>05-chat-ready.png</code></li>
+      <li>Runner: <code>scripts/roundtable-health-smoke-at.js</code></li>
+    </ul>
+  </section>
+
+  <footer>
+    Report generated from bounded Health smoke AT run <code>roundtable-health-smoke-20260611T0831</code>. Post-run process check found no leftover chromium, playwright, or openclaw-hooks processes.
+  </footer>
+</main>
+</body>
+</html>

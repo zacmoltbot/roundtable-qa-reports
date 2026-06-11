@@ -1,0 +1,562 @@
+{
+  "startedAt": "2026-06-11T08:31:22.886Z",
+  "target": "https://doppel-health.zeabur.app/group",
+  "verdict": "ERROR",
+  "flows": [
+    {
+      "name": "Flow A: Page 1 topic input",
+      "status": "PASS",
+      "homeReadyMs": 5882
+    },
+    {
+      "name": "Flow B: Page 2 matching readiness",
+      "status": "PASS",
+      "ms": 4704,
+      "loadingSeen": false,
+      "names": [
+        "賴珊蒂",
+        "宋艾倫",
+        "沈露西"
+      ]
+    },
+    {
+      "name": "Flow C: manual expert remove/add",
+      "status": "PASS",
+      "beforeNames": [
+        "賴珊蒂",
+        "宋艾倫",
+        "沈露西"
+      ],
+      "afterRemove": [
+        "宋艾倫",
+        "沈露西"
+      ],
+      "afterAdd": [
+        "宋艾倫",
+        "沈露西",
+        "賴珊蒂"
+      ]
+    },
+    {
+      "name": "Flow D: enter chat",
+      "status": "PASS",
+      "chatReadyMs": 91285
+    }
+  ],
+  "timings": {
+    "homeReadyMs": 5882,
+    "matchingReadyMs": 4704,
+    "chatReadyMs": 91285
+  },
+  "observations": {
+    "01-home-loaded": {
+      "label": "01-home-loaded",
+      "url": "https://doppel-health.zeabur.app/group",
+      "text": "熱門話題\n睡眠品質，可能比睡眠時間更重要？\n睡眠修復\n家庭照護\n加入這場討論\n喝豆漿、吃豆腐防乳癌有秘訣！\n營養管理\n內科健康\n加入這場討論\n60歲像40歲，正在從幻想變成生意?\n營養管理\n中醫養生\n預防保健\n加入這場討論\n長時間看螢幕讓眼睛太疲勞，怎麼改善？\n復健治療\n內科健康\n家庭照護\n加入這場討論\n長時間坐辦公室導致肩頸痠痛，該如何舒緩？\n睡眠修復\n內科健康\n中醫養生\n加入這場討論\n您想討論什麼健康主題？\n說出你的問題\n本內容由人工智慧(AI)生成，可能包括不準確資訊，僅供創意與個人化參考。做出決定前請自行查證，本公司不保證內容之絕對正確性，互動過程請避免輸入個人資料。\n\n警語 · 緊急求助\n\n緊急狀況提醒警語\n\n若您目前有胸痛、呼吸困難、意識不清、嚴重外傷或其他危及生命的緊急狀況，請立即停止使用本服務，並直接撥打台灣緊急救護電話 119，尋求即時協助。\n\n本服務為 AI 諮詢性質，並非醫療救護系統，無法提供即時醫療急救支援或派遣醫護人員。\n\nHEALTH · 服務聲明\n\n使用前請詳閱\n\n本服務內容由 AI 生成，可能包含不準確資訊，僅供衛教諮詢參考，不具診斷或治療效力。本服務並非「醫療管理平台」。AI 角色不具醫師資格，亦不提供任何醫療診斷、處方或治療建議；相關數據僅用於優化衛教引導，不構成病歷紀錄。若有身體不適，請務必諮詢專業醫療機構。請勿輸入個資或病歷。對話內容僅於連線期間暫存（RAM），關閉視窗後立即銷毀，系統不留存紀錄。\n\n隱私權聲明\n\n資料與隱私保護\n\n團隊確認使用者在訪客模式就可以與Roundtable AI進行互動，請在使用者進入開始互動前的Disclaimer顯示框中加入「點擊以下按鈕，即代表您同意我們依據隱私權政策 蒐集、處理及利用您的個人資料。」\n\n我已閱讀並同意本服務不具診斷功能\n\n點擊即代表您已理解上述聲明",
+      "textSample": "熱門話題\n睡眠品質，可能比睡眠時間更重要？\n睡眠修復\n家庭照護\n加入這場討論\n喝豆漿、吃豆腐防乳癌有秘訣！\n營養管理\n內科健康\n加入這場討論\n60歲像40歲，正在從幻想變成生意?\n營養管理\n中醫養生\n預防保健\n加入這場討論\n長時間看螢幕讓眼睛太疲勞，怎麼改善？\n復健治療\n內科健康\n家庭照護\n加入這場討論\n長時間坐辦公室導致肩頸痠痛，該如何舒緩？\n睡眠修復\n內科健康\n中醫養生\n加入這場討論\n您想討論什麼健康主題？\n說出你的問題\n本內容由人工智慧(AI)生成，可能包括不準確資訊，僅供創意與個人化參考。做出決定前請自行查證，本公司不保證內容之絕對正確性，互動過程請避免輸入個人資料。\n\n警語 · 緊急求助\n\n緊急狀況提醒警語\n\n若您目前有胸痛、呼吸困難、意識不清、嚴重外傷或其他危及生命的緊急狀況，請立即停止使用本服務，並直接撥打台灣緊急救護電話 119，尋求即時協助。\n\n本服務為 AI 諮詢性質，並非醫療救護系統，無法提供即時醫療急救支援或派遣醫護人員。\n\nHEALTH · 服務聲明\n\n使用前請詳閱\n\n本服務內容由 AI 生成，可能包含不準確資訊，僅供衛教諮詢參考，不具診斷或治療效力。本服務並非「醫療管理平台」。AI 角色不具醫師資格，亦不提供任何醫療診斷、處方或治療建議；相關數據僅用於優化衛教引導，不構成病歷紀錄。若有身體不適，請務必諮詢專業醫療機構。請勿輸入個資或病歷。對話內容僅於連線期間暫存（RAM），關閉視窗後立即銷毀，系統不留存紀錄。\n\n隱私權聲明\n\n資料與隱私保護\n\n團隊確認使用者在訪客模式就可以與Roundtable AI進行互動，請在使用者進入開始互動前的Disclaimer顯示框中加入「點擊以下按鈕，即代表您同意我們依據隱私權政策 蒐集、處理及利用您的個人資料。」\n\n我已閱讀並同意本服務不具診斷功能\n\n點擊即代表您已理解上述聲明",
+      "buttons": [
+        {
+          "index": 0,
+          "text": "",
+          "aria": "語音輸入",
+          "disabled": false
+        },
+        {
+          "index": 1,
+          "text": "",
+          "aria": "文字輸入",
+          "disabled": false
+        },
+        {
+          "index": 2,
+          "text": "我已閱讀並同意本服務不具診斷功能",
+          "aria": null,
+          "disabled": false
+        }
+      ]
+    },
+    "02-topic-entered": {
+      "label": "02-topic-entered",
+      "url": "https://doppel-health.zeabur.app/group",
+      "text": "熱門話題\n睡眠品質，可能比睡眠時間更重要？\n睡眠修復\n家庭照護\n加入這場討論\n喝豆漿、吃豆腐防乳癌有秘訣！\n營養管理\n內科健康\n加入這場討論\n60歲像40歲，正在從幻想變成生意?\n營養管理\n中醫養生\n預防保健\n加入這場討論\n長時間看螢幕讓眼睛太疲勞，怎麼改善？\n復健治療\n內科健康\n家庭照護\n加入這場討論\n長時間坐辦公室導致肩頸痠痛，該如何舒緩？\n睡眠修復\n內科健康\n中醫養生\n加入這場討論\n您想討論什麼健康主題？\n+\nPopular topic\n+\n聰明減醣\n+\n天天好眠\n+\n日常保骨\n+\n壓力調節\n+\n運動習慣\n+\n痠痛管理\n尋找專家\n本內容由人工智慧(AI)生成，可能包括不準確資訊，僅供創意與個人化參考。做出決定前請自行查證，本公司不保證內容之絕對正確性，互動過程請避免輸入個人資料。",
+      "textSample": "熱門話題\n睡眠品質，可能比睡眠時間更重要？\n睡眠修復\n家庭照護\n加入這場討論\n喝豆漿、吃豆腐防乳癌有秘訣！\n營養管理\n內科健康\n加入這場討論\n60歲像40歲，正在從幻想變成生意?\n營養管理\n中醫養生\n預防保健\n加入這場討論\n長時間看螢幕讓眼睛太疲勞，怎麼改善？\n復健治療\n內科健康\n家庭照護\n加入這場討論\n長時間坐辦公室導致肩頸痠痛，該如何舒緩？\n睡眠修復\n內科健康\n中醫養生\n加入這場討論\n您想討論什麼健康主題？\n+\nPopular topic\n+\n聰明減醣\n+\n天天好眠\n+\n日常保骨\n+\n壓力調節\n+\n運動習慣\n+\n痠痛管理\n尋找專家\n本內容由人工智慧(AI)生成，可能包括不準確資訊，僅供創意與個人化參考。做出決定前請自行查證，本公司不保證內容之絕對正確性，互動過程請避免輸入個人資料。",
+      "buttons": [
+        {
+          "index": 0,
+          "text": "+\nPopular topic",
+          "aria": null,
+          "disabled": false
+        },
+        {
+          "index": 1,
+          "text": "+\n聰明減醣",
+          "aria": null,
+          "disabled": false
+        },
+        {
+          "index": 2,
+          "text": "+\n天天好眠",
+          "aria": null,
+          "disabled": false
+        },
+        {
+          "index": 3,
+          "text": "+\n日常保骨",
+          "aria": null,
+          "disabled": false
+        },
+        {
+          "index": 4,
+          "text": "+\n壓力調節",
+          "aria": null,
+          "disabled": false
+        },
+        {
+          "index": 5,
+          "text": "+\n運動習慣",
+          "aria": null,
+          "disabled": false
+        },
+        {
+          "index": 6,
+          "text": "+\n痠痛管理",
+          "aria": null,
+          "disabled": false
+        },
+        {
+          "index": 7,
+          "text": "",
+          "aria": "語音輸入",
+          "disabled": false
+        },
+        {
+          "index": 8,
+          "text": "尋找專家",
+          "aria": "尋找專家",
+          "disabled": false
+        }
+      ]
+    },
+    "03-page2-ready": {
+      "label": "03-page2-ready",
+      "url": "https://doppel-health.zeabur.app/group/select?topic=%E6%88%91%E6%9C%80%E8%BF%91%E6%99%9A%E4%B8%8A%E7%9D%A1%E4%B8%8D%E5%A5%BD%EF%BC%8C%E5%8D%8A%E5%A4%9C%E5%B8%B8%E5%B8%B8%E9%86%92%E4%BE%86%EF%BC%8C%E6%83%B3%E8%AB%8B%E5%B0%88%E5%AE%B6%E6%8F%90%E4%BE%9B%E6%94%B9%E5%96%84%E7%9D%A1%E7%9C%A0%E7%9A%84%E5%BB%BA%E8%AD%B0%E3%80%82&projectTheme=%E5%81%A5%E5%BA%B7%E9%86%AB%E7%99%82",
+      "text": "返回\n已選的AI虛擬專家\n你也可從下方換成其他專家\n討論話題：我最近晚上睡不好，半夜常常醒來，想請專家提供改善睡眠的建議。\n睡眠修復\n賴珊蒂\n理解情緒與睡眠節律的睡眠專家 / 用低壓力方式慢慢修復睡眠狀態 / 幫助身體重新建立穩定作息節奏\n預防保健\n宋艾倫\n預防醫學與健康管理專家 / 重新理解身體狀態 / 建立可執行的健康策略\n中醫養生\n沈露西\n邏輯嚴密的經絡分析者 / 專注根源調理的治本之道 / 結合傳統智慧的精準養生\n開始討論\n推薦\n全部\n家庭照護\n復健治療\n內科健康\n睡眠修復\n預防保健\n中醫養生\n營養管理\n睡眠修復\n賴珊蒂\n95%\n符合\n睡眠修復\n賴珊蒂\n優化睡眠品質與深層修復\n理解情緒與睡眠節律的睡眠專家\n用低壓力方式慢慢修復睡眠狀態\n幫助身體重新建立穩定作息節奏\n預防保健\n宋艾倫\n85%\n符合\n預防保健\n宋艾倫\n讓健康風險在發生前被看見\n預防醫學與健康管理專家\n重新理解身體狀態\n建立可執行的健康策略\n中醫養生\n沈露西\n80%\n符合\n中醫養生\n沈露西\n從節氣與體質重新理解身體狀態\n邏輯嚴密的經絡分析者\n專注根源調理的治本之道\n結合傳統智慧的精準養生\n家庭照護\n林珍妮\n75%\n符合\n家庭照護\n林珍妮\n探索身體警訊與多元引導\n家庭健康與健康識能整合專家\n梳理反覆不適與慢性健康困擾\n建立以家庭為核心的健康照護方式\n營養管理\n林安娜\n70%\n符合\n營養管理\n林安娜\n讓健康飲食真正融入生活節奏\n家庭營養規劃專家\n讓健康飲食真正走進日常生活\n建立身體營養基礎\n內科健康\n白大衛\n70%\n符合\n內科健康\n白大衛\n調理內在平衡與穩固體質\n理解生活脈絡的健康專家\n從日常慢慢調整身體狀態\n建立能長久維持的健康節奏\n營養管理\n周丹尼\n65%\n符合\n營養管理\n周丹尼\n高壓生活型態整合營養專家\n重新回到穩定生活節奏\n系統化方法改善失衡狀態\n長期維持的健康運作系統\n復健治療\n郭馬克\n復健治療\n郭馬克\n專精復健訓練與機能重建\n專注重建身體平衡的復健專家\n協助身體慢慢找回生活節奏\n重啟自然而穩定的身體運作\n本內容由人工智慧(AI)生成，可能包括不準確資訊，僅供創意與個人化參考。做出決定前請自行查證，本公司不保證內容之絕對正確性，互動過程請避免輸入個人資料。",
+      "textSample": "返回\n已選的AI虛擬專家\n你也可從下方換成其他專家\n討論話題：我最近晚上睡不好，半夜常常醒來，想請專家提供改善睡眠的建議。\n睡眠修復\n賴珊蒂\n理解情緒與睡眠節律的睡眠專家 / 用低壓力方式慢慢修復睡眠狀態 / 幫助身體重新建立穩定作息節奏\n預防保健\n宋艾倫\n預防醫學與健康管理專家 / 重新理解身體狀態 / 建立可執行的健康策略\n中醫養生\n沈露西\n邏輯嚴密的經絡分析者 / 專注根源調理的治本之道 / 結合傳統智慧的精準養生\n開始討論\n推薦\n全部\n家庭照護\n復健治療\n內科健康\n睡眠修復\n預防保健\n中醫養生\n營養管理\n睡眠修復\n賴珊蒂\n95%\n符合\n睡眠修復\n賴珊蒂\n優化睡眠品質與深層修復\n理解情緒與睡眠節律的睡眠專家\n用低壓力方式慢慢修復睡眠狀態\n幫助身體重新建立穩定作息節奏\n預防保健\n宋艾倫\n85%\n符合\n預防保健\n宋艾倫\n讓健康風險在發生前被看見\n預防醫學與健康管理專家\n重新理解身體狀態\n建立可執行的健康策略\n中醫養生\n沈露西\n80%\n符合\n中醫養生\n沈露西\n從節氣與體質重新理解身體狀態\n邏輯嚴密的經絡分析者\n專注根源調理的治本之道\n結合傳統智慧的精準養生\n家庭照護\n林珍妮\n75%\n符合\n家庭照護\n林珍妮\n探索身體警訊與多元引導\n家庭健康與健康識能整合專家\n梳理反覆不適與慢性健康困擾\n建立以家庭為核心的健康照護方式\n營養管理\n林安娜\n70%\n符合\n營養管理\n林安娜\n讓健康飲食真正融入生活節奏\n家庭營養規劃專家\n讓健康飲食真正走進日常生活\n建立身體營養基礎\n內科健康\n白大衛\n70%\n符合\n內科健康\n白大衛\n調理內在平衡與穩固體質\n理解生活脈絡的健康專家\n從日常慢慢調整身體狀態\n建立能長久維持的健康節奏\n營養管理\n周丹尼\n65%\n符合\n營養管理\n周丹尼\n高壓生活型態整合營養專家\n重新回到穩定生活節奏\n系統化方法改善失衡狀態\n長期維持的健康運作系統\n復健治療\n郭馬克\n復健治療\n郭馬克\n專精復健訓練與機能重建\n專注重建身體平衡的復健專家\n協助身體慢慢找回生活節奏\n重啟自然而穩定的身體運作\n本內容由人工智慧(AI)生成，可能包括不準確資訊，僅供創意與個人化參考。做出決定前請自行查證，本公司不保證內容之絕對正確性，互動過程請避免輸入個人資料。",
+      "buttons": [
+        {
+          "index": 0,
+          "text": "返回",
+          "aria": "返回",
+          "disabled": false
+        },
+        {
+          "index": 1,
+          "text": "",
+          "aria": "返回 賴珊蒂",
+          "disabled": false
+        },
+        {
+          "index": 2,
+          "text": "",
+          "aria": "返回 宋艾倫",
+          "disabled": false
+        },
+        {
+          "index": 3,
+          "text": "",
+          "aria": "返回 沈露西",
+          "disabled": false
+        },
+        {
+          "index": 4,
+          "text": "開始討論",
+          "aria": null,
+          "disabled": false
+        },
+        {
+          "index": 5,
+          "text": "推薦",
+          "aria": null,
+          "disabled": false
+        },
+        {
+          "index": 6,
+          "text": "全部",
+          "aria": null,
+          "disabled": false
+        },
+        {
+          "index": 7,
+          "text": "家庭照護",
+          "aria": null,
+          "disabled": false
+        },
+        {
+          "index": 8,
+          "text": "復健治療",
+          "aria": null,
+          "disabled": false
+        },
+        {
+          "index": 9,
+          "text": "內科健康",
+          "aria": null,
+          "disabled": false
+        },
+        {
+          "index": 10,
+          "text": "睡眠修復",
+          "aria": null,
+          "disabled": false
+        },
+        {
+          "index": 11,
+          "text": "預防保健",
+          "aria": null,
+          "disabled": false
+        },
+        {
+          "index": 12,
+          "text": "中醫養生",
+          "aria": null,
+          "disabled": false
+        },
+        {
+          "index": 13,
+          "text": "營養管理",
+          "aria": null,
+          "disabled": false
+        },
+        {
+          "index": 14,
+          "text": "",
+          "aria": "View details",
+          "disabled": false
+        },
+        {
+          "index": 15,
+          "text": "",
+          "aria": "Back to front side",
+          "disabled": false
+        },
+        {
+          "index": 16,
+          "text": "",
+          "aria": "View details",
+          "disabled": false
+        },
+        {
+          "index": 17,
+          "text": "",
+          "aria": "Back to front side",
+          "disabled": false
+        },
+        {
+          "index": 18,
+          "text": "",
+          "aria": "View details",
+          "disabled": false
+        },
+        {
+          "index": 19,
+          "text": "",
+          "aria": "Back to front side",
+          "disabled": false
+        },
+        {
+          "index": 20,
+          "text": "",
+          "aria": "View details",
+          "disabled": false
+        },
+        {
+          "index": 21,
+          "text": "",
+          "aria": "Back to front side",
+          "disabled": false
+        },
+        {
+          "index": 22,
+          "text": "",
+          "aria": "View details",
+          "disabled": false
+        },
+        {
+          "index": 23,
+          "text": "",
+          "aria": "Back to front side",
+          "disabled": false
+        },
+        {
+          "index": 24,
+          "text": "",
+          "aria": "View details",
+          "disabled": false
+        },
+        {
+          "index": 25,
+          "text": "",
+          "aria": "Back to front side",
+          "disabled": false
+        },
+        {
+          "index": 26,
+          "text": "",
+          "aria": "View details",
+          "disabled": false
+        },
+        {
+          "index": 27,
+          "text": "",
+          "aria": "Back to front side",
+          "disabled": false
+        },
+        {
+          "index": 28,
+          "text": "",
+          "aria": "View details",
+          "disabled": false
+        },
+        {
+          "index": 29,
+          "text": "",
+          "aria": "Back to front side",
+          "disabled": false
+        }
+      ]
+    },
+    "04-flow-c-manual-selection": {
+      "label": "04-flow-c-manual-selection",
+      "url": "https://doppel-health.zeabur.app/group/select?topic=%E6%88%91%E6%9C%80%E8%BF%91%E6%99%9A%E4%B8%8A%E7%9D%A1%E4%B8%8D%E5%A5%BD%EF%BC%8C%E5%8D%8A%E5%A4%9C%E5%B8%B8%E5%B8%B8%E9%86%92%E4%BE%86%EF%BC%8C%E6%83%B3%E8%AB%8B%E5%B0%88%E5%AE%B6%E6%8F%90%E4%BE%9B%E6%94%B9%E5%96%84%E7%9D%A1%E7%9C%A0%E7%9A%84%E5%BB%BA%E8%AD%B0%E3%80%82&projectTheme=%E5%81%A5%E5%BA%B7%E9%86%AB%E7%99%82",
+      "text": "返回\n已選的AI虛擬專家\n請選擇 2-3 位專家加入討論\n討論話題：我最近晚上睡不好，半夜常常醒來，想請專家提供改善睡眠的建議。\n預防保健\n宋艾倫\n預防醫學與健康管理專家 / 重新理解身體狀態 / 建立可執行的健康策略\n中醫養生\n沈露西\n邏輯嚴密的經絡分析者 / 專注根源調理的治本之道 / 結合傳統智慧的精準養生\n睡眠修復\n賴珊蒂\n理解情緒與睡眠節律的睡眠專家 / 用低壓力方式慢慢修復睡眠狀態 / 幫助身體重新建立穩定作息節奏\n開始討論\n推薦\n全部\n家庭照護\n復健治療\n內科健康\n睡眠修復\n預防保健\n中醫養生\n營養管理\n睡眠修復\n賴珊蒂\n95%\n符合\n睡眠修復\n賴珊蒂\n優化睡眠品質與深層修復\n理解情緒與睡眠節律的睡眠專家\n用低壓力方式慢慢修復睡眠狀態\n幫助身體重新建立穩定作息節奏\n預防保健\n宋艾倫\n85%\n符合\n預防保健\n宋艾倫\n讓健康風險在發生前被看見\n預防醫學與健康管理專家\n重新理解身體狀態\n建立可執行的健康策略\n中醫養生\n沈露西\n80%\n符合\n中醫養生\n沈露西\n從節氣與體質重新理解身體狀態\n邏輯嚴密的經絡分析者\n專注根源調理的治本之道\n結合傳統智慧的精準養生\n家庭照護\n林珍妮\n75%\n符合\n家庭照護\n林珍妮\n探索身體警訊與多元引導\n家庭健康與健康識能整合專家\n梳理反覆不適與慢性健康困擾\n建立以家庭為核心的健康照護方式\n營養管理\n林安娜\n70%\n符合\n營養管理\n林安娜\n讓健康飲食真正融入生活節奏\n家庭營養規劃專家\n讓健康飲食真正走進日常生活\n建立身體營養基礎\n內科健康\n白大衛\n70%\n符合\n內科健康\n白大衛\n調理內在平衡與穩固體質\n理解生活脈絡的健康專家\n從日常慢慢調整身體狀態\n建立能長久維持的健康節奏\n營養管理\n周丹尼\n65%\n符合\n營養管理\n周丹尼\n高壓生活型態整合營養專家\n重新回到穩定生活節奏\n系統化方法改善失衡狀態\n長期維持的健康運作系統\n復健治療\n郭馬克\n復健治療\n郭馬克\n專精復健訓練與機能重建\n專注重建身體平衡的復健專家\n協助身體慢慢找回生活節奏\n重啟自然而穩定的身體運作\n本內容由人工智慧(AI)生成，可能包括不準確資訊，僅供創意與個人化參考。做出決定前請自行查證，本公司不保證內容之絕對正確性，互動過程請避免輸入個人資料。",
+      "textSample": "返回\n已選的AI虛擬專家\n請選擇 2-3 位專家加入討論\n討論話題：我最近晚上睡不好，半夜常常醒來，想請專家提供改善睡眠的建議。\n預防保健\n宋艾倫\n預防醫學與健康管理專家 / 重新理解身體狀態 / 建立可執行的健康策略\n中醫養生\n沈露西\n邏輯嚴密的經絡分析者 / 專注根源調理的治本之道 / 結合傳統智慧的精準養生\n睡眠修復\n賴珊蒂\n理解情緒與睡眠節律的睡眠專家 / 用低壓力方式慢慢修復睡眠狀態 / 幫助身體重新建立穩定作息節奏\n開始討論\n推薦\n全部\n家庭照護\n復健治療\n內科健康\n睡眠修復\n預防保健\n中醫養生\n營養管理\n睡眠修復\n賴珊蒂\n95%\n符合\n睡眠修復\n賴珊蒂\n優化睡眠品質與深層修復\n理解情緒與睡眠節律的睡眠專家\n用低壓力方式慢慢修復睡眠狀態\n幫助身體重新建立穩定作息節奏\n預防保健\n宋艾倫\n85%\n符合\n預防保健\n宋艾倫\n讓健康風險在發生前被看見\n預防醫學與健康管理專家\n重新理解身體狀態\n建立可執行的健康策略\n中醫養生\n沈露西\n80%\n符合\n中醫養生\n沈露西\n從節氣與體質重新理解身體狀態\n邏輯嚴密的經絡分析者\n專注根源調理的治本之道\n結合傳統智慧的精準養生\n家庭照護\n林珍妮\n75%\n符合\n家庭照護\n林珍妮\n探索身體警訊與多元引導\n家庭健康與健康識能整合專家\n梳理反覆不適與慢性健康困擾\n建立以家庭為核心的健康照護方式\n營養管理\n林安娜\n70%\n符合\n營養管理\n林安娜\n讓健康飲食真正融入生活節奏\n家庭營養規劃專家\n讓健康飲食真正走進日常生活\n建立身體營養基礎\n內科健康\n白大衛\n70%\n符合\n內科健康\n白大衛\n調理內在平衡與穩固體質\n理解生活脈絡的健康專家\n從日常慢慢調整身體狀態\n建立能長久維持的健康節奏\n營養管理\n周丹尼\n65%\n符合\n營養管理\n周丹尼\n高壓生活型態整合營養專家\n重新回到穩定生活節奏\n系統化方法改善失衡狀態\n長期維持的健康運作系統\n復健治療\n郭馬克\n復健治療\n郭馬克\n專精復健訓練與機能重建\n專注重建身體平衡的復健專家\n協助身體慢慢找回生活節奏\n重啟自然而穩定的身體運作\n本內容由人工智慧(AI)生成，可能包括不準確資訊，僅供創意與個人化參考。做出決定前請自行查證，本公司不保證內容之絕對正確性，互動過程請避免輸入個人資料。",
+      "buttons": [
+        {
+          "index": 0,
+          "text": "返回",
+          "aria": "返回",
+          "disabled": false
+        },
+        {
+          "index": 1,
+          "text": "",
+          "aria": "返回 宋艾倫",
+          "disabled": false
+        },
+        {
+          "index": 2,
+          "text": "",
+          "aria": "返回 沈露西",
+          "disabled": false
+        },
+        {
+          "index": 3,
+          "text": "",
+          "aria": "返回 賴珊蒂",
+          "disabled": false
+        },
+        {
+          "index": 4,
+          "text": "開始討論",
+          "aria": null,
+          "disabled": false
+        },
+        {
+          "index": 5,
+          "text": "推薦",
+          "aria": null,
+          "disabled": false
+        },
+        {
+          "index": 6,
+          "text": "全部",
+          "aria": null,
+          "disabled": false
+        },
+        {
+          "index": 7,
+          "text": "家庭照護",
+          "aria": null,
+          "disabled": false
+        },
+        {
+          "index": 8,
+          "text": "復健治療",
+          "aria": null,
+          "disabled": false
+        },
+        {
+          "index": 9,
+          "text": "內科健康",
+          "aria": null,
+          "disabled": false
+        },
+        {
+          "index": 10,
+          "text": "睡眠修復",
+          "aria": null,
+          "disabled": false
+        },
+        {
+          "index": 11,
+          "text": "預防保健",
+          "aria": null,
+          "disabled": false
+        },
+        {
+          "index": 12,
+          "text": "中醫養生",
+          "aria": null,
+          "disabled": false
+        },
+        {
+          "index": 13,
+          "text": "營養管理",
+          "aria": null,
+          "disabled": false
+        },
+        {
+          "index": 14,
+          "text": "",
+          "aria": "View details",
+          "disabled": false
+        },
+        {
+          "index": 15,
+          "text": "",
+          "aria": "Back to front side",
+          "disabled": false
+        },
+        {
+          "index": 16,
+          "text": "",
+          "aria": "View details",
+          "disabled": false
+        },
+        {
+          "index": 17,
+          "text": "",
+          "aria": "Back to front side",
+          "disabled": false
+        },
+        {
+          "index": 18,
+          "text": "",
+          "aria": "View details",
+          "disabled": false
+        },
+        {
+          "index": 19,
+          "text": "",
+          "aria": "Back to front side",
+          "disabled": false
+        },
+        {
+          "index": 20,
+          "text": "",
+          "aria": "View details",
+          "disabled": false
+        },
+        {
+          "index": 21,
+          "text": "",
+          "aria": "Back to front side",
+          "disabled": false
+        },
+        {
+          "index": 22,
+          "text": "",
+          "aria": "View details",
+          "disabled": false
+        },
+        {
+          "index": 23,
+          "text": "",
+          "aria": "Back to front side",
+          "disabled": false
+        },
+        {
+          "index": 24,
+          "text": "",
+          "aria": "View details",
+          "disabled": false
+        },
+        {
+          "index": 25,
+          "text": "",
+          "aria": "Back to front side",
+          "disabled": false
+        },
+        {
+          "index": 26,
+          "text": "",
+          "aria": "View details",
+          "disabled": false
+        },
+        {
+          "index": 27,
+          "text": "",
+          "aria": "Back to front side",
+          "disabled": false
+        },
+        {
+          "index": 28,
+          "text": "",
+          "aria": "View details",
+          "disabled": false
+        },
+        {
+          "index": 29,
+          "text": "",
+          "aria": "Back to front side",
+          "disabled": false
+        }
+      ]
+    },
+    "05-chat-ready": {
+      "label": "05-chat-ready",
+      "url": "https://doppel-health.zeabur.app/group/chat?profileIds=8463a8dc-5ed1-4eb9-be30-a6078f70d952,424fb0ae-d2de-4f24-acea-146186ee3271,aa856c73-9438-4a98-9ecb-00adeec575d0&topic=%E6%88%91%E6%9C%80%E8%BF%91%E6%99%9A%E4%B8%8A%E7%9D%A1%E4%B8%8D%E5%A5%BD%EF%BC%8C%E5%8D%8A%E5%A4%9C%E5%B8%B8%E5%B8%B8%E9%86%92%E4%BE%86%EF%BC%8C%E6%83%B3%E8%AB%8B%E5%B0%88%E5%AE%B6%E6%8F%90%E4%BE%9B%E6%94%B9%E5%96%84%E7%9D%A1%E7%9C%A0%E7%9A%84%E5%BB%BA%E8%AD%B0%E3%80%82&preheatSessionId=ps-1781166703575-hzazvrkp&projectTheme=%E5%81%A5%E5%BA%B7%E9%86%AB%E7%99%82&scores=%7B%228463a8dc-5ed1-4eb9-be30-a6078f70d952%22%3A95%2C%22424fb0ae-d2de-4f24-acea-146186ee3271%22%3A85%2C%22aa856c73-9438-4a98-9ecb-00adeec575d0%22%3A80%7D",
+      "text": "返回\n睡眠修復 | 賴珊蒂\n預防保健 | 宋艾倫\n中醫養生 | 沈露西\n討論話題：我最近晚上睡不好，半夜常常醒來，想請專家提供改善睡眠的建議。\n傳送中\n賴珊蒂 · 睡眠修復\n免費試用 2:30\n\n本內容由人工智慧(AI)生成，可能包括不準確資訊，僅供創意與個人化參考。做出決定前請自行查證，本公司不保證內容之絕對正確性，互動過程請避免輸入個人資料。",
+      "textSample": "返回\n睡眠修復 | 賴珊蒂\n預防保健 | 宋艾倫\n中醫養生 | 沈露西\n討論話題：我最近晚上睡不好，半夜常常醒來，想請專家提供改善睡眠的建議。\n傳送中\n賴珊蒂 · 睡眠修復\n免費試用 2:30\n\n本內容由人工智慧(AI)生成，可能包括不準確資訊，僅供創意與個人化參考。做出決定前請自行查證，本公司不保證內容之絕對正確性，互動過程請避免輸入個人資料。",
+      "buttons": [
+        {
+          "index": 0,
+          "text": "返回",
+          "aria": "返回",
+          "disabled": false
+        },
+        {
+          "index": 1,
+          "text": "",
+          "aria": "對話總結",
+          "disabled": false
+        },
+        {
+          "index": 2,
+          "text": "",
+          "aria": "暫停",
+          "disabled": false
+        },
+        {
+          "index": 3,
+          "text": "",
+          "aria": "",
+          "disabled": false
+        },
+        {
+          "index": 4,
+          "text": "",
+          "aria": "文字輸入",
+          "disabled": false
+        }
+      ]
+    }
+  },
+  "errors": [
+    {
+      "message": "page.waitForFunction: Timeout 90000ms exceeded.",
+      "stack": "page.waitForFunction: Timeout 90000ms exceeded.\n    at run (/home/node/.openclaw/workspace/scripts/roundtable-health-smoke-at.js:239:16)"
+    }
+  ],
+  "finishedAt": "2026-06-11T08:34:56.996Z"
+}
